@@ -1,0 +1,195 @@
+#versiones, #zmejelovTextMore, #buttonZmejelovMenos, #buttonDaylio1Menos, #Daylio1TextMore , #buttonDaylioMenos, #DaylioTextMore{
+    display: none;
+}   
+
+* {
+    color:#333333      ;
+    background-color: #f5f5f5 ;
+    font-size: 20px;
+}
+
+
+button {
+    color:#333333       ;
+    background-color: #618dba  ;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1%;
+
+
+}
+#proyectosGrandes, #proyectosMenores, #videos {
+    border:solid 1px #181b1c;
+    box-sizing: border-box;
+    padding: 2%;
+    text-align: center;
+}
+
+a {
+    color: #0073e6; /* Link color */
+    text-decoration: none; /* Remove underlines */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+a:hover {
+    color: #0051a8; /* Darker shade of link color on hover */
+    text-decoration: underline; /* Add underline on hover (optional) */
+}
+
+
+
+#proyectosGrandes, #proyectosMenores{
+    margin-top: 0.6%; 
+    flex-wrap: wrap;
+}
+
+#proyectosMenores {
+    
+}
+
+
+#videos{
+    margin-top: 0.6%; 
+    margin-bottom: 0.6%;
+}
+
+#sobreMi {
+    border:solid 1px #181b1c;
+    box-sizing: border-box;
+    padding: 1%;
+    text-align: center;
+    margin-top: 0.6%; 
+
+
+
+}
+
+.col-4 {
+    box-sizing: border-box;
+    padding: 10px; /* Add padding to create space */
+    border: solid 1px #181b1c;
+    text-align: center;
+    margin-bottom: 10px; /* Add margin to separate the boxes */
+    height: 30%; /* Set a fixed height to ensure they are the same size */
+}
+
+
+
+
+
+
+
+
+#filler {
+    box-sizing: border-box;
+}
+
+.two-column-list {
+    column-count: 3; /* Set the number of columns */
+}
+
+.two-column-list li {
+    margin-bottom: 10px; /* Add margin between list items */
+}
+
+ul{
+    list-style-position: inside;
+}
+
+.col-2 {
+    width: 16.66%; /* 16.66% width for each empty container */
+    box-sizing: border-box;
+    padding: 10px; /* Add padding to create space */
+    background-color: transparent; /* Set background to transparent for empty container */
+}
+
+.clear-left {
+    clear: left; /* Clear the float to start a new line */
+}
+
+footer{
+    text-align: center;
+    padding: 1%;
+    clear: both;
+    display: block;
+    margin-top: 5%;
+}
+
+
+.row::after {   /*da footer ne pobegne na neko drugo prosto mesto*/
+    content: "";
+    clear: both;
+    display: block;
+  }
+
+
+[class*="col-"] {
+    float: left;
+  }
+
+  .col-1 { width: 100%; }
+  .col-2 { width: 100%; }
+  .col-3 { width: 100%; }
+  .col-4 { width: 100%; }
+  .col-5 { width: 100%; }
+  .col-6 { width: 100%; }
+  .col-7 { width: 100%; }
+  .col-8 { width: 100%; }
+  .col-9 { width: 100%; }
+  .col-10 { width: 100%; }
+  .col-11 { width: 100%; }
+  .col-12 { width: 100%; }
+  
+  
+  @media only screen and (min-width: 1125px)  {
+  .col-1 { width: 8.33%; }
+  .col-2 { width: 16.66%; }
+  .col-3 { width: 25%; }
+  .col-4 { width: 33.33%; }
+  .col-5 { width: 41.66%; }
+  .col-6 { width: 50%; }
+  .col-7 { width: 58.33%; }
+  .col-8 { width: 66.66%; }
+  .col-9 { width: 75%; }
+  .col-10 { width: 83.33%; }
+  .col-11 { width: 91.66%; }
+  .col-12 { width: 100%; }
+  
+
+
+
+
+  }
+  @media only screen and (min-width:600px) and (max-width:1124px) {
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  img, video, canvas {
+    max-width: 100%;
+    height: auto;
+    }
+    
+  
+  svg{
+    max-width: 100%;
+    height: auto;
+  }
+
+  
