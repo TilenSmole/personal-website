@@ -50,9 +50,7 @@ a:hover {
     flex-wrap: wrap;
 }
 
-#proyectosMenores {
-    
-}
+
 
 
 #videos{
@@ -124,13 +122,39 @@ footer{
 }
 
 
+.flags-container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#english, #spanish{
+    font-size: 300px; 
+    margin: 0 10px; 
+}
+
+#language-selecter {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    color:#333333;
+     
+}
+
+
+
 .row::after {   /*da footer ne pobegne na neko drugo prosto mesto*/
     content: "";
     clear: both;
     display: block;
   }
 
-
+.flag {
+    font-size: 48px; /* Adjust the size as needed */
+    margin: 0 10px; /* Optional: Adds spacing between the flags */
+}
 [class*="col-"] {
     float: left;
   }
