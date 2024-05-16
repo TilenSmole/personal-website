@@ -1,0 +1,29 @@
+
+            Programski jeziki
+            <ul class="listMe">
+                <li> Java ☕  </li>   
+                <li> Php 🐘 </li>
+                <li>Python </li>
+                <li>Java Script </li>
+                <li>Matlab</li>
+            </ul>
+            Spletne tehnologije
+            <ul class="listMe">
+                <li>HTML🌐 </li>
+                <li>CSS 🎨 </li> 
+                <li> React</li>
+                <li>Tailwind</li>
+            </ul>
+            Podatkovne baze
+            <ul class="listMe">
+                <li>SQL 🗄️ </li>
+            </ul>
+            UPORABNIŠKI VMESNIKI
+            <ul class="listMe">
+                <li>Java FX 🖥️ </li>
+                <li>Phaser </li>
+            </ul>
+
+            OPERACIJSKI SISTEMI
+            <li>LINUX🐧</li>
+            <li>WINDOWS</li>
