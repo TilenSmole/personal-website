@@ -1,0 +1,43 @@
+  
+
+    <div class="row section">
+        <div class="col-1 sidebar">
+            <div class="circle-column">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+        <p id="aboutmespan">O MENI</p>
+        <section class="section4">
+
+       
+
+            
+
+        </section>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="header"></div>
+    <div class="row section">
+        <section class="section" id="section0">
+            <div style="display: flex; align-items: center;">
+                <span id="introLogo">
+                    <!--- <img src="photos\Capture-removebg-preview.png" alt="my photo" width="500" height="500">-->
+                </span>
+                <span id="introText">
+                    <p style="font-size: 100px; color: black;">TILEN SMOLE<br>
+                        <span style="font-size: 35px" ;>programer, video montažer</span>
+                    </p>
+                </span>
+            </div>
+        </section>
+    </div>
