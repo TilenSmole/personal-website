@@ -8,7 +8,6 @@ body {
 
 }
 
-
 a {
     text-decoration: none;
     color: #1a1d1a;
@@ -25,51 +24,73 @@ a {
 }
 
 
-#videoSection {
-    display: flex;
-    justify-content: center;
-}
-
-
-.linkDisplay {
-    flex: 0.8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo {
-    padding-bottom: 20px;
-}
-
-
-#logoTitle {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-}
 
 footer {
-    text-align: center;
-    clear: both;
-    display: block;
-    background: #a99985;
-    padding:  50px 0  20px 0;
+  text-align: center;
+  clear: both;
+  display: block;
+  background: #181717;
+  padding:  50px 0  20px 0;
+  color:white;
+}
+
+/*
+Projects
+*/
+.linkDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.logoDisplay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+} 
+.mobile-projects{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-project{
+  background-color: #c7d3dd;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;;
+}
+
+@media (max-width: 1024px) {
+  img {
+    max-width: 85%;
+  }
+
+  .linkDisplay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
 
 }
 
 
-img,
-video,
-canvas {
-    max-width: 300px;
-    height: auto;
+
+/*
+home
+*/
+#home {
+  position: relative;
+  min-height: 100vh; 
+  overflow: hidden;  
 }
 
 
 
-
-    
 
 /* Technologies section layout */
 .tech-items {
@@ -80,12 +101,11 @@ canvas {
 }
 
 .tech-card {
-    background: #34495e;
+    background: #37393A;
     border-radius: 12px;
     padding: 10px 10px;
     text-align: center;
     min-width: 100px;
-    
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
@@ -116,6 +136,17 @@ canvas {
     color: #f39c12;
 }
 
+@media (max-width: 1024px) {
+  .tech-items {
+    gap: 10px;
+}
+
+.tech-card {
+    min-width: 50px;
+}
+
+}
+
 
 .social-icon {
     width: 30px;
@@ -126,14 +157,6 @@ canvas {
 
 .social-icon:hover {
     transform: scale(1.1);
-}
-
-.linkDisplay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    gap: 10px;
 }
 
 
@@ -149,100 +172,60 @@ canvas {
   .circle {
     width: 50px;
     height: 50px;
-    background-color: #A2D2FF   ;
+    background-color: #c7d3dd   ;
     border-radius: 50%; 
   }
   .circle:hover {
-    background-color: #a99380;
+    background-color: #b1d1dc;
     transform: scale(1.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-  .sidebar {
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center; 
-    align-items: center;    
-  }
-
-  .section {
-    height: 100vh;
-   }
-
- 
-
-
-#introText {
-    position: absolute;
-    bottom: 100px; 
-    right: 20px;  
-    font-size: 500px;
-    text-align: right;
-    margin-right: 50px;
-}
-
-
-
-  
 
 h1 {    
     text-align: center;
     padding-bottom: 50px;
     font-size: 40px;
-    color: #49a078 
+    color: #77b6ea ;
+    z-index: 900;
+    position: relative;
 }
 
 h2 {
     font-size: 30px;
     display: block;
     margin: 0 20px 0 20px;
-    color: #49a078 
-
+    color: #77b6ea ;
+    z-index: 900;
+    position: relative;
 }
 
 .carousel-section{
     height: 80vh;
     margin: 10px;
-    background-color:#A2D2FF ;
+    background-color:#c7d3dd ;
     border-radius: 20px;
-
 }
-
-.logoDisplay{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 50px;
-}
-
-.logo{
-    min-width: 350px;
-}
-
-
 
 .floating-item {
     position: absolute;
     pointer-events: none;
-    z-index: 0;
-  }
+}
 
-  .floating-item-basic {
-    width: 80px;
-    height: 80px;
-  }
+.floating-item-basic {
+  width: 80px;
+  height: 80px;
+}
 
-  .floating-item-logo {
-    width: 200px;
-    height: 200px;
-  }
+.floating-item-logo {
+  width: 200px;
+  height: 200px;
+}
 
 
-  .floating-item-zmejelov{
-    width: 250px;
-    height: 250px;
-  }
+.floating-item-zmejelov{
+  width: 250px;
+  height: 250px;
+}
 
 /*VIDEOS */
 
@@ -254,6 +237,7 @@ h2 {
     padding: 40px 20px;
   }
   
+ 
   .video-card {
     flex: 1 1 30%;
     max-width: 30%;
@@ -277,115 +261,142 @@ h2 {
     border: none;
   }
 
-  
+  @media (max-width: 1024px) {
+    .video-card {
+      min-width: 100%;
+      
+    }
+  }
+
 /*ABOUT ME */
+@media (max-width: 1024px) {
+  .aboutme {
+    margin: 20px;
+    
+  }
+}
 
 .scroll-container {
    overflow: hidden;
     position: relative;
     width: 80%; 
   }
-  
-  .bubble {
+
+.bubble-title {
     display: flex;
-    flex-direction: column;
-    padding: 4rem;
-    background-color: #334155;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.3);
-    }
-  
-    .bubble-title {
-        display: flex;
-        font-size: 1rem;
-        color: #e2e8f0;
-    }
+    font-size: 1rem;
+    color: #e2e8f0;
+}
     
-
-
-  .sub-bubbles-movement {
-    animation-name: loop;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-duration: 10s;
-  }
+.sub-bubbles-movement {
+  animation-name: loop;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+}
   
 
 
-  /* Infinite scroll loop animation */
-  @keyframes loop {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-20%);
-    }
+/* Infinite scroll loop animation */
+@keyframes loop {
+  0% {
+    transform: translateX(0);
   }
-  
-  /* Hover effect to pause animation */
-  .scroll-container:hover .sub-bubbles {
-    animation-play-state: paused;
+  100% {
+    transform: translateX(-20%);
   }
-  
-  /* Clone bubbles to ensure smooth loop */
-  .sub-bubbles.clone {
-    left: 100%;
-  }
+}
+
+.scroll-container:hover .sub-bubbles {
+  animation-play-state: paused;
+}
 
 
-  .carousel {
-    margin: 0 auto;
-    padding: 20px 0;
-    overflow: hidden;
-    
+.carousel {
+  margin: 0 auto;
+  padding: 20px 0;
+  overflow: hidden;
+  
+}
+.sub-bubble-solid, .sub-bubble {
+  min-width:15rem;
+  color: white;
+  padding: 20px;
+  font-size: xx-large;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px; 
+}
+
+img{
+  max-height: 500px;
+  max-height: 300px;
+}
+
+.sub-bubbles {
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 1024px) {
+  .sub-bubble, .sub-bubble-solid  {
+    padding: 10px;
+    font-size: 20px;
+    min-width: 7rem;
+
   }
-  .sub-bubble-solid{
-    max-width:15rem;
-    color: white;
-    border-radius: 24px;
-    box-shadow: rgba(0, 0, 0, 10%) 5px 5px 20px 0;
-    padding: 20px;
-    font-size: xx-large;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px;
-    background: #7958ff;
+}
+
+.group-solid {
     display: flex;
+}
+.group {
+  will-change: transform; 
+  animation: scrolling 30s linear infinite;
+  display: flex;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
   }
-  .sub-bubble  {
-    min-width:15rem;
-    color: white;
-    padding: 20px;
-    font-size: xx-large;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px;
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 
-   
-  }
-  .sub-bubbles {
-    display: flex;
-    gap: 1rem; /* optional, adds spacing between items */
-  }
+/*
+sidebar
+*/
+.sidebar {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+}
 
-  .group-solid {
-      display: flex;
-      justify-content: center;
-  }
-  .group {
-    /* ... */
-    will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
-    animation: scrolling 30s linear infinite;
-      display: flex;
-  }
 
-  @keyframes scrolling {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none; 
   }
+}
+
+#introText {
+
+              align-self: flex-end;
+              margin-top: auto;
+}
+
+
+#myName {
+  font-size: 12rem; 
+}
+
+@media (max-width: 1024px) {
+  #myName {
+    font-size: 6rem; 
+
+  }
+}
