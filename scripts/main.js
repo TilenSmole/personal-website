@@ -1,6 +1,4 @@
 
-const loginButton = document.getElementById("showMyInfo").addEventListener('click', showMyInfo);
-
 function showMyInfo() {
     var home = document.getElementById("home");
     var showMyInfo = document.getElementById("showMyInfo");
@@ -24,3 +22,9 @@ function showMyInfo() {
 
     }
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+   const loginButton = document.getElementById("showMyInfo").addEventListener('click', showMyInfo);
+
+});
