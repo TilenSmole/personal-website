@@ -25,7 +25,7 @@ $(document).ready(function () {
     // Load main fragments
     $("#footer").load("footer.html");
     $("#videosCarousel").load("videos.html");
-    $("#me").load("aboutMe.html");
+    $("#me").load("aboutme.html");
     $(".sidebar").load("_sidebar.html");
 
     $("#projectsCarousel").load("projects.html", function () {
