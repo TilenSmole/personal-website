@@ -22,6 +22,11 @@
             // }
 
         });
+
+        $(document).ready(function() {
+  $(".sidebar").first().load("_sidebar.html"); // load sidebar HTML once
+});
+
     </script>
 
     <!-- Bootstrap CSS -->
@@ -39,10 +44,8 @@
     <script src="scripts/main.js"></script>
 
     <div class="row" id="home">
-        <div class="col-xl-1 sidebar" id="sidebarIntro"> </div>
-        <script>
-            $("#sidebarIntro").load("_sidebar.html");
-        </script>
+        <div class="col-xl-1 sidebar" class="sidebar"> </div>
+
 
         <div class="col-lg-12 col-xl-11" id="introText">
             <h1 id="myName">TILEN SMOLE</h1>
@@ -65,10 +68,8 @@
     </div>
 
     <div class="row" id="projects">
-        <div class="col-xl-1 sidebar" id="sidebarProjects"></div>
-        <script>
-            $("#sidebarProjects").load("_sidebar.html");
-        </script>
+                <div class="col-xl-1 sidebar" class="sidebar"> </div>
+
         <div class="col-lg-12 col-xl-11">
             <div id="projectsCarousel">
             </div>
@@ -76,10 +77,8 @@
     </div>
 
     <div class="row" id="videos">
-        <div class="col-xl-1 sidebar" id="sidebarVideos"></div>
-        <script>
-            $("#sidebarVideos").load("_sidebar.html");
-        </script>
+           <div class="col-xl-1 sidebar" class="sidebar"> </div>
+
         <div class="col-lg-12 col-xl-11">
             <div id="videosCarousel">
             </div>
