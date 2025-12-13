@@ -4,7 +4,7 @@ function showMyInfo() {
     var showMyInfo = document.getElementById("showMyInfo");
     var aboutMe = document.getElementById("aboutMe");
 
-    showHome = home.style.display == "none"
+    var showHome = home.style.display == "none"
 
     if (showHome) {
         home.style.display = "flex";
