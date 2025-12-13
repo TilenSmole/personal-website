@@ -1,6 +1,7 @@
 
 
-const fileNames = [
+function loadData(){
+    const fileNames = [
     "java_fx.png",
     "js.png",
     "lyfio logo.png",
@@ -67,6 +68,7 @@ fileNames.forEach(file => {
         removable: !isLogo && !isZmejelov
     });
 });
+} 
 
 function animate() {
     for (let item of items) {
@@ -82,5 +84,6 @@ function animate() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    loadData();
     animate();
 });
