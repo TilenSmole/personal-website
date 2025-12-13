@@ -1,4 +1,5 @@
-
+const items = [];
+const home = document.getElementById("home");
 
 function loadData(){
     const fileNames = [
@@ -24,8 +25,7 @@ function loadData(){
 
 ];
 
-const items = [];
-const home = document.getElementById("home");
+
 
 fileNames.forEach(file => {
     const isLogo = file.toLowerCase().includes("logo");
