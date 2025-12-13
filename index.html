@@ -10,22 +10,19 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script>
-        $(function () {
-            $("#footer").load("footer.html");
-            $("#videosCarousel").load("videos.html");
-            $("#me").load("aboutMe.html");
 
-            // if (window.innerWidth > 1024) {
-            $("#projectsCarousel").load("projects.html");
-            // } else {
-            //     $("#projectsCarousel").load("projects-copy.html");
-            // }
 
-        });
+   $(document).ready(function() {
+        // Naloži vse fragmente v ciljne ID-je:
+        $("#footer").load("footer.html");
+        $("#videosCarousel").load("videos.html");
+        $("#me").load("aboutMe.html");
+        $("#projectsCarousel").load("projects.html");
 
-        $(document).ready(function() {
-  $(".sidebar").first().load("_sidebar.html"); // load sidebar HTML once
-});
+        // Naloži stransko vrstico v vse elemente, ki jo potrebujejo (z razredom .sidebar):
+        // Ker je element #sidebar_me tudi .sidebar, bo naložen tudi tja.
+        $(".sidebar").load("_sidebar.html"); 
+    });
 
     </script>
 
