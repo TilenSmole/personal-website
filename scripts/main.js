@@ -1,28 +1,24 @@
-
 function showMyInfo() {
-    var home = document.getElementById("home");
-    var showMyInfo = document.getElementById("showMyInfo");
-    var aboutMe = document.getElementById("aboutMe");
+    const home = document.getElementById("home");
+    const btn = document.getElementById("showMyInfo");
+    const aboutMe = document.getElementById("aboutMe");
 
-    var showHome = home.style.display == "none"
+    const homeDisplay = window.getComputedStyle(home).display;
+    const showHome = homeDisplay === "none";
 
     if (showHome) {
         home.style.display = "flex";
-        showMyInfo.innerText = "O meni";
         aboutMe.style.display = "none";
-                    console.log("changing to flex")
-
-    }
-    else {
+        btn.innerText = "O meni";
+        console.log("changing to flex");
+    } else {
         home.style.display = "none";
-        showMyInfo.innerText = "Nazaj";
         aboutMe.style.display = "flex";
-            console.log("changing to none")
+        btn.innerText = "Nazaj";
+        console.log("changing to none");
     }
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
-   document.getElementById("showMyInfo").addEventListener('click', showMyInfo);
-
+    document.getElementById("showMyInfo").addEventListener('click', showMyInfo);
 });
