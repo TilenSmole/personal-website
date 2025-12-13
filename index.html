@@ -13,17 +13,15 @@
         $(function () {
             $("#footer").load("footer.html");
             $("#videosCarousel").load("videos.html");
-            $("#me").load("aboutme.html");
+            $("#me").load("aboutMe.html");
 
-            if (window.innerWidth > 1024) {
-                $("#projectsCarousel").load("projects.html");
-            } else {
-                $("#projectsCarousel").load("projects-copy.html");
-            }
+            // if (window.innerWidth > 1024) {
+            $("#projectsCarousel").load("projects.html");
+            // } else {
+            //     $("#projectsCarousel").load("projects-copy.html");
+            // }
 
         });
-    </script>
-
     </script>
 
     <!-- Bootstrap CSS -->
@@ -41,124 +39,43 @@
 </head>
 
 <body>
+    <div class="click-container">
+        <button class="attention-btn" id="showMyInfo">O MENI!</button>
+    </div>
 
-
+    <script src="scripts/main.js"></script>
 
     <div class="row" id="home">
-        <div class="col-xl-1 sidebar">
-            <div class="circle-column">
-                <a class="circle" href="#home" title="Home"></a>
-                <a class="circle" href="#projects" title="Projects"></a>
-                <a class="circle" href="#videos" title="Videos"></a>
-                <a class="circle" href="#me" title="About Me"></a>
-            </div>
-        </div>
+        <div class="col-xl-1 sidebar" id="sidebarIntro"> </div>
+        <script>
+            $("#sidebarIntro").load("_sidebar.html");
+        </script>
+
         <div class="col-lg-12 col-xl-11" id="introText">
-            <h1 id="myName">TILEN SMOLE</h1><br>
-            <span>
-                <h2 style="font-size: 2rem" ;> programer, video montažer</h2>
-            </span>
+            <h1 id="myName">TILEN SMOLE</h1>
             </h1>
+            <h2 style="font-size: 2rem" ;> programer, video montažer</h2>
         </div>
     </div>
 
-    <script>
-         /* const fileNames = [
-              "javafx.png",
-              "js.png",
-              "lyfio logo.png",
-              "monobank_logo.png",
-              "my page logo.png",
-              "node js.png",
-              "panap logo.png",
-              "phaser.png",
-              "php.png",
-              "python.jpg",
-              "ruby.jpg",
-              "slim.jpg",
-              "sloopy-fruits logo.png",
-              "flutter.jpg",
-              "react.jpg",
-              "prisma.png",
-              "typescript.png",
-              "wordpress.png",
-              "zmejelov (1).png",
-              "zmejelov (2).png",
-              "zmejelov (4).png",
-              "zmejelov (6).png",
-              "zmejelov (8).png"
-          ];*/
+    <script src="scripts/logosDancing.js"></script>
 
-        const items = [];
-        const home = document.getElementById("home");
-
-        fileNames.forEach(file => {
-            const isLogo = file.toLowerCase().includes("logo");
-            const isZmejelov = file.toLowerCase().includes("zmejelov");
-            const isSmallScreen = window.innerWidth < 992;
-
-            if ((isLogo || isZmejelov) && isSmallScreen) {
-                return;
-            }
-
-            const item = document.createElement("img");
-            item.src = `animations/${encodeURIComponent(file)}`;
-            item.classList.add("floating-item", "item");
-
-            const container = document.createElement("a");
-            container.style.position = "absolute";
-
-            if (isLogo) {
-                item.classList.add("floating-item-logo");
-                container.href = "https://example.com";
-                container.target = "_blank";
-            } else if (isZmejelov) {
-                item.classList.add("floating-item-zmejelov");
-                container.href = "https://example.com";
-                container.target = "_blank";
-            } else {
-                item.classList.add("floating-item-basic");
-            }
-
-            container.appendChild(item);
-            home.appendChild(container);
-
-            items.push({
-                el: container,
-                x: Math.random() * home.clientWidth,
-                y: Math.random() * home.clientHeight,
-                dx: (Math.random() - 0.5) * 2,
-                dy: (Math.random() - 0.5) * 2,
-                angle: 0
-            });
-        });
-
-        function animate() {
-            for (let item of items) {
-                item.x += item.dx;
-                item.y += item.dy;
-
-                if (item.x < 0 || item.x > home.clientWidth - 300) item.dx *= -1;
-                if (item.y < 0 || item.y > home.clientHeight - 300) item.dy *= -1;
-
-                item.el.style.transform = `translate(${item.x}px, ${item.y}px) rotate(${item.angle}deg)`;
-            }
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-    </script>
-
-
-    <div class="row" id="projects">
-        <div class="col-xl-1 sidebar">
-            <div class="circle-column">
-                <a class="circle" href="#home" title="Home"></a>
-                <a class="circle" href="#projects" title="Projects"></a>
-                <a class="circle" href="#videos" title="Videos"></a>
-                <a class="circle" href="#me" title="About Me"></a>
+    <div class="row" id="aboutMe">
+        <div class="col-xl-1 sidebar" id="sidebar_me"></div>
+        <script>
+            $("#sidebar_me").load("_sidebar.html");
+        </script>
+        <div class="col-lg-12 col-xl-11">
+            <div id="me">
             </div>
         </div>
+    </div>
+
+    <div class="row" id="projects">
+        <div class="col-xl-1 sidebar" id="sidebarProjects"></div>
+        <script>
+            $("#sidebarProjects").load("_sidebar.html");
+        </script>
         <div class="col-lg-12 col-xl-11">
             <div id="projectsCarousel">
             </div>
@@ -166,41 +83,16 @@
     </div>
 
     <div class="row" id="videos">
-        <div class="col-xl-1 sidebar">
-            <div class="circle-column">
-                <a class="circle" href="#home" title="Home"></a>
-                <a class="circle" href="#projects" title="Projects"></a>
-                <a class="circle" href="#videos" title="Videos"></a>
-                <a class="circle" href="#me" title="About Me"></a>
-            </div>
-        </div>
+        <div class="col-xl-1 sidebar" id="sidebarVideos"></div>
+        <script>
+            $("#sidebarVideos").load("_sidebar.html");
+        </script>
         <div class="col-lg-12 col-xl-11">
             <div id="videosCarousel">
             </div>
         </div>
     </div>
-
-    <div class="row" id="aboutme">
-        <div class="col-xl-1 sidebar">
-            <div class="circle-column">
-                <a class="circle" href="#home" title="Home"></a>
-                <a class="circle" href="#projects" title="Projects"></a>
-                <a class="circle" href="#videos" title="Videos"></a>
-                <a class="circle" href="#me" title="About Me"></a>
-            </div>
-        </div>
-        <div class="col-lg-12 col-xl-11">
-            <div id="me">
-            </div>
-        </div>
-    </div>
-
-
-
-
-
     <div id="footer">
-
 </body>
 
 </html>
