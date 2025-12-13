@@ -17,11 +17,29 @@
         $("#footer").load("footer.html");
         $("#videosCarousel").load("videos.html");
         $("#me").load("aboutMe.html");
-        $("#projectsCarousel").load("projects.html");
 
         // Naloži stransko vrstico v vse elemente, ki jo potrebujejo (z razredom .sidebar):
         // Ker je element #sidebar_me tudi .sidebar, bo naložen tudi tja.
         $(".sidebar").load("_sidebar.html"); 
+
+
+        $("#projectsCarousel").load("projects.html", function() {
+    
+    // 2. KO je projects.html USPEŠNO naložen in vstavljen:
+    console.log("Projects carousel successfully loaded. Now loading sub-projects.");
+
+    // Naloži notranje pod-projekte v karusel:
+    $("#zmejelov").load("projects/zmejelov.html");
+    $("#panap").load("projects/panap.html");
+    $("#lyfio").load("projects/lyfio.html");
+    $("#monobank").load("projects/monobank.html");
+    $("#website").load("projects/website.html");
+    $("#sloopyfruits").load("projects/sloopyfruits.html");
+    
+
+});
+
+        
     });
 
     </script>
