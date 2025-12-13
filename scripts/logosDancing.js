@@ -1,5 +1,5 @@
-const items = [];
-const home = document.getElementById("home");
+window.items = window.items || [];
+window.home = window.home || document.getElementById("home");
 
 function loadData(){
     const fileNames = [
