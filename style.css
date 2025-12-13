@@ -61,7 +61,7 @@ Projects
 /*
 home
 */
-#home, #aboutMe {
+#home {
   display: flex;
   position: relative;
   min-height: 100vh; 
@@ -257,9 +257,11 @@ h2 {
   }
 
 /*ABOUT ME */
+/*
+
 #aboutMe{
   display: none;
-}
+}*/
 
 .carousel {
   margin: 0 auto;

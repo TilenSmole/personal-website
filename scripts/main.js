@@ -1,6 +1,20 @@
-// scripts/main.js
+function showMyInfo() {
+    const home = document.getElementById("home");
+    const aboutMe = document.getElementById("aboutMe");
+    const btn = document.getElementById("showMyInfo");
 
-$(document).ready(function() {
+    if (home.style.display === "none") {
+        home.style.display = "flex";
+        aboutMe.style.display = "none";
+        btn.innerText = "O meni";
+    } else {
+        home.style.display = "none";
+        aboutMe.style.display = "flex";
+        btn.innerText = "Nazaj";
+    }
+}
+
+$(document).ready(function () {
     // Prevent this code from running more than once (fixes infinite loop)
     if (window.contentLoaded) {
         console.log("Content already loaded, skipping...");
@@ -14,7 +28,7 @@ $(document).ready(function() {
     $("#me").load("aboutMe.html");
     $(".sidebar").load("_sidebar.html");
 
-    $("#projectsCarousel").load("projects.html", function() {
+    $("#projectsCarousel").load("projects.html", function () {
         console.log("Projects carousel successfully loaded. Now loading sub-projects.");
 
         // Prevent sub-projects from loading multiple times
@@ -32,23 +46,8 @@ $(document).ready(function() {
         $("#sloopyfruits").load("projects/sloopyfruits.html");
     });
 
-    // Your existing showMyInfo function (toggle "O meni")
-    function showMyInfo() {
-        const home = document.getElementById("home");
-        const aboutMe = document.getElementById("aboutMe");
-        const btn = document.getElementById("showMyInfo");
 
-        if (home.style.display === "none") {
-            home.style.display = "flex";
-            aboutMe.style.display = "none";
-            btn.innerText = "O meni";
-        } else {
-            home.style.display = "none";
-            aboutMe.style.display = "flex";
-            btn.innerText = "Nazaj";
-        }
-    }
 
-    // Use event delegation to handle clicks even if button is duplicated/reloaded
-    $(document).on('click', '#showMyInfo', showMyInfo);
+    document.getElementById("showMyInfo").addEventListener('click', showMyInfo);
+
 });
