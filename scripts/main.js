@@ -3,7 +3,6 @@ function showMyInfo() {
     var home = document.getElementById("home");
     var showMyInfo = document.getElementById("showMyInfo");
     var aboutMe = document.getElementById("aboutMe");
-    var showHome = document.getElementById("showHome");
 
     showHome = home.style.display == "none"
 
