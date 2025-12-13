@@ -10,12 +10,14 @@ function showMyInfo() {
         home.style.display = "flex";
         showMyInfo.innerText = "O meni";
         aboutMe.style.display = "none";
+                    console.log("changing to flex")
+
     }
     else {
         home.style.display = "none";
         showMyInfo.innerText = "Nazaj";
         aboutMe.style.display = "flex";
-
+            console.log("changing to none")
     }
 }
 
