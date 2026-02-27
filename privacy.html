@@ -1,0 +1,72 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <main class="container m-3">
+        <h1 data-i18n="privacy_title"></h1>
+        <p data-i18n="last_updated"></p>
+
+        <section>
+            <h2 data-i18n="sec1_title"></h2>
+            <p data-i18n="sec1_text"></p>
+        </section>
+
+        <section>
+            <h2 data-i18n="sec2_title"></h2>
+            <ul>
+                <li data-i18n="sec2_analytics"></li>
+                <li data-i18n="sec2_embed"></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 data-i18n="sec3_title"></h2>
+            <p data-i18n="sec3_text"></p>
+        </section>
+
+        <section>
+            <h2 data-i18n="sec4_title"></h2>
+            <p data-i18n="sec4_text"></p>
+        </section>
+
+        <section>
+            <h2 data-i18n="sec5_title"></h2>
+            <p data-i18n="sec5_text"></p>
+        </section>
+
+        <section>
+            <h2 data-i18n="sec6_title"></h2>
+            <p>
+                <span data-i18n="sec6_text">
+                </span>
+                <a href="mailto:smoletilen@gmail.com">smoletilen@gmail.com</a>
+            </p>
+        </section>
+
+        <section>
+            <h2 data-i18n="sec7_title"></h2>
+            <p>
+                <span data-i18n="status_label"></span>
+                <span id="current-status"></span>
+            </p>
+            <button onclick="resetConsent()" class="fancy-button" data-i18n="reset_btn">
+
+            </button>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/translations.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/privacy.js"></script>
+
+</body>
+
+</html>

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tilen Smole</title>
-    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
@@ -20,19 +19,44 @@
 
 <body>
     <div class="click-container" id="start">
-        <button class="attention-btn" id="showMyInfo">O MENI!</button>
+        <button class="fancy-button" data-i18n="about_me" id="showMyInfo"></button>
+
+        <div id="language-switcher" class="ml-3 d-flex gap-2 justify-content-center">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="sl">SLO</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+        </div>
     </div>
 
+    <section id="cookie-consent" class="cookie-banner" aria-hidden="true">
+        <div class="cookie-content">
+            <p>
+                <span data-i18n="cookie_text"></span>
+                <a href="/privacy.html" data-i18n="cookie_privacy"></a>.
+            </p>
+            <div class="cookie-actions">
+                <button id="cookie-reject" class="btn-secondary" data-i18n="cookie_reject"></button>
+                <button id="cookie-accept" class="btn-primary" data-i18n="cookie_accept"></button>
+            </div>
+        </div>
+    </section>
+
     <script src="scripts/main.js"></script>
+    <script src="scripts/translations.js"></script>
 
     <div class="row" id="home">
         <div class="col-xl-1 sidebar" class="sidebar"> </div>
-
-
         <div class="col-lg-12 col-xl-11" id="introText">
             <h1 id="myName">TILEN SMOLE</h1>
-            </h1>
-            <h2 style="font-size: 2rem" ;> programer, video montažer</h2>
+            <h2 data-i18n="titles"></h2>
+            <div class="scroll-wrapper" style="margin-top: 10rem;">
+                <div class="scroll-arrow" aria-label="Scroll down">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                    </svg>
+                </div>
+            </div>
         </div>
     </div>
 
