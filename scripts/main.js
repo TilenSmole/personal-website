@@ -65,6 +65,7 @@ $(document).ready(function () {
 
         if (choice === 'accept') {
             initAnalytics();
+            window.location.reload()
         }
     };
 
