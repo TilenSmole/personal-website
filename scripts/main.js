@@ -14,32 +14,45 @@ function showMyInfo() {
     }
 }
 
-$(document).ready(function () {
+// Replacement for $(el).load(url)
+function loadHTML(selector, url) {
+    return fetch(url)
+        .then(res => res.text())
+        .then(html => {
+            document.querySelectorAll(selector).forEach(el => {
+                el.innerHTML = html;
+            });
+        });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
     if (window.contentLoaded) {
         console.log("Content already loaded, skipping...");
         return;
     }
     window.contentLoaded = true;
 
-    $("#footer").load("footer.html");
+    loadHTML("#footer", "footer.html");
 
-    $("#videosCarousel").load(localStorage.getItem('cookie-consent-choice') === 'accept' ? "videos.html" : "videos_disabled.html");
+    loadHTML("#videosCarousel", localStorage.getItem('cookie-consent-choice') === 'accept' ? "videos.html" : "videos_disabled.html");
 
-    $("#me").load("aboutme.html");
-    $(".sidebar").load("_sidebar.html");
+    loadHTML("#me", "aboutme.html");
+    loadHTML(".sidebar", "_sidebar.html");
 
-    $("#projectsCarousel").load("projects.html", function () {
-        $.when(
-            $("#zmejelov").load("projects/zmejelov.html"),
-            $("#panap").load("projects/panap.html"),
-            $("#lyfio").load("projects/lyfio.html"),
-            $("#monobank").load("projects/monobank.html"),
-            $("#website").load("projects/website.html"),
-            $("#sloopyfruits").load("projects/sloopyfruits.html")
-        ).then(function () {
-
+    loadHTML("#projectsCarousel", "projects.html").then(function () {
+        Promise.all([
+            loadHTML("#zmejelov", "projects/zmejelov.html"),
+            loadHTML("#panap", "projects/panap.html"),
+            loadHTML("#lyfio", "projects/lyfio.html"),
+            loadHTML("#monobank", "projects/monobank.html"),
+            loadHTML("#website", "projects/website.html"),
+            loadHTML("#sloopyfruits", "projects/sloopyfruits.html"),
+            loadHTML("#missya", "projects/missya.html")
+        ]).then(function () {
             const savedLang = localStorage.getItem('preferredLang') || 'en';
             updateLanguage(savedLang);
+
+            initCarousel();
         });
     });
 
@@ -59,13 +72,13 @@ $(document).ready(function () {
     }
 
     const handleChoice = (choice) => {
-        setCookieConcent(choice)
+        setCookieConcent(choice);
         banner.classList.remove('is-visible');
         banner.setAttribute('aria-hidden', 'true');
 
         if (choice === 'accept') {
             initAnalytics();
-            window.location.reload()
+            window.location.reload();
         }
     };
 
@@ -76,7 +89,6 @@ $(document).ready(function () {
 function setCookieConcent(choice) {
     localStorage.setItem('cookie-consent-choice', choice);
 }
-
 
 function initAnalytics() {
     const gtagScript = document.createElement('script');
@@ -90,6 +102,45 @@ function initAnalytics() {
 
     gtag('js', new Date());
     gtag('config', 'G-2QE406BX4M');
-
 }
 
+function initCarousel() {
+    const carousel = document.getElementById("controls");
+    if (!carousel) return;
+
+    const track = carousel.querySelector(".carousel-track");
+    const items = carousel.querySelectorAll(".carousel-item");
+    const indicators = carousel.querySelectorAll(".carousel-indicators li");
+    const prevBtn = carousel.querySelector(".prev");
+    const nextBtn = carousel.querySelector(".next");
+
+    let index = 0;
+    const total = items.length;
+
+    function goTo(i) {
+        index = (i + total) % total;
+        track.style.transform = `translateX(-${index * 100}%)`;
+
+        items.forEach((item, idx) => item.classList.toggle("active", idx === index));
+        indicators.forEach((dot, idx) => dot.classList.toggle("active", idx === index));
+    }
+
+    prevBtn.addEventListener("click", () => goTo(index - 1));
+    nextBtn.addEventListener("click", () => goTo(index + 1));
+
+    indicators.forEach((dot, i) => {
+        dot.addEventListener("click", () => goTo(i));
+    });
+
+    let startX = 0;
+    track.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    });
+    track.addEventListener("touchend", (e) => {
+        const diff = e.changedTouches[0].clientX - startX;
+        if (diff > 50) goTo(index - 1);
+        else if (diff < -50) goTo(index + 1);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", initCarousel);
