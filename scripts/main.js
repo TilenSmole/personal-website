@@ -47,7 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
             loadHTML("#monobank", "projects/monobank.html"),
             loadHTML("#website", "projects/website.html"),
             loadHTML("#sloopyfruits", "projects/sloopyfruits.html"),
-            loadHTML("#missya", "projects/missya.html")
+            loadHTML("#missya", "projects/missya.html"),
+                        loadHTML("#brumbrum", "projects/brumbrum.html")
         ]).then(function () {
             const savedLang = localStorage.getItem('preferredLang') || 'en';
             updateLanguage(savedLang);
@@ -144,3 +145,26 @@ function initCarousel() {
 }
 
 document.addEventListener("DOMContentLoaded", initCarousel);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll('#home, #projects, #videos');
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.sidebar .circle').forEach((link) => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        },
+        {
+            rootMargin: '-40% 0px -40% 0px',
+            threshold: 0,
+        }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+});

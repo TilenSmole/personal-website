@@ -1,0 +1,63 @@
+<svg width="512" height="600" viewBox="0 0 512 600" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>BrumBrum logotip</title>
+  <desc>Oranžen avtomobilček s tealovo kapljico goriva z evrskim znakom in napisom BrumBrum spodaj, prosojno ozadje</desc>
+
+  <!-- ground line -->
+  <line x1="96" y1="340" x2="416" y2="340" stroke="#D85A30" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- speed lines -->
+  <line x1="90" y1="210" x2="140" y2="210" stroke="#D85A30" stroke-width="8" stroke-linecap="round" opacity="0.55"/>
+  <line x1="80" y1="238" x2="150" y2="238" stroke="#D85A30" stroke-width="8" stroke-linecap="round" opacity="0.75"/>
+
+  <!-- car body -->
+  <path d="M128 300
+           C128 268 148 252 178 248
+           L206 214
+           C214 202 228 196 244 196
+           L316 196
+           C332 196 346 204 354 218
+           L378 250
+           C404 254 424 270 424 300
+           L424 316
+           C424 328 415 336 404 336
+           L388 336
+           C388 314 371 296 349 296
+           C327 296 310 314 310 336
+           L228 336
+           C228 314 211 296 189 296
+           C167 296 150 314 150 336
+           L142 336
+           C134 336 128 330 128 322
+           Z"
+        fill="#D85A30"/>
+
+  <!-- windows -->
+  <path d="M220 216 L206 250 L288 250 L288 216 Z" fill="#FFFFFF" opacity="0.9"/>
+  <path d="M300 216 L300 250 L346 250 L326 224
+           C320 218 312 216 305 216 Z" fill="#FFFFFF" opacity="0.9"/>
+
+  <!-- wheels -->
+  <circle cx="189" cy="336" r="30" fill="#4A1B0C"/>
+  <circle cx="189" cy="336" r="13" fill="#FFFFFF"/>
+  <circle cx="349" cy="336" r="30" fill="#4A1B0C"/>
+  <circle cx="349" cy="336" r="13" fill="#FFFFFF"/>
+
+  <!-- headlight -->
+  <circle cx="410" cy="286" r="8" fill="#FAC775"/>
+
+  <!-- fuel drop badge -->
+  <g>
+    <path d="M256 60
+             C256 60 208 122 208 158
+             C208 184 229 205 256 205
+             C283 205 304 184 304 158
+             C304 122 256 60 256 60 Z"
+          fill="#0F6E56"/>
+    <text x="256" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#E1F5EE">€</text>
+  </g>
+
+  <!-- wordmark -->
+  <text x="256" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="700">
+    <tspan fill="#D85A30">Brum</tspan><tspan fill="#0F6E56">Brum</tspan>
+  </text>
+</svg>
