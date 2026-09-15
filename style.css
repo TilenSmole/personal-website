@@ -24,7 +24,10 @@ body {
   color: var(--text-font);
   font-size: 20px;
   overflow-x: hidden;
-  background: linear-gradient(to bottom, #181717, #353434);
+}
+
+#rename{
+  background: linear-gradient(#1a1919, #353434);
 }
 
 html {
@@ -66,7 +69,7 @@ h2 {
   z-index: 900;
   position: relative;
   text-align: left;
-  margin-left:  var(--uni-margin);
+  margin-left: var(--uni-margin);
 }
 
 .sec-text {
@@ -145,14 +148,16 @@ h2 {
 /* ==========================================================================
    PAGE LAYOUT / SIDEBAR / HEADER MENU
    ========================================================================== */
-#home {
+#home, #aboutMe {
   display: flex;
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  background: #1a1919;
+
 }
 
-#introText{
+#introText {
   min-width: 100%;
 }
 
@@ -501,8 +506,12 @@ img {
 
 #myName {
   font-size: 12rem;
+  display: inline-block;
+  width: fit-content;
+  background: rgb(26, 25, 25, 0.6); 
+  
+  backdrop-filter: blur(4px);
 }
-
 @media (max-width: 1224px) {
   #myName {
     font-size: 6rem;
@@ -710,7 +719,7 @@ footer {
     flex-direction: column;
   }
 
-  .socials-col{
+  .socials-col {
     min-width: 100%;
     flex-direction: row;
     align-items: center;

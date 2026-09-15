@@ -2,30 +2,29 @@ window.items = window.items || [];
 window.home = window.home || document.getElementById("home");
 
 function loadData(){
-    const fileNames = [
-    "java_fx.png",
-    "js.png",
-    "lyfio logo.png",
-    "monobank_logo.png",
-    "my page logo.png",
-    "node js.png",
-    "phaser.png",
-    "php.png",
-    "python.jpg",
-    "ruby.jpg",
-    "slim.jpg",
-    "sloopy-fruits logo.png",
-    "flutter.jpg",
-    "react.jpg",
-    "prisma.png",
-    "typescript.png",
-    "wordpress.png",
-    "zmejelov (1).png",
-    "panap_logo.png"
-
+const fileNames = [
+    "bash.svg",
+    "clojurescript.svg",
+    "csharp.svg",
+    "css.svg",
+    "dart.svg",
+    "flutter.svg",
+    "git.svg",
+    "github.svg",
+    "go.svg",
+    "html.svg",
+    "java.svg",
+    "javascript.svg",
+    "phaser.svg",
+    "php.svg",
+    "postgresql.svg",
+    "prisma.svg",
+    "python.svg",
+    "rails.svg",
+    "react.svg",
+    "ruby.svg",
+    "typescript.svg",
 ];
-
-
 
 fileNames.forEach(file => {
     const isLogo = file.toLowerCase().includes("logo");
@@ -37,7 +36,7 @@ fileNames.forEach(file => {
     }
 
     const item = document.createElement("img");
-    item.src = `logos/${encodeURIComponent(file)}`;
+    item.src = `icons/${encodeURIComponent(file)}`;
     item.classList.add("floating-item", "item");
 
     const container = document.createElement("a");
