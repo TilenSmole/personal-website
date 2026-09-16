@@ -36,7 +36,7 @@ fileNames.forEach(file => {
     }
 
     const item = document.createElement("img");
-    item.src = `icons/${encodeURIComponent(file)}`;
+    item.src = `img-icons/${encodeURIComponent(file)}`;
     item.classList.add("floating-item", "item");
 
     const container = document.createElement("a");
