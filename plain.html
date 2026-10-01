@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilen Smole</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="icon" type="image/png" href="photos/website-logo.png">
+</head>
+
+<body>
+    <!-- Top Menu / Language Switcher / Cookie Banner -->
+  <div class="top-right-menu" id="start">
+        <div id="language-switcher" class="ml-3 d-flex gap-2 justify-content-center">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="sl">SLO</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+    </div>
+    
+ <section id="cookie-consent" class="cookie-banner" aria-hidden="true">
+        <div class="cookie-content">
+            <p>
+                <span data-i18n="cookie_text"></span>
+                <a href="/privacy.html" data-i18n="cookie_privacy"></a>.
+            </p>
+            <div class="cookie-actions">
+                <button id="cookie-reject" class="btn-secondary" data-i18n="cookie_reject"></button>
+                <button id="cookie-accept" class="btn-primary" data-i18n="cookie_accept"></button>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/translations.js"></script>
+
+    <div class="row" id="home">
+        <div class="sidebar"></div>
+        <div id="introText">
+            <h1 id="myName">TILEN SMOLE</h1>
+            <h2 id="titles" data-i18n="titles"></h2>
+            <div class="scroll-wrapper">
+                <a href="#projects">
+                    <div class="scroll-arrow" aria-label="Scroll down">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+        <script src="scripts/logosDancing.js"></script>
+
+    <div class="row" id="aboutMe">
+        <div class="sidebar"></div>
+        <div id="me"></div>
+    </div>
+
+    <div id="section-non-main">
+                <div class="row paper-bite-top" id="projects">
+            <div class="sidebar"></div>
+            <div id="projectsCarousel"></div>
+        </div>
+
+        <div class="row" id="videos">
+            <div class="sidebar"></div>
+            <div>
+                <div id="videosCarousel"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+
+</html>

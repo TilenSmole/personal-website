@@ -168,3 +168,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sections.forEach((section) => observer.observe(section));
 });
+
+const ids = ['home', 'aboutMe', 'projects', 'videos'];
+
+function updateActive() {
+  const i = Math.min(
+    ids.length - 1,
+    Math.max(0, Math.round(window.scrollY / window.innerHeight))
+  );
+  const current = ids[i];
+  document.querySelectorAll('.sidebar .circle').forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+}
+
+// throttle to one update per frame
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (ticking) return;
+  ticking = true;
+  requestAnimationFrame(() => {
+    updateActive();
+    ticking = false;
+  });
+}, { passive: true });
+window.addEventListener('resize', updateActive);
+
+function goTo(id, push = true) {
+  const index = ids.indexOf(id);
+  if (index === -1) return;
+  window.scrollTo({
+    top: index * window.innerHeight,
+    left: 0,
+    behavior:'smooth'
+  });
+  if (push) history.pushState(null, '', '#' + id);
+}
+
+document.addEventListener('click', e => {
+  const link = e.target.closest('.sidebar a.circle');
+  if (!link) return;
+  e.preventDefault();
+  goTo(link.getAttribute('href').slice(1));
+});
+
+window.addEventListener('load', () => {
+  if (location.hash) goTo(location.hash.slice(1), false);
+  updateActive();
+});
+
+window.addEventListener('popstate', () => {
+  goTo(location.hash.slice(1) || 'home', false);
+});

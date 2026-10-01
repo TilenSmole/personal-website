@@ -1,83 +1,1091 @@
 <!DOCTYPE html>
-<html lang="sl">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tilen Smole</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="projects.css">
-    <link rel="icon" type="image/png" href="photos/website-logo.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Alex Rivera · Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --desk: #d9c6a5;
+      --deskdark: #c3ae88;
+      --strip: #156ed4;
+      --ink: #26323f;
+      --paper: #fffdf5;
+      --hl: #ffe45e;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    @media(prefers-color-scheme:dark) {
+      :root:not([data-theme="light"]) {
+        --desk: #3a3128;
+        --deskdark: #2b231c
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --desk: #3a3128;
+      --deskdark: #2b231c
+    }
+
+    html {
+      scroll-padding-top: env(safe-area-inset-top, 0px)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0
+    }
+
+    body {
+      background: radial-gradient(circle at 30% 20%, var(--desk), var(--deskdark));
+      font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+      color: var(--ink);
+      overflow: hidden;
+      display: grid;
+      place-items: center
+    }
+
+    #bg {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none
+    }
+
+    #pad {
+      container-type: inline-size;
+      position: relative;
+      width: min(94vw, calc((100dvh - 28px) * .74));
+      aspect-ratio: 3/4;
+      background: #fff8;
+      border-radius: 1.5cqw;
+      box-shadow: 0 2.5cqw 4cqw #0006, 0 .6cqw 0 #0002;
+      display: flex;
+      flex-direction: column
+    }
+
+    #strip {
+      background: var(--strip);
+      height: 9cqw;
+      border-radius: 1.5cqw 1.5cqw 0 0;
+      display: flex;
+      align-items: center;
+      gap: 1.2cqw;
+      padding: 0 2.5cqw;
+      color: #fff;
+      font-family: Caveat, cursive;
+      font-size: 4.6cqw;
+      box-shadow: inset 0 -.8cqw 0 #0003;
+      z-index: 999
+    }
+
+    #strip button,
+    #strip a {
+      font: inherit;
+      color: #fff;
+      background: #0002;
+      border: .35cqw dashed #fff9;
+      border-radius: 1.2cqw;
+      min-width: 6.2cqw;
+      height: 6.4cqw;
+      padding: 0 1.2cqw;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none
+    }
+
+    #strip button:hover,
+    #strip button:focus-visible,
+    #strip a:hover,
+    #strip a:focus-visible {
+      background: #0004;
+      outline: .4cqw solid var(--hl)
+    }
+
+    #strip button.active {
+      background: #fff4;
+      border-style: solid;
+      font-weight: bold
+    }
+
+    .logoDisplay .logo {
+      height: 15rem;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .linkDisplay {
+      display: flex;
+      gap: 1.5cqw;
+      align-items: center;
+    }
+
+    .social-icon {
+      width: 5cqw;
+      height: 5cqw;
+      max-width: 2rem;
+      max-height: 2rem;
+      object-fit: contain;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.15);
+      opacity: 0.85;
+    }
+
+    #area {
+      position: relative;
+      flex: 1;
+      perspective: 1100px
+    }
+
+    .sheet {
+      position: absolute;
+      inset: 0;
+      background: var(--paper) repeating-linear-gradient(transparent 0 5.9cqw, #7aa8d233 5.9cqw 6.1cqw);
+      box-shadow: 0 .4cqw 1.2cqw #0004;
+      transform-origin: 50% 0;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+      font-size: 3.7cqw;
+      line-height: 1.3;
+      cursor: grab;
+      overflow: hidden;
+      will-change: transform
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      left: 5cqw;
+      top: 0;
+      bottom: 0;
+      width: .3cqw;
+      background: #e2563b55
+    }
+
+    .inner {
+      position: absolute;
+      inset: 3.5cqw 4cqw 8cqw 8cqw;
+      overflow: hidden
+    }
+
+    .inner>* {
+      margin: 0 0 2cqw
+    }
+
+    h2 {
+      font-family: Caveat, cursive;
+      font-size: 8cqw;
+      line-height: 1;
+      transform: rotate(-1.5deg);
+      background: linear-gradient(transparent 62%, var(--hl) 62%);
+      display: inline-block
+    }
+
+    h3 {
+      font-family: Caveat, cursive;
+      font-size: 5cqw;
+      margin: 0 0 .5cqw;
+      color: var(--strip)
+    }
+
+    .tag {
+      display: inline-block;
+      border: .35cqw solid var(--ink);
+      border-radius: 5cqw 4cqw 6cqw 3cqw;
+      padding: 0 1.8cqw;
+      margin: 0 1cqw 1cqw 0
+    }
+
+    a {
+      color: #1d5fd1
+    }
+
+    .vid {
+      aspect-ratio: 16/9;
+      width: 70%;
+      background: #222;
+      border: 0;
+      border-radius: 1cqw;
+      color: #fff;
+      font: inherit;
+      font-size: 6cqw;
+      cursor: pointer;
+      display: block
+    }
+
+    iframe.vid {
+      display: block
+    }
+
+    .curl {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 11cqw;
+      height: 11cqw;
+      border: 0;
+      cursor: pointer;
+      background: linear-gradient(315deg, transparent 50%, #d8d2bd 50%, #fff 75%);
+      box-shadow: -.8cqw -.8cqw 1.5cqw #0003;
+      border-top-left-radius: 100%;
+      z-index: 5;
+      font-size: 0
+    }
+
+    .hint {
+      position: absolute;
+      right: 12cqw;
+      bottom: 3cqw;
+      font-family: Caveat, cursive;
+      font-size: 5cqw;
+      color: var(--strip);
+      transform: rotate(-4deg);
+      animation: bob 1.4s infinite;
+      pointer-events: none
+    }
+
+    .end {
+      font-family: Caveat, cursive;
+      font-size: 6cqw;
+      color: var(--strip);
+      transform: rotate(-3deg);
+      margin-top: 3cqw
+    }
+
+    @keyframes bob {
+      50% {
+        transform: rotate(-4deg) translateY(-1.2cqw)
+      }
+    }
+
+    .redraw .inner>* {
+      animation: draw .55s ease-out both;
+      animation-delay: calc(var(--i)*.13s)
+    }
+
+    @keyframes draw {
+      from {
+        clip-path: inset(0 100% 0 0)
+      }
+
+      to {
+        clip-path: inset(0 0 0 0)
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      .redraw .inner>*,
+      .hint {
+        animation: none
+      }
+    }
+
+    .tech-icon {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.2cqw;
+      margin-left: auto;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="top-right-menu" id="start">
-        <a class="me-button" data-i18n="about_me" href="#me" id="showMyInfo"></a>
-        <div id="language-switcher" class="ml-3 d-flex gap-2 justify-content-center">
-            <button class="lang-btn" data-lang="en">EN</button>
-            <button class="lang-btn" data-lang="sl">SLO</button>
-            <button class="lang-btn" data-lang="es">ES</button>
-        </div>
-    </div>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <main id="pad">
+    <div id="strip" role="toolbar" aria-label="Navigation">
+      <button id="home" title="Home">⌂</button>
+      <button id="back" title="Back">←</button>
+      <button id="next" title="Next">→</button>
+      <button id="end" title="End">⏭</button>
 
-    <section id="cookie-consent" class="cookie-banner" aria-hidden="true">
-        <div class="cookie-content">
-            <p>
-                <span data-i18n="cookie_text"></span>
-                <a href="/privacy.html" data-i18n="cookie_privacy"></a>.
-            </p>
-            <div class="cookie-actions">
-                <button id="cookie-reject" class="btn-secondary" data-i18n="cookie_reject"></button>
-                <button id="cookie-accept" class="btn-primary" data-i18n="cookie_accept"></button>
+      <div class="toolbar">
+        <button id="slo" class="lang-btn">SLO</button>
+        <button id="en" class="lang-btn">EN</button>
+        <button id="es" class="lang-btn">ES</button>
+        <a id="pl" title="Plain version" href="plain.html">Plain</a>
+      </div>
+    </div>
+    <div id="area"></div>
+  </main>
+  <noscript>Alex Rivera – developer portfolio. Please enable JavaScript.</noscript>
+  <script>
+    const CONFIG = {
+      name: "Alex Rivera",
+      videos: [
+        ["qbz5kqjlVdk", "lYap_4NCPcY"],
+        ["gbjCdeeGPG4", "eqha3gpD4qI"],
+        ["41yrJquOsSA", "nN8u2-mLYUY"],
+        ["WkpYCOwkyK4"]
+      ],
+      languages: [
+        { name: 'JavaScript', icon: 'javascript.svg' },
+        { name: 'TypeScript', icon: 'typescript.svg' },
+        { name: 'Java', icon: 'java.svg' },
+        { name: 'Python', icon: 'python.svg' },
+        { name: 'PHP', icon: 'php.svg' },
+        { name: 'C#', icon: 'csharp.svg' },
+        { name: 'Ruby', icon: 'ruby.svg' },
+        { name: 'ClojureScript', icon: 'clojurescript.svg' },
+        { name: 'Dart', icon: 'dart.svg' },
+        { name: 'Go', icon: 'go.svg' },
+        { name: 'Bash', icon: 'bash.svg' }
+      ],
+      markup: [
+        { name: 'HTML', icon: 'html.svg' },
+        { name: 'CSS', icon: 'css.svg' },
+        { name: 'Sass', icon: 'sass.svg' },
+        { name: 'Tailwind', icon: 'tailwind.svg' },
+        { name: 'Bootstrap', icon: 'bootstrap.svg' }
+      ]
+      ,
+      frameworks: [
+        { name: 'React', icon: 'react.svg' },
+        { name: 'jQuery', icon: 'jquery.svg' },
+        { name: 'Node.js', icon: 'nodejs.svg' },
+        { name: 'Express', icon: 'express.svg' },
+        { name: 'Rails', icon: 'rails.svg' },
+        { name: '.NET', icon: 'dotnetcore.svg' },
+        { name: 'Flutter', icon: 'flutter.svg' },
+        { name: 'JavaFX', icon: 'javafx.svg' },
+        { name: 'Slim', icon: 'slim.svg' },
+        { name: 'Phaser', icon: 'phaser.svg' },
+        { name: 'Prisma', icon: 'prisma.svg' }
+      ],
+      databases: [
+        { name: 'MySQL', icon: 'mysql.svg' },
+        { name: 'MariaDB', icon: 'mariadb.svg' },
+        { name: 'PostgreSQL', icon: 'postgresql.svg' }
+      ],
+      devops: [
+        { name: 'Git', icon: 'git.svg' },
+        { name: 'GitHub', icon: 'github.svg' },
+        { name: 'Docker', icon: 'docker.svg' },
+        { name: 'Kubernetes', icon: 'kubernetes.svg' },
+        { name: 'Azure', icon: 'azure.svg' }
+      ],
+
+      en: {
+        ui: { pull: "pull up to tear!", next: "Tear page", back: "Back", home: "Home", play: "▶ Play", plain: "Simple mode", end: "That's all, folks! Thanks for visiting ✌" },
+        intro: { h: "Hi, I'm Alex!", p: ["I build playful, fast web things.", "Rip this page to see more →"] },
+        about: { h: "About me", p: ["Full-stack developer with 6 years of experience, obsessed with details that make people smile.", "Based in Spain. I like sketching, climbing and tiny interactions."] },
+        techH: "Tech I know", vidH: "Videos", vidP: ["Demo reel", "Talk: building for the web"],
+        projects: [
+          {
+            id: "zmejelov",
+            h: "Zmejelov",
+            logo: "logos/zmejelov (1).png",
+            what: "Zmejelov is a multi-year project that culminated in my thesis. It is a suite of 5 challenging, themed games combining various technologies and creativity.",
+            links: {
+              youtube: "https://www.youtube.com/watch?v=WkpYCOwkyK4",
+              github: "https://github.com/TilenSmole/ZMEJELOV",
+              live: "https://zmejelov.azurewebsites.net/"
+            },
+            tech: [
+              { name: "HTML", icon: "html.svg" },
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "PHP", icon: "php.svg" },
+              { name: "Phaser", icon: "phaser.svg" },
+              { name: "CSS", icon: "css.svg" },
+              { name: "SQL", icon: "mysql.svg" }
+            ]
+          },
+          {
+            id: "panap",
+            h: "Panap",
+            logo: "photos/panap-logo.png",
+            what: "Panap is a complex pantry management app. Users can view recipes, add items to a shopping cart, and get weekly menu suggestions automatically.",
+            links: {},
+            tech: [
+              { name: "Flutter", icon: "flutter.svg" },
+              { name: "TypeScript", icon: "typescript.svg" },
+              { name: "PostGres", icon: "postgresql.svg" },
+              { name: "React", icon: "react.svg" },
+              { name: "NodeJS", icon: "nodejs.svg" }
+            ]
+          },
+          {
+            id: "monobank",
+            h: "Monobank",
+            logo: "photos/mono-bank-logo.png",
+            what: "Monobank revolutionizes Monopoly. The banker starts a game, and players join via code. The app simplifies financial management and money transfers between players.",
+            links: {},
+            tech: [
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "React", icon: "react.svg" },
+              { name: "TypeScript", icon: "typescript.svg" },
+              { name: "CSS", icon: "css.svg" },
+              { name: "NodeJS", icon: "nodejs.svg" }
+            ]
+          },
+          {
+            id: "missya",
+            h: "MissYa",
+            logo: "photos/missya-logo.png",
+            what: "MissYa is a simple project that lets users send a link with a custom message and a countdown to their loved ones until they meet again.",
+            links: {
+              github: "https://github.com/TilenSmole/MISSYA",
+              live: "https://missya.tilensmole.uk/"
+            },
+            tech: [
+              { name: "Ruby", icon: "ruby.svg" },
+              { name: "Slim", icon: "slim.svg" }
+            ]
+          },
+          {
+            id: "brumbrum",
+            h: "BrumBrum",
+            logo: "photos/brumbrum-logo.svg",
+            what: "",
+            links: {
+              github: "https://github.com/TilenSmole/BRUMBRUM",
+              live: "https://brumbrum.tilensmole.uk/"
+            },
+            tech: [
+              { name: "C#", icon: "csharp.svg" },
+              { name: "HTML", icon: "html.svg" },
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "CSS", icon: "css.svg" }
+            ]
+          },
+          {
+            id: "sloopyfruits",
+            h: "Sloppy Fruits",
+            logo: "photos/sloopy-fruits-logo.png",
+            what: "Sloppy fruits is a slot machine simulator where players pull a lever to hit winning combinations, featuring various gameplay modifications.",
+            links: {
+              github: "https://github.com/TilenSmole/Sloppy_fruits"
+            },
+            tech: [
+              { name: "Java", icon: "java.svg" },
+              { name: "JavaFX", icon: "javafx.svg" }
+            ]
+          },
+          {
+            id: "lyfio",
+            h: "Lyfio",
+            logo: "photos/lyfio-logo.png",
+            what: "Lyfio is a project that allows users to easily monitor expenses using tables and specialized graphs.",
+            links: {
+              github: "https://github.com/TilenSmole/DAYLIO"
+            },
+            tech: [
+              { name: "HTML", icon: "html.svg" },
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "PHP", icon: "php.svg" },
+              { name: "CSS", icon: "css.svg" }
+            ]
+          },
+          {
+            id: "website",
+            h: "Website",
+            logo: "photos/website-logo.png",
+            what: "Personal website is a simple site built using WordPress.",
+            links: {
+              live: "https://tilensmole.uk"
+            },
+            tech: [
+              { name: "HTML", icon: "html.svg" },
+              { name: "JS", icon: "javascript.svg" },
+              { name: "CSS", icon: "css.svg" }
+            ]
+          }
+        ], lbl: { what: "What", how: "How", role: "My role", res: "Results", visit: "Visit" }
+      },
+      es: {
+        ui: { pull: "¡tira hacia arriba!", next: "Rasgar página", back: "Atrás", home: "Inicio", play: "▶ Reproducir", plain: "Modo simple", end: "¡Eso es todo! Gracias por visitar ✌" },
+        intro: { h: "¡Hola, soy Alex!", p: ["Construyo cosas web divertidas y rápidas.", "Rasga esta hoja para ver más →"] },
+        about: { h: "Sobre mí", p: ["Desarrollador full-stack con 6 años de experiencia, obsesionado con los detalles que hacen sonreír.", "Vivo en España. Me gusta dibujar, escalar y las microinteracciones."] },
+        techH: "Tecnologías", vidH: "Vídeos", vidP: ["Demo reel", "Charla: construir para la web"],
+        projects: [
+          {
+            id: "zmejelov",
+            h: "Zmejelov",
+            logo: "logos/zmejelov (1).png",
+            what: "Zmejelov is a multi-year project that culminated in my thesis. It is a suite of 5 challenging, themed games combining various technologies and creativity.",
+            links: {
+              youtube: "https://www.youtube.com/watch?v=WkpYCOwkyK4",
+              github: "https://github.com/TilenSmole/ZMEJELOV",
+              live: "https://zmejelov.azurewebsites.net/"
+            },
+            tech: [
+              { name: "HTML", icon: "html.svg" },
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "PHP", icon: "php.svg" },
+              { name: "Phaser", icon: "phaser.svg" },
+              { name: "CSS", icon: "css.svg" },
+              { name: "SQL", icon: "mysql.svg" }
+            ]
+          },
+          {
+            id: "panap",
+            h: "Panap",
+            logo: "photos/panap-logo.png",
+            what: "Panap is a complex pantry management app. Users can view recipes, add items to a shopping cart, and get weekly menu suggestions automatically.",
+            links: {},
+            tech: [
+              { name: "Flutter", icon: "flutter.svg" },
+              { name: "TypeScript", icon: "typescript.svg" },
+              { name: "PostGres", icon: "postgresql.svg" },
+              { name: "React", icon: "react.svg" },
+              { name: "NodeJS", icon: "nodejs.svg" }
+            ]
+          },
+          {
+            id: "monobank",
+            h: "Monobank",
+            logo: "photos/mono-bank-logo.png",
+            what: "Monobank revolutionizes Monopoly. The banker starts a game, and players join via code. The app simplifies financial management and money transfers between players.",
+            links: {},
+            tech: [
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "React", icon: "react.svg" },
+              { name: "TypeScript", icon: "typescript.svg" },
+              { name: "CSS", icon: "css.svg" },
+              { name: "NodeJS", icon: "nodejs.svg" }
+            ]
+          },
+          {
+            id: "missya",
+            h: "MissYa",
+            logo: "photos/missya-logo.png",
+            what: "MissYa is a simple project that lets users send a link with a custom message and a countdown to their loved ones until they meet again.",
+            links: {
+              github: "https://github.com/TilenSmole/MISSYA",
+              live: "https://missya.tilensmole.uk/"
+            },
+            tech: [
+              { name: "Ruby", icon: "ruby.svg" },
+              { name: "Slim", icon: "slim.svg" }
+            ]
+          },
+          {
+            id: "brumbrum",
+            h: "BrumBrum",
+            logo: "photos/brumbrum-logo.svg",
+            what: "",
+            links: {
+              github: "https://github.com/TilenSmole/BRUMBRUM",
+              live: "https://brumbrum.tilensmole.uk/"
+            },
+            tech: [
+              { name: "C#", icon: "csharp.svg" },
+              { name: "HTML", icon: "html.svg" },
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "CSS", icon: "css.svg" }
+            ]
+          },
+          {
+            id: "sloopyfruits",
+            h: "Sloppy Fruits",
+            logo: "photos/sloopy-fruits-logo.png",
+            what: "Sloppy fruits is a slot machine simulator where players pull a lever to hit winning combinations, featuring various gameplay modifications.",
+            links: {
+              github: "https://github.com/TilenSmole/Sloppy_fruits"
+            },
+            tech: [
+              { name: "Java", icon: "java.svg" },
+              { name: "JavaFX", icon: "javafx.svg" }
+            ]
+          },
+          {
+            id: "lyfio",
+            h: "Lyfio",
+            logo: "photos/lyfio-logo.png",
+            what: "Lyfio is a project that allows users to easily monitor expenses using tables and specialized graphs.",
+            links: {
+              github: "https://github.com/TilenSmole/DAYLIO"
+            },
+            tech: [
+              { name: "HTML", icon: "html.svg" },
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "PHP", icon: "php.svg" },
+              { name: "CSS", icon: "css.svg" }
+            ]
+          },
+          {
+            id: "website",
+            h: "Website",
+            logo: "photos/website-logo.png",
+            what: "Personal website is a simple site built using WordPress.",
+            links: {
+              live: "https://tilensmole.uk"
+            },
+            tech: [
+              { name: "HTML", icon: "html.svg" },
+              { name: "JS", icon: "javascript.svg" },
+              { name: "CSS", icon: "css.svg" }
+            ]
+          }
+        ], lbl: { what: "What", how: "How", role: "My role", res: "Results", visit: "Visit" }
+      },
+      slo: {
+        ui: { pull: "potegni gor, da odtrgaš!", next: "Odtrgaj stran", back: "Nazaj", home: "Domov", play: "▶ Predvajaj", plain: "Enostaven način", end: "To je vse! Hvala za obisk ✌" },
+        intro: { h: "Živjo, jaz sem Alex!", p: ["Ustvarjam zabavne in hitre spletne rešitve.", "Odtrgaj ta list za več vsebine →"] },
+        outro: {
+          h: "Živjo, jaz sem Alex!",
+          p: [
+            "Ustvarjam zabavne in hitre spletne rešitve.",
+            "Odtrgaj ta list za več vsebine →"
+          ],
+          social_header: "Povezimo se", // or whatever matches your data-i18n key
+          privacy_title: "Politika zasebnosti"
+        }, about: { h: "O meni", p: ["Full-stack razvijalec s 6 leti izkušenj, navdušen nad podrobnostmi, ki izvabijo nasmeh.", "Živim v Španiji. Rad rišem, plezam in ustvarjam drobne interakcije."] },
+        techH: "Tehnologije", vidH: "Videoposnetki", vidP: ["Predstavitveni posnetek", "Predavanje: gradnja za splet"],
+        projects: [
+          {
+            id: "zmejelov",
+            h: "Zmejelov",
+            logo: "logos/zmejelov (1).png",
+            what: "Zmejelov is a multi-year project that culminated in my thesis. It is a suite of 5 challenging, themed games combining various technologies and creativity.",
+            links: {
+              youtube: "https://www.youtube.com/watch?v=WkpYCOwkyK4",
+              github: "https://github.com/TilenSmole/ZMEJELOV",
+              live: "https://zmejelov.azurewebsites.net/"
+            },
+            tech: [
+              { name: "HTML", icon: "html.svg" },
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "PHP", icon: "php.svg" },
+              { name: "Phaser", icon: "phaser.svg" },
+              { name: "CSS", icon: "css.svg" },
+              { name: "SQL", icon: "mysql.svg" }
+            ]
+          },
+          {
+            id: "panap",
+            h: "Panap",
+            logo: "photos/panap-logo.png",
+            what: "Panap is a complex pantry management app. Users can view recipes, add items to a shopping cart, and get weekly menu suggestions automatically.",
+            links: {},
+            tech: [
+              { name: "Flutter", icon: "flutter.svg" },
+              { name: "TypeScript", icon: "typescript.svg" },
+              { name: "PostGres", icon: "postgresql.svg" },
+              { name: "React", icon: "react.svg" },
+              { name: "NodeJS", icon: "nodejs.svg" }
+            ]
+          },
+          {
+            id: "monobank",
+            h: "Monobank",
+            logo: "photos/mono-bank-logo.png",
+            what: "Monobank revolutionizes Monopoly. The banker starts a game, and players join via code. The app simplifies financial management and money transfers between players.",
+            links: {},
+            tech: [
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "React", icon: "react.svg" },
+              { name: "TypeScript", icon: "typescript.svg" },
+              { name: "CSS", icon: "css.svg" },
+              { name: "NodeJS", icon: "nodejs.svg" }
+            ]
+          },
+          {
+            id: "missya",
+            h: "MissYa",
+            logo: "photos/missya-logo.png",
+            what: "MissYa is a simple project that lets users send a link with a custom message and a countdown to their loved ones until they meet again.",
+            links: {
+              github: "https://github.com/TilenSmole/MISSYA",
+              live: "https://missya.tilensmole.uk/"
+            },
+            tech: [
+              { name: "Ruby", icon: "ruby.svg" },
+              { name: "Slim", icon: "slim.svg" }
+            ]
+          },
+          {
+            id: "brumbrum",
+            h: "BrumBrum",
+            logo: "photos/brumbrum-logo.svg",
+            what: "",
+            links: {
+              github: "https://github.com/TilenSmole/BRUMBRUM",
+              live: "https://brumbrum.tilensmole.uk/"
+            },
+            tech: [
+              { name: "C#", icon: "csharp.svg" },
+              { name: "HTML", icon: "html.svg" },
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "CSS", icon: "css.svg" }
+            ]
+          },
+          {
+            id: "sloopyfruits",
+            h: "Sloppy Fruits",
+            logo: "photos/sloopy-fruits-logo.png",
+            what: "Sloppy fruits is a slot machine simulator where players pull a lever to hit winning combinations, featuring various gameplay modifications.",
+            links: {
+              github: "https://github.com/TilenSmole/Sloppy_fruits"
+            },
+            tech: [
+              { name: "Java", icon: "java.svg" },
+              { name: "JavaFX", icon: "javafx.svg" }
+            ]
+          },
+          {
+            id: "lyfio",
+            h: "Lyfio",
+            logo: "photos/lyfio-logo.png",
+            what: "Lyfio is a project that allows users to easily monitor expenses using tables and specialized graphs.",
+            links: {
+              github: "https://github.com/TilenSmole/DAYLIO"
+            },
+            tech: [
+              { name: "HTML", icon: "html.svg" },
+              { name: "JavaScript", icon: "javascript.svg" },
+              { name: "PHP", icon: "php.svg" },
+              { name: "CSS", icon: "css.svg" }
+            ]
+          },
+          {
+            id: "website",
+            h: "Website",
+            logo: "photos/website-logo.png",
+            what: "Personal website is a simple site built using WordPress.",
+            links: {
+              live: "https://tilensmole.uk"
+            },
+            tech: [
+              { name: "HTML", icon: "html.svg" },
+              { name: "JS", icon: "javascript.svg" },
+              { name: "CSS", icon: "css.svg" }
+            ]
+          }
+        ], lbl: { what: "What", how: "How", role: "My role", res: "Results", visit: "Visit" }
+      },
+    };
+    /* ========= ENGINE ========= */
+    const $ = s => document.querySelector(s), area = $('#area'), pad = $('#pad');
+    let lang = 'slo', cur = 0, sheets = [], busy = false, mute = false, reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const T = () => CONFIG[lang];
+    function renderTechGroup(techCategory, indicator) {
+      return `<h2>${T().techH}  (${indicator})</h2>` +
+        Object.entries(techCategory)
+          .map(([group, items]) => `
+        <div>
+          <h3>${group}</h3>
+          <div class="tag-container">
+            ${items.map(x => `
+              <span class="tag">
+                ${x.icon ? `<img src="img-icons/${x.icon}" class="tech-icon" alt="${x.name}">` : ''}
+                ${x.name}
+              </span>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+    function pagesHTML() {
+      const t = T(), c = CONFIG, L = t.lbl;
+      let cookiesAccepted = false;
+      try {
+        cookiesAccepted = localStorage.getItem('cookie-consent-choice') === 'accept';
+      } catch (e) { }
+
+      const p = [
+        `<h2>${t.intro.h}</h2>${t.intro.p.map(x => `<p>${x}</p>`).join('')}`,
+        `<h2>${t.about.h}</h2>${t.about.p.map(x => `<p>${x}</p>`).join('')}`,
+        renderTechGroup({ Languages: c.languages, Markup: c.markup, DevOps: c.devops }, 1),
+        renderTechGroup({ Frameworks: c.frameworks, Databases: c.databases }, 2),
+      ];
+      t.projects.forEach(r => {
+        const linksHtml = Object.entries(r.links || {}).map(([type, url]) => {
+          const icon = type === 'github' ? 'photos/github.png'
+            : type === 'youtube' ? 'photos/youtube.png'
+              : 'photos/world-wide-web.png';
+          return `<a href="${url}" target="_blank" rel="noopener noreferrer"><img src="${icon}" alt="${type}" class="social-icon"></a>`;
+        }).join('');
+
+        const techHtml = (r.tech || []).map(tc => `
+        <div class="tech-card">
+          <img src="img-icons/${tc.icon}" alt="${tc.name} icon" class="tech-icon">
+          <span>${tc.name}</span>
+        </div>
+      `).join('');
+
+        p.push(`
+        <div class="carousel-section" id="${r.id}">
+          <div class="logo-row">
+            <div class="logoDisplay">
+              <img src="${r.logo}" alt="${r.h} logo" class="logo">
             </div>
-        </div>
-    </section>
+          </div>
 
-    <script src="scripts/main.js"></script>
-    <script src="scripts/translations.js"></script>
-
-    <div class="row" id="home">
-        <div class="sidebar"> </div>
-        <div id="introText">
-            <h1 id="myName">TILEN SMOLE</h1>
-            <h2 id="titles" data-i18n="titles"></h2>
-            <div class="scroll-wrapper">
-                <a href="#projects">
-                    <div class="scroll-arrow" aria-label="Scroll down">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-                        </svg>
-                    </div>
-                </a>
+          <div class="project-main-row">
+            <div class="description-col">
+              <p>${r.what}</p>
             </div>
-        </div>
-    </div>
-
-    <script src="scripts/logosDancing.js"></script>
-    <div class="row" id="aboutMe">
-        <div class=" sidebar"> </div>
-        <div id="me">
-        </div>
-    </div>
-    </div>
-    <div id="section-non-main">
-
-        <div class="row" id="projects">
-            <div class=" sidebar"> </div>
-            <div id="projectsCarousel">
+            <div class="socials-col">
+              <div class="linkDisplay">
+                ${linksHtml}
+              </div>
             </div>
-        </div>
+          </div>
 
-        <div class="row" id="videos">
-            <div class=" sidebar"> </div>
-            <div class="">
-                <div id="videosCarousel">
-                </div>
+          <div class="tech-section">
+            <div class="tech-items">
+              ${techHtml}
             </div>
+          </div>
         </div>
-    </div>
-    <div id="footer"> </div>
+      `);
+      },
+      );
+
+      p.push(...c.videos.map((vidGroup, pageIdx) =>
+        `<h2>${t.vidH} (${pageIdx + 1})</h2>` +
+        vidGroup.map((v, i) => `
+            <div>
+              <h3>${t.vidP[(pageIdx * 2) + i] || ''}</h3>
+              ${cookiesAccepted
+            ? `<button class="vid" data-v="${v}">${t.ui.play}</button>`
+            : `<div class="vid" style="display:flex;align-items:center;justify-content:center;text-align:center;font-size:4cqw;cursor:not-allowed;">
+                     🍪 Enable cookies to view
+                   </div>`
+          }
+            </div>
+          `).join('')
+      ));
+
+      p.push(`
+      <div class="carousel-section outro-section" id="outro">
+        <div class="logo-row">
+          <h2>${t.outro.h}</h2>
+        </div>
+        <div class="project-main-row">
+        </div>
+      </div>
+
+      <footer>
+        <div class="tech-section">
+          <div class="tech-items">
+            <div class="row">
+              <p class="sec-text" data-i18n="social_header">Let's connect</p>
+            </div>
+            <div class="row linkDisplay">
+              <a href="https://github.com/TilenSmole" target="_blank" rel="noopener noreferrer" class="tech-card">
+                <img src="photos/github.png" alt="GitHub Logo" class="tech-icon">
+              </a>
+              <a href="https://tilensmole.uk" target="_blank" rel="noopener noreferrer" class="tech-card">
+                <img src="photos/world-wide-web.png" alt="Link Icon" class="tech-icon">
+              </a>
+              <a href="https://www.linkedin.com/in/tilen-smole-8550152a1/" target="_blank" rel="noopener noreferrer" class="tech-card">
+                <img src="photos/linkedin.png" alt="LinkedIn Icon" class="tech-icon">
+              </a>
+              <a href="mailto:smoletilen@gmail.com" class="tech-card">
+                <img src="photos/email.png" alt="Email Icon" class="tech-icon">
+              </a>
+            </div>
+
+            <a href="privacy.html" class="footer-link" data-i18n="privacy_title">Privacy Policy</a>
+            <p class="sec-text mt-2">&copy; Tilen Smole</p>
+          </div>
+        </div>
+      </footer>
+                <div class="description-col">
+ ${t.outro.p.map(text => `<p>${text}</p>`).join('')}            
+          </div>
+    `);
+
+      return p;
+    }
+    const jag = () => { let s = '0 0', n = 18; for (let i = 1; i < n; i++)s += `,${(i / n * 100).toFixed(1)}% ${(Math.random() * 1.4).toFixed(2)}%`; return `polygon(${s},100% 0,100% 100%,0 100%)` };
+    function build() {
+      const pg = pagesHTML(); area.innerHTML = '';
+      sheets = pg.map((h, i) => {
+        const e = document.createElement('section'); e.className = 'sheet'; e.dataset.r = (Math.random() * 3 - 1.5).toFixed(2);
+        e.style.clipPath = jag(); e.innerHTML = `<div class="inner">${h}</div>`;
+        [...e.firstChild.children].forEach((c, k) => c.style.setProperty('--i', k));
+        if (i < pg.length - 1) { const b = document.createElement('button'); b.className = 'curl'; b.setAttribute('aria-label', T().ui.next); b.onclick = e2 => { e2.stopPropagation(); if (!e2.detail) next() }; e.append(b) }
+        if (i === 0 && !seen()) { const t = document.createElement('div'); t.className = 'hint'; t.textContent = T().ui.pull + ' ↗'; e.append(t) }
+        area.append(e); return e
+      });
+      layout();
+    }
+    function layout() {
+      $('#pl').textContent = T().ui.plain;
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.id === lang));
+      const plain = false;
+      sheets.forEach((e, i) => {
+        e.style.transition = 'none'; e.style.transformOrigin = ''; e.style.zIndex = sheets.length - i;
+        e.style.display = plain || (i >= cur && i <= cur + 1) ? '' : 'none';
+        e.style.transform = plain ? '' : `rotate(${i === cur ? 0 : e.dataset.r}deg)`; e.style.opacity = 1; e.classList.remove('redraw'); e.inert = !plain && i !== cur
+      });
+
+      $('#back').style.display = cur === 0 ? 'none' : '';
+      $('#home').style.display = cur === 0 ? 'none' : '';
+
+      $('#next').style.display = cur === LAST() ? 'none' : '';
+      $('#end').style.display = cur === LAST() ? 'none' : '';
+
+
+
+      document.title = `${CONFIG.name} · ${cur + 1}/${sheets.length}`;
+    }
+    const seen = () => { try { return localStorage.getItem('padseen') } catch (e) { return 1 } };
+    function markSeen() { try { localStorage.setItem('padseen', '1') } catch (e) { } document.querySelectorAll('.hint').forEach(h => h.remove()) }
+    /* navigation */
+    const LAST = () => sheets.length - 1;
+    function tearOff(e, vx, vy, ang) {
+      return new Promise(r => {
+        if (reduce) { r(); return }
+        e.style.transition = 'transform .4s cubic-bezier(.4,0,.8,.6),opacity .4s'; e.style.transform = `translate3d(${vx}px,${vy}px,0) rotate(${ang}rad)`; e.style.opacity = 0; setTimeout(r, 400)
+      })
+    }
+    async function next(v) {
+      if (busy || cur >= LAST()) return; busy = true; markSeen(); const e = sheets[cur];
+      if (!v) { e.style.transformOrigin = '0 0'; v = { x: 40, y: -area.clientHeight * .9, a: .5 } }
+      e.style.zIndex = 999; await tearOff(e, v.x, v.y, v.a); cur++; layout(); busy = false
+    }
+    function go(i) { if (busy || i === cur) return; cur = i; layout(); if (!reduce) sheets[cur].classList.add('redraw'); }
+    $('#back').onclick = () => go(Math.max(0, cur - 1)); $('#home').onclick = () => go(0);
+    $('#next').onclick = () => go(Math.max(0, cur + 1));
+    $('#end').onclick = () => go(LAST());
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.onclick = () => {
+        lang = btn.id;
+        document.documentElement.lang = lang;
+        build();
+      };
+    });
+
+    addEventListener('keydown', e => {
+      if (e.target.tagName === 'BUTTON' && e.key === ' ') return;
+      if (['ArrowRight', 'ArrowDown'].includes(e.key)) next(); if (['ArrowLeft', 'ArrowUp'].includes(e.key)) go(Math.max(0, cur - 1)); if (e.key === 'Home') go(0)
+    });
+    /* drag-to-tear from any corner */
+    let d = null, raf = 0; window.dragging = false;
+    area.addEventListener('pointerdown', e => {
+      const s = sheets[cur]; if (reduce || busy || !s || cur >= LAST() || !s.contains(e.target) || e.target.closest('a,iframe,.vid')) return;
+      const r = s.getBoundingClientRect(), gx = e.clientX - r.left, gy = e.clientY - r.top, px = gx < r.width / 2 ? r.width : 0, py = gy < r.height / 2 ? r.height : 0;
+      s.style.transformOrigin = `${px}px ${py}px`;
+      d = { x: e.clientX, y: e.clientY, t: performance.now(), s, gx: gx - px, gy: gy - py, a: 0, dx: 0, dy: 0, curl: !!e.target.closest('.curl') }; dragging = true; s.setPointerCapture(e.pointerId)
+    });
+    area.addEventListener('pointermove', e => {
+      if (!d) return; const dx = e.clientX - d.x, dy = e.clientY - d.y, a = Math.atan2(d.gy + dy, d.gx + dx) - Math.atan2(d.gy, d.gx);
+      d.a = Math.atan2(Math.sin(a), Math.cos(a)); d.dx = dx; d.dy = dy;
+      if (!raf) raf = requestAnimationFrame(() => { raf = 0; if (d) d.s.style.transform = `translate3d(${d.dx * .15}px,${d.dy * .15}px,0) rotate(${d.a}rad)` })
+    });
+    const endDrag = () => {
+      if (!d) return; const dd = d, s = dd.s, m = Math.hypot(dd.dx, dd.dy), v = m / (performance.now() - dd.t), h = area.clientHeight; d = null; dragging = false;
+      if (m < 6) { s.style.transformOrigin = ''; if (dd.curl) next(); return }
+      if (Math.abs(dd.a) > .4 || (v > .9 && m > h * .1)) { const k = h * 1.2 / m; next({ x: dd.dx * k, y: dd.dy * k, a: (dd.a * 2.2) || .5 }) }
+      else { s.style.transition = 'transform .3s cubic-bezier(.3,1.5,.5,1)'; s.style.transform = 'translate3d(0,0,0) rotate(0rad)'; setTimeout(() => { if (!d) s.style.transformOrigin = '' }, 320) }
+    };
+    area.addEventListener('pointerup', endDrag); area.addEventListener('pointercancel', endDrag);
+    /* lazy video embeds */
+    area.addEventListener('click', e => {
+      const b = e.target.closest('button.vid'); if (!b) return; const f = document.createElement('iframe'); f.className = 'vid';
+      f.src = `https://www.youtube-nocookie.com/embed/${b.dataset.v}?autoplay=1&rel=0`; f.allow = 'autoplay;encrypted-media;fullscreen'; f.title = 'Video'; b.replaceWith(f)
+    });
+    /* drifting tech badges (canvas, text-only, paused when hidden) */
+    (function () {
+      const cv = $('#bg'), x = cv.getContext('2d'); let W, H;
+
+      // Pull all icon file names dynamically from CONFIG.tech
+      const allIcons = Object.values({ ...CONFIG.frameworks, ...CONFIG.languages, ...CONFIG.markup, ...CONFIG.databases, ...CONFIG.devops })
+        .flatMap(categoryItems => categoryItems)
+        .map(item => item?.icon ?? item)
+        .filter(Boolean);
+
+      // Filter to only include icons present in your confirmed file list
+      const validFiles = [
+        "bash.svg", "clojurescript.svg", "csharp.svg", "css.svg", "dart.svg",
+        "flutter.svg", "git.svg", "github.svg", "go.svg", "html.svg",
+        "java.svg", "javascript.svg", "phaser.svg", "php.svg", "postgresql.svg",
+        "prisma.svg", "python.svg", "rails.svg", "react.svg", "ruby.svg", "typescript.svg"
+      ];
+
+      const fileNames = Object.values({ ...CONFIG.frameworks, ...CONFIG.languages, ...CONFIG.markup, ...CONFIG.databases, ...CONFIG.devops })
+        .flat()
+        .map(item => typeof item === 'string' ? item : item.icon);
+      const cols = ['#e2563b', '#2f7fd1', '#3fa36b', '#d9a321', '#8a5cc2'];
+
+      // Preload valid SVGs
+      const loadedIcons = fileNames.map(file => {
+        const img = new Image();
+        img.src = `img-icons/${file}`;
+        return img;
+      });
+
+      const fit = () => {
+        const r = Math.min(devicePixelRatio || 1, 1.5);
+        W = cv.width = innerWidth * r;
+        H = cv.height = innerHeight * r;
+      };
+      fit();
+      addEventListener('resize', fit);
+
+      const bs = fileNames.map((_, i) => ({
+        img: loadedIcons[i],
+        x: Math.random() * W,
+        y: Math.random() * H,
+        v: .15 + Math.random() * .35,
+        a: Math.random() * 6,
+        c: cols[i % cols.length],
+        s: (W / (innerWidth < 600 ? 14 : 30)) * (.8 + Math.random() * .5) / 1.5
+      }));
+
+      let q = 0;
+      (function f() {
+        if (++q % 2 && !document.hidden && !reduce && !dragging && !busy) {
+          x.clearRect(0, 0, W, H);
+          bs.forEach(b => {
+            b.y -= b.v;
+            b.x += Math.sin(b.a += .004) * .3;
+            if (b.y < -60) { b.y = H + 60; b.x = Math.random() * W; }
+
+            x.save();
+            x.translate(b.x, b.y);
+            x.rotate(Math.sin(b.a) * .2);
+            x.globalAlpha = .22;
+
+            const iconSize = b.s * 1.1;
+            const padding = iconSize * 0.35;
+            const badgeSize = iconSize + padding;
+
+            x.fillStyle = b.c;
+            x.beginPath();
+            x.roundRect(-badgeSize / 2, -badgeSize / 2, badgeSize, badgeSize, badgeSize * 0.3);
+            x.fill();
+
+            if (b.img.complete) {
+              x.drawImage(b.img, -iconSize / 2, -iconSize / 2, iconSize, iconSize);
+            }
+
+            x.restore();
+          });
+        }
+        requestAnimationFrame(f);
+      })();
+    })();
+    build();
+  </script>
 </body>
 
 </html>
