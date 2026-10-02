@@ -1,0 +1,13 @@
+# Tilen Smole · Software Developer Portfolio
+
+> Personal portfolio and professional developer profile of Tilen Smole, showcasing modern web architecture, projects, and technical skills.
+
+## Core Pages
+
+- [Home](https://tilensmole.uk/): Main single-page interactive portfolio and project showcase.
+- [Privacy Policy](https://tilensmole.uk/privacy.html): Data privacy and cookie consent guidelines.
+
+## Optional
+
+- [GitHub Profile](https://github.com/TilenSmole): Open-source repositories and code contributions.
+- [LinkedIn](https://www.linkedin.com/in/tilen-smole-8550152a1/): Professional background and career history.

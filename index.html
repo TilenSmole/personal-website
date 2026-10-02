@@ -4,9 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Alex Rivera · Portfolio</title>
+  <title>Tilen Smole · Portfolio</title>
+  <meta name="description" content="Portfolio of a full-stack web developer with 6 years of experience: games, web apps and playful interactive projects built with JavaScript, React, Flutter and more.">
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap"
     rel="stylesheet">
+  <script src="scripts/privacy.js" defer></script>
+  <link rel="stylesheet" href="global.css">
+
   <style>
     :root {
       --desk: #d9c6a5;
@@ -39,6 +43,39 @@
     * {
       box-sizing: border-box
     }
+
+    /* Footer Layout Structure */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1rem;
+  width: 100%;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.footer-social-row {
+  display: flex-start;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: left;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Forces the paragraph to take up the full row, pushing the icons underneath */
+.footer-social-row p {
+  flex: 0 0 100%;
+  text-align: left;
+  margin: 0;
+}
 
     html,
     body {
@@ -90,22 +127,23 @@
       z-index: 999
     }
 
-    #strip button,
-    #strip a {
-      font: inherit;
-      color: #fff;
-      background: #0002;
-      border: .35cqw dashed #fff9;
-      border-radius: 1.2cqw;
-      min-width: 6.2cqw;
-      height: 6.4cqw;
-      padding: 0 1.2cqw;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none
-    }
+#strip button,
+#strip a {
+  font: inherit;
+  line-height: 1;
+  color: #fff;
+  background: #0002;
+  border: .35cqw dashed #fff9;
+  border-radius: 1.2cqw;
+  min-width: 6.2cqw;
+  height: 6.4cqw;
+  padding: 0 1.5cqw 0;   
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
 
     #strip button:hover,
     #strip button:focus-visible,
@@ -122,7 +160,8 @@
     }
 
     .logoDisplay .logo {
-      height: 15rem;
+      height: 50cqw;
+      max-width: 80%;
       object-fit: contain;
       display: block;
       margin: 0 auto;
@@ -132,6 +171,8 @@
       display: flex;
       gap: 1.5cqw;
       align-items: center;
+      flex-direction: column;
+       gap: 0.75rem;
     }
 
     .social-icon {
@@ -218,18 +259,77 @@
       color: #1d5fd1
     }
 
+    .vgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2cqw 3cqw;
+    }
+
+    .vblock {
+      margin: 0 !important;
+    }
+
+
     .vid {
       aspect-ratio: 16/9;
-      width: 70%;
-      background: #222;
+      width: 100%;
+      background: #222 center / cover no-repeat;
       border: 0;
       border-radius: 1cqw;
       color: #fff;
       font: inherit;
-      font-size: 6cqw;
       cursor: pointer;
-      display: block
+      display: block;
+      position: relative;
+      padding: 0;
     }
+
+    .tech-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows them to wrap to the next line if there are too many */
+  gap: 1rem;       /* Space between each tech card */
+  align-items: center;
+}
+    .vid .play {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 9cqw;
+      height: 9cqw;
+      display: grid;
+      place-items: center;
+      font-size: 4.5cqw;
+      background: #000a;
+      border-radius: 50%;
+      transition: transform .15s;
+    }
+
+    .vid:hover .play {
+      transform: scale(1.12);
+    }
+
+    .consent-msg p {
+      margin: 0 0 2cqw;
+    }
+
+    .consent-btn {
+      font: inherit;
+      font-family: Caveat, cursive;
+      font-weight: 700;
+      font-size: 5cqw;
+      padding: .6cqw 3cqw;
+      background: var(--strip);
+      color: #fff;
+      border: 0;
+      border-radius: 2cqw;
+      cursor: pointer;
+    }
+
+    .consent-btn:hover {
+      filter: brightness(1.1);
+    }
+
 
     iframe.vid {
       display: block
@@ -249,25 +349,22 @@
       z-index: 5;
       font-size: 0
     }
-
+.logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the logo and links horizontally */
+  gap: 1.5rem;             /* Space between the logo and the vertical links */
+}
     .hint {
       position: absolute;
       right: 12cqw;
-      bottom: 3cqw;
+      bottom: 15cqw;
       font-family: Caveat, cursive;
       font-size: 5cqw;
       color: var(--strip);
       transform: rotate(-4deg);
       animation: bob 1.4s infinite;
       pointer-events: none
-    }
-
-    .end {
-      font-family: Caveat, cursive;
-      font-size: 6cqw;
-      color: var(--strip);
-      transform: rotate(-3deg);
-      margin-top: 3cqw
     }
 
     @keyframes bob {
@@ -291,18 +388,21 @@
       }
     }
 
-    @media(prefers-reduced-motion:reduce) {
-
-      .redraw .inner>*,
-      .hint {
-        animation: none
-      }
-    }
-
     .tech-icon {
       width: 1.2rem;
       height: 1.2rem;
     }
+
+    /* Smooth lift effect on social icon hover */
+.footer-row a {
+  margin-left: 0.3rem;
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-row a:hover {
+  transform: translateY(-4px) scale(1.05);
+}
 
     .toolbar {
       display: flex;
@@ -310,12 +410,28 @@
       gap: 1.2cqw;
       margin-left: auto;
     }
+
+
   </style>
 </head>
 
 <body>
+  <section id="cookie-consent" class="cookie-banner" aria-hidden="true">
+    <div class="cookie-content">
+      <p>
+        <span data-i18n="cookie_text"></span>
+        <a href="/privacy.html" data-i18n="cookie_privacy"></a>.
+
+      </p>
+      <div class="cookie-actions">
+        <button id="cookie-reject" class="btn-secondary" data-i18n="cookie_reject"></button>
+        <button id="cookie-accept" class="btn-primary" data-i18n="cookie_accept"></button>
+      </div>
+    </div>
+  </section>
   <canvas id="bg" aria-hidden="true"></canvas>
   <main id="pad">
+
     <div id="strip" role="toolbar" aria-label="Navigation">
       <button id="home" title="Home">⌂</button>
       <button id="back" title="Back">←</button>
@@ -330,16 +446,43 @@
       </div>
     </div>
     <div id="area"></div>
+
   </main>
-  <noscript>Alex Rivera – developer portfolio. Please enable JavaScript.</noscript>
-  <script>
+<noscript>
+  <h1>Tilen Smole – Full-stack developer</h1>
+  <p>Full-stack developer with 2 years of experience.</p>
+  <ul>
+    <li><a href="https://missya.tilensmole.uk/">MissYa</a> – countdown links for loved ones (Ruby, Slim)</li>
+  </ul>
+  <a href="plain.html">Plain version</a>
+</noscript> 
+<link rel="canonical" href="https://tilensmole.uk/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tilen Smole · Portfolio">
+<meta property="og:description" content="Full-stack developer building playful, fast web things.">
+<meta property="og:image" content="https://tilensmole.uk/photos/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tilen Smole",
+  "jobTitle": "Full-stack developer",
+  "url": "https://tilensmole.uk/",
+  "sameAs": [
+    "https://github.com/TilenSmole",
+    "https://www.linkedin.com/in/tilen-smole-8550152a1/"
+  ]
+}
+</script>
+
+<script>
     const CONFIG = {
-      name: "Alex Rivera",
+      name: "Tilen Smole",
       videos: [
-        ["qbz5kqjlVdk", "lYap_4NCPcY"],
-        ["gbjCdeeGPG4", "eqha3gpD4qI"],
-        ["41yrJquOsSA", "nN8u2-mLYUY"],
-        ["WkpYCOwkyK4"]
+        ["qbz5kqjlVdk", "lYap_4NCPcY", "WkpYCOwkyK4", "41yrJquOsSA", "gbjCdeeGPG4", "eqha3gpD4qI",],
+        ["nN8u2-mLYUY", "nN8u2-mLYUY"],
       ],
       languages: [
         { name: 'JavaScript', icon: 'javascript.svg' },
@@ -388,17 +531,27 @@
         { name: 'Azure', icon: 'azure.svg' }
       ],
 
-      en: {
-        ui: { pull: "pull up to tear!", next: "Tear page", back: "Back", home: "Home", play: "▶ Play", plain: "Simple mode", end: "That's all, folks! Thanks for visiting ✌" },
-        intro: { h: "Hi, I'm Alex!", p: ["I build playful, fast web things.", "Rip this page to see more →"] },
-        about: { h: "About me", p: ["Full-stack developer with 6 years of experience, obsessed with details that make people smile.", "Based in Spain. I like sketching, climbing and tiny interactions."] },
-        techH: "Tech I know", vidH: "Videos", vidP: ["Demo reel", "Talk: building for the web"],
+       en: {
+        ui: {
+          enableVideos: "Please accept cookies to watch the videos", cookieText: "This website uses cookies. You can accept or reject them.",
+          cookiePrivacy: "Privacy policy",
+          cookieReject: "Reject",
+          cookieAccept: "Accept",
+          connect: "Let's connect", pull: "pull to tear!", next: "Tear page", back: "Back", home: "Home", play: "▶ Play", plain: "Classic"
+        },
+        intro: { h: "Hi, I'm Tilen!", p: ["Bachelor's graduate in Computer and Information Science", "Full-stack developer with almost 3 years of experience, passionate about most technologies and how they work. Always looking for new knowledge."] },
+        outro: {
+          h: "That's all! Thanks for visiting ✌",
+          social_header: "Let's connect",
+          privacy_title: "Privacy policy"
+        },
+        techH: "My skills", vidH: "My videos", projH: "Projects",
         projects: [
           {
             id: "zmejelov",
             h: "Zmejelov",
             logo: "logos/zmejelov (1).png",
-            what: "Zmejelov is a multi-year project that culminated in my thesis. It is a suite of 5 challenging, themed games combining various technologies and creativity.",
+            what: "Zmejelov is a project that started as my thesis. The platform includes 5 themed games and combines various technologies with creativity.",
             links: {
               youtube: "https://www.youtube.com/watch?v=WkpYCOwkyK4",
               github: "https://github.com/TilenSmole/ZMEJELOV",
@@ -417,7 +570,7 @@
             id: "panap",
             h: "Panap",
             logo: "photos/panap-logo.png",
-            what: "Panap is a complex pantry management app. Users can view recipes, add items to a shopping cart, and get weekly menu suggestions automatically.",
+            what: "Panap is a complex pantry management app. Users can browse recipes, add items to a shopping cart and receive weekly menu suggestions.",
             links: {},
             tech: [
               { name: "Flutter", icon: "flutter.svg" },
@@ -431,7 +584,7 @@
             id: "monobank",
             h: "Monobank",
             logo: "photos/mono-bank-logo.png",
-            what: "Monobank revolutionizes Monopoly. The banker starts a game, and players join via code. The app simplifies financial management and money transfers between players.",
+            what: "Monobank revolutionizes Monopoly. The player acting as the banker starts a new game and the other players join with a code. The app makes managing finances and sending money easy.",
             links: {},
             tech: [
               { name: "JavaScript", icon: "javascript.svg" },
@@ -445,7 +598,7 @@
             id: "missya",
             h: "MissYa",
             logo: "photos/missya-logo.png",
-            what: "MissYa is a simple project that lets users send a link with a custom message and a countdown to their loved ones until they meet again.",
+            what: "MissYa is a simple project that lets users send their loved ones a link with a custom message and a countdown to the moment they will see each other again.",
             links: {
               github: "https://github.com/TilenSmole/MISSYA",
               live: "https://missya.tilensmole.uk/"
@@ -459,7 +612,7 @@
             id: "brumbrum",
             h: "BrumBrum",
             logo: "photos/brumbrum-logo.svg",
-            what: "",
+            what: "BrumBrum is a simple personal app that calculates the fuel cost in euros for the day. It takes the fuel price at Petrol, the kilometers driven and the car's consumption in liters, and works out the cost. Especially handy when you drive someone else's car and want to reimburse them.",
             links: {
               github: "https://github.com/TilenSmole/BRUMBRUM",
               live: "https://brumbrum.tilensmole.uk/"
@@ -475,7 +628,7 @@
             id: "sloopyfruits",
             h: "Sloppy Fruits",
             logo: "photos/sloopy-fruits-logo.png",
-            what: "Sloppy fruits is a slot machine simulator where players pull a lever to hit winning combinations, featuring various gameplay modifications.",
+            what: "Sloppy Fruits is a slot machine simulator where the user pulls the lever and waits for a winning combination. The game offers many modifications.",
             links: {
               github: "https://github.com/TilenSmole/Sloppy_fruits"
             },
@@ -488,7 +641,7 @@
             id: "lyfio",
             h: "Lyfio",
             logo: "photos/lyfio-logo.png",
-            what: "Lyfio is a project that allows users to easily monitor expenses using tables and specialized graphs.",
+            what: "Lyfio is a project that lets users easily track their expenses using tables and specialized charts.",
             links: {
               github: "https://github.com/TilenSmole/DAYLIO"
             },
@@ -503,7 +656,7 @@
             id: "website",
             h: "Website",
             logo: "photos/website-logo.png",
-            what: "Personal website is a simple site built using WordPress.",
+            what: "My personal website is a simple site built with WordPress.",
             links: {
               live: "https://tilensmole.uk"
             },
@@ -516,16 +669,26 @@
         ], lbl: { what: "What", how: "How", role: "My role", res: "Results", visit: "Visit" }
       },
       es: {
-        ui: { pull: "¡tira hacia arriba!", next: "Rasgar página", back: "Atrás", home: "Inicio", play: "▶ Reproducir", plain: "Modo simple", end: "¡Eso es todo! Gracias por visitar ✌" },
-        intro: { h: "¡Hola, soy Alex!", p: ["Construyo cosas web divertidas y rápidas.", "Rasga esta hoja para ver más →"] },
-        about: { h: "Sobre mí", p: ["Desarrollador full-stack con 6 años de experiencia, obsesionado con los detalles que hacen sonreír.", "Vivo en España. Me gusta dibujar, escalar y las microinteracciones."] },
-        techH: "Tecnologías", vidH: "Vídeos", vidP: ["Demo reel", "Charla: construir para la web"],
+        ui: {
+          enableVideos: "Acepta las cookies para ver los vídeos", cookieText: "Este sitio web utiliza cookies. Puedes aceptarlas o rechazarlas.",
+          cookiePrivacy: "Política de privacidad",
+          cookieReject: "Rechazar",
+          cookieAccept: "Aceptar",
+          connect: "Conectemos", pull: "¡tira para rasgar!", next: "Rasgar página", back: "Atrás", home: "Inicio", play: "▶ Reproducir", plain: "Clásico"
+        },
+        intro: { h: "¡Hola, soy Tilen!", p: ["Graduado en Ingeniería Informática y de la Computación", "Desarrollador full-stack con casi 3 años de experiencia, apasionado por la mayoría de las tecnologías y su funcionamiento. Siempre en busca de nuevos conocimientos."] },
+        outro: {
+          h: "¡Eso es todo! Gracias por visitar ✌",
+          social_header: "Conectemos",
+          privacy_title: "Política de privacidad"
+        },
+        techH: "Mis conocimientos", vidH: "Mis vídeos", projH: "Proyectos",
         projects: [
           {
             id: "zmejelov",
             h: "Zmejelov",
             logo: "logos/zmejelov (1).png",
-            what: "Zmejelov is a multi-year project that culminated in my thesis. It is a suite of 5 challenging, themed games combining various technologies and creativity.",
+            what: "Zmejelov es un proyecto que nació como mi trabajo de fin de grado. La plataforma incluye 5 juegos temáticos y combina diversas tecnologías con creatividad.",
             links: {
               youtube: "https://www.youtube.com/watch?v=WkpYCOwkyK4",
               github: "https://github.com/TilenSmole/ZMEJELOV",
@@ -544,7 +707,7 @@
             id: "panap",
             h: "Panap",
             logo: "photos/panap-logo.png",
-            what: "Panap is a complex pantry management app. Users can view recipes, add items to a shopping cart, and get weekly menu suggestions automatically.",
+            what: "Panap es una aplicación compleja para gestionar la despensa. El usuario puede consultar recetas, añadir productos al carrito y recibir sugerencias de menú semanal.",
             links: {},
             tech: [
               { name: "Flutter", icon: "flutter.svg" },
@@ -558,7 +721,7 @@
             id: "monobank",
             h: "Monobank",
             logo: "photos/mono-bank-logo.png",
-            what: "Monobank revolutionizes Monopoly. The banker starts a game, and players join via code. The app simplifies financial management and money transfers between players.",
+            what: "Monobank revoluciona el Monopoly. El jugador que hace de banco crea una nueva partida y los demás se unen mediante un código. La aplicación facilita la gestión de las finanzas y el envío de dinero.",
             links: {},
             tech: [
               { name: "JavaScript", icon: "javascript.svg" },
@@ -572,7 +735,7 @@
             id: "missya",
             h: "MissYa",
             logo: "photos/missya-logo.png",
-            what: "MissYa is a simple project that lets users send a link with a custom message and a countdown to their loved ones until they meet again.",
+            what: "MissYa es un proyecto sencillo que permite enviar a tus seres queridos un enlace con un mensaje personalizado y una cuenta atrás hasta el momento en que volváis a veros.",
             links: {
               github: "https://github.com/TilenSmole/MISSYA",
               live: "https://missya.tilensmole.uk/"
@@ -586,7 +749,7 @@
             id: "brumbrum",
             h: "BrumBrum",
             logo: "photos/brumbrum-logo.svg",
-            what: "",
+            what: "BrumBrum es una aplicación personal sencilla que calcula el coste del combustible en euros para el día. Toma el precio de la gasolina en Petrol, los kilómetros recorridos y el consumo del coche en litros, y calcula el coste. Muy útil cuando conduces el coche de otra persona y quieres reembolsarle los gastos.",
             links: {
               github: "https://github.com/TilenSmole/BRUMBRUM",
               live: "https://brumbrum.tilensmole.uk/"
@@ -602,7 +765,7 @@
             id: "sloopyfruits",
             h: "Sloppy Fruits",
             logo: "photos/sloopy-fruits-logo.png",
-            what: "Sloppy fruits is a slot machine simulator where players pull a lever to hit winning combinations, featuring various gameplay modifications.",
+            what: "Sloppy Fruits es un simulador de tragaperras en el que el usuario tira de la palanca y espera una combinación ganadora. El juego ofrece numerosas modificaciones.",
             links: {
               github: "https://github.com/TilenSmole/Sloppy_fruits"
             },
@@ -615,7 +778,7 @@
             id: "lyfio",
             h: "Lyfio",
             logo: "photos/lyfio-logo.png",
-            what: "Lyfio is a project that allows users to easily monitor expenses using tables and specialized graphs.",
+            what: "Lyfio es un proyecto que permite controlar fácilmente los gastos mediante tablas y gráficos especializados.",
             links: {
               github: "https://github.com/TilenSmole/DAYLIO"
             },
@@ -630,7 +793,7 @@
             id: "website",
             h: "Website",
             logo: "photos/website-logo.png",
-            what: "Personal website is a simple site built using WordPress.",
+            what: "Mi sitio web personal es una página sencilla creada con WordPress.",
             links: {
               live: "https://tilensmole.uk"
             },
@@ -643,24 +806,26 @@
         ], lbl: { what: "What", how: "How", role: "My role", res: "Results", visit: "Visit" }
       },
       slo: {
-        ui: { pull: "potegni gor, da odtrgaš!", next: "Odtrgaj stran", back: "Nazaj", home: "Domov", play: "▶ Predvajaj", plain: "Enostaven način", end: "To je vse! Hvala za obisk ✌" },
-        intro: { h: "Živjo, jaz sem Alex!", p: ["Ustvarjam zabavne in hitre spletne rešitve.", "Odtrgaj ta list za več vsebine →"] },
+        ui: {
+          enableVideos: "Za ogled videoposnetkov omogočite piškotke", cookieText: "To spletišče uporablja piškotke. Lahko jih sprejmete ali zavrnete.",
+          cookiePrivacy: "Politika zasebnosti",
+          cookieReject: "Zavrni",
+          cookieAccept: "Sprejmi",
+          connect: "Povežimo se", pull: "potegni, da odtrgaš!", next: "Odtrgaj stran", back: "Nazaj", home: "Domov", play: "▶ Predvajaj", plain: "Klasična stran"
+        },
+        intro: { h: "Živjo, jaz sem Tilen!", p: ["Diplomirani inženir računalništva in informatike", "Full-stack razvijalec s skoraj 3 leti izkušenj, navdušen nad večino tehnologij in njihovim delovanjem. Vedno v iskanju novega znanja."] },
         outro: {
-          h: "Živjo, jaz sem Alex!",
-          p: [
-            "Ustvarjam zabavne in hitre spletne rešitve.",
-            "Odtrgaj ta list za več vsebine →"
-          ],
-          social_header: "Povezimo se", // or whatever matches your data-i18n key
+          h: "To je vse! Hvala za obisk ✌",
+          social_header: "Povežimo se",
           privacy_title: "Politika zasebnosti"
-        }, about: { h: "O meni", p: ["Full-stack razvijalec s 6 leti izkušenj, navdušen nad podrobnostmi, ki izvabijo nasmeh.", "Živim v Španiji. Rad rišem, plezam in ustvarjam drobne interakcije."] },
-        techH: "Tehnologije", vidH: "Videoposnetki", vidP: ["Predstavitveni posnetek", "Predavanje: gradnja za splet"],
+        },
+        techH: "Moja znanja", vidH: "Moji Videoposnetki", projH: "Projekti",
         projects: [
           {
             id: "zmejelov",
             h: "Zmejelov",
             logo: "logos/zmejelov (1).png",
-            what: "Zmejelov is a multi-year project that culminated in my thesis. It is a suite of 5 challenging, themed games combining various technologies and creativity.",
+            what:    "Zmejelov je projekt, ki je nastal kot diplomsko delo. Platforma vključuje 5 tematsko povezanih iger in združuje različne tehnologije ter kreativnost.",
             links: {
               youtube: "https://www.youtube.com/watch?v=WkpYCOwkyK4",
               github: "https://github.com/TilenSmole/ZMEJELOV",
@@ -679,7 +844,8 @@
             id: "panap",
             h: "Panap",
             logo: "photos/panap-logo.png",
-            what: "Panap is a complex pantry management app. Users can view recipes, add items to a shopping cart, and get weekly menu suggestions automatically.",
+            what:   "Panap je kompleksna aplikacija za vodenje evidence shrambe. Uporabnik lahko pregleduje recepte, dodaja v košarico in prejema predloge za tedenski meni.",
+
             links: {},
             tech: [
               { name: "Flutter", icon: "flutter.svg" },
@@ -693,8 +859,8 @@
             id: "monobank",
             h: "Monobank",
             logo: "photos/mono-bank-logo.png",
-            what: "Monobank revolutionizes Monopoly. The banker starts a game, and players join via code. The app simplifies financial management and money transfers between players.",
-            links: {},
+what:  "Monobank revolucionira Monopoly. Igralec, ki predstavlja banko, odpre novo igro, nato pa se ji igralci pridružijo preko kode. Aplikacija omogoča enostavno vodenje financ in pošiljanje denarja.",
+links: {},
             tech: [
               { name: "JavaScript", icon: "javascript.svg" },
               { name: "React", icon: "react.svg" },
@@ -707,7 +873,7 @@
             id: "missya",
             h: "MissYa",
             logo: "photos/missya-logo.png",
-            what: "MissYa is a simple project that lets users send a link with a custom message and a countdown to their loved ones until they meet again.",
+            what:   "MissYa je preprost projekt, ki uporabnikom omogoča, da svojim bližnjim pošljejo povezavo s poljubnim sporočilcem in odštevalnikom do momenta, ko se bodo ponovno videli.",
             links: {
               github: "https://github.com/TilenSmole/MISSYA",
               live: "https://missya.tilensmole.uk/"
@@ -717,11 +883,11 @@
               { name: "Slim", icon: "slim.svg" }
             ]
           },
-          {
+                    {
             id: "brumbrum",
             h: "BrumBrum",
             logo: "photos/brumbrum-logo.svg",
-            what: "",
+            what: "BrumBrum je preprosta osebna aplikacija, ki uporabniku omogoča, preprost izračun porabe bencina v evrih na tekoči dan. Aplikacija vzame ceno bencina na Petrolu, prevožene kilomentre in porabo avtomobila v litrih in izračuna strošek. Uporabo posebej, ko voziš avto od drugega in mu hočeš povrniti stroške.",
             links: {
               github: "https://github.com/TilenSmole/BRUMBRUM",
               live: "https://brumbrum.tilensmole.uk/"
@@ -737,7 +903,7 @@
             id: "sloopyfruits",
             h: "Sloppy Fruits",
             logo: "photos/sloopy-fruits-logo.png",
-            what: "Sloppy fruits is a slot machine simulator where players pull a lever to hit winning combinations, featuring various gameplay modifications.",
+            what: "Sloopy fruits je simulacija igralnega avtomata, kjer uporabnik potegne ročico in čaka na zmagovalno kombinacijo. Igra omogoča številne modifikacije.",
             links: {
               github: "https://github.com/TilenSmole/Sloppy_fruits"
             },
@@ -750,7 +916,7 @@
             id: "lyfio",
             h: "Lyfio",
             logo: "photos/lyfio-logo.png",
-            what: "Lyfio is a project that allows users to easily monitor expenses using tables and specialized graphs.",
+            what: "Lyfio je projekt, ki uporabnikom omogoča enostavno spremljanje stroškov z uporabo tabel in specializiranih grafov.",
             links: {
               github: "https://github.com/TilenSmole/DAYLIO"
             },
@@ -780,7 +946,7 @@
     };
     /* ========= ENGINE ========= */
     const $ = s => document.querySelector(s), area = $('#area'), pad = $('#pad');
-    let lang = 'slo', cur = 0, sheets = [], busy = false, mute = false, reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    let lang = 'en', cur = 0, sheets = [], busy = false, mute = false, reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
     const T = () => CONFIG[lang];
     function renderTechGroup(techCategory, indicator) {
       return `<h2>${T().techH}  (${indicator})</h2>` +
@@ -799,6 +965,7 @@
         </div>
       `).join('');
     }
+
     function pagesHTML() {
       const t = T(), c = CONFIG, L = t.lbl;
       let cookiesAccepted = false;
@@ -808,11 +975,11 @@
 
       const p = [
         `<h2>${t.intro.h}</h2>${t.intro.p.map(x => `<p>${x}</p>`).join('')}`,
-        `<h2>${t.about.h}</h2>${t.about.p.map(x => `<p>${x}</p>`).join('')}`,
         renderTechGroup({ Languages: c.languages, Markup: c.markup, DevOps: c.devops }, 1),
         renderTechGroup({ Frameworks: c.frameworks, Databases: c.databases }, 2),
       ];
-      t.projects.forEach(r => {
+      
+      t.projects.forEach((r, i) => {
         const linksHtml = Object.entries(r.links || {}).map(([type, url]) => {
           const icon = type === 'github' ? 'photos/github.png'
             : type === 'youtube' ? 'photos/youtube.png'
@@ -821,58 +988,66 @@
         }).join('');
 
         const techHtml = (r.tech || []).map(tc => `
-        <div class="tech-card">
-          <img src="img-icons/${tc.icon}" alt="${tc.name} icon" class="tech-icon">
-          <span>${tc.name}</span>
-        </div>
-      `).join('');
+    <div class="">
+      <img src="img-icons/${tc.icon}" alt="${tc.name} icon" class="tech-icon">
+      <span>${tc.name}</span>
+    </div>
+  `).join('');
 
         p.push(`
-        <div class="carousel-section" id="${r.id}">
-          <div class="logo-row">
-            <div class="logoDisplay">
-              <img src="${r.logo}" alt="${r.h} logo" class="logo">
-            </div>
-          </div>
-
-          <div class="project-main-row">
-            <div class="description-col">
-              <p>${r.what}</p>
-            </div>
-            <div class="socials-col">
-              <div class="linkDisplay">
-                ${linksHtml}
-              </div>
-            </div>
-          </div>
-
-          <div class="tech-section">
-            <div class="tech-items">
-              ${techHtml}
-            </div>
-          </div>
+         <h2>${t.projH} (${i + 1})</h2>
+    <div id="${r.id}">
+      <div class="logo-row">
+        <div class="logoDisplay">
+          <img src="${r.logo}" alt="${r.h} logo" class="logo">
         </div>
-      `);
-      },
-      );
+        <div class="linkDisplay">
+          ${linksHtml}
+        </div>
+      </div>
 
-      p.push(...c.videos.map((vidGroup, pageIdx) =>
-        `<h2>${t.vidH} (${pageIdx + 1})</h2>` +
-        vidGroup.map((v, i) => `
-            <div>
-              <h3>${t.vidP[(pageIdx * 2) + i] || ''}</h3>
-              ${cookiesAccepted
-            ? `<button class="vid" data-v="${v}">${t.ui.play}</button>`
-            : `<div class="vid" style="display:flex;align-items:center;justify-content:center;text-align:center;font-size:4cqw;cursor:not-allowed;">
-                     🍪 Enable cookies to view
-                   </div>`
-          }
-            </div>
-          `).join('')
-      ));
+      <div class="project-main-row">
+        <div class="description-col">
+          <p>${r.what}</p>
+        </div>
+      </div>
+
+      <div class="tech-section">
+        <div class="tech-items">
+          ${techHtml}
+        </div>
+      </div>
+    </div>
+  `);
+      });
+
+
+      let vidCount = 0;
+      p.push(...c.videos.map((vidGroup, pageIdx) => {
+        const head = `<h2>${t.vidH} (${pageIdx + 1})</h2>`;
+
+        if (!cookiesAccepted) {
+          return head + `
+      <div class="consent-msg" style="position: relative; z-index: 10;">
+        <p>${t.ui.enableVideos}</p>
+        <button class="consent-btn" data-consent onclick="setCookieConcent('accept'); window.location.reload()" id="video-consent">${t.ui.cookieAccept}</button>
+      </div>`;
+        }
+
+        return head + `<div class="vgrid">` + vidGroup.map(v => {
+          return `
+      <div class="vblock">
+        
+        <button class="vid" data-v="${v}" aria-label="${t.ui.play}"
+          style="background-image:url(https://i.ytimg.com/vi/${v}/hqdefault.jpg)">
+          <span class="play">▶</span>
+        </button>
+      </div>`;
+        }).join('') + `</div>`;
+      }));
 
       p.push(`
-      <div class="carousel-section outro-section" id="outro">
+      <div class="outro-section" id="outro">
         <div class="logo-row">
           <h2>${t.outro.h}</h2>
         </div>
@@ -880,35 +1055,38 @@
         </div>
       </div>
 
-      <footer>
-        <div class="tech-section">
-          <div class="tech-items">
-            <div class="row">
-              <p class="sec-text" data-i18n="social_header">Let's connect</p>
-            </div>
-            <div class="row linkDisplay">
-              <a href="https://github.com/TilenSmole" target="_blank" rel="noopener noreferrer" class="tech-card">
-                <img src="photos/github.png" alt="GitHub Logo" class="tech-icon">
-              </a>
-              <a href="https://tilensmole.uk" target="_blank" rel="noopener noreferrer" class="tech-card">
-                <img src="photos/world-wide-web.png" alt="Link Icon" class="tech-icon">
-              </a>
-              <a href="https://www.linkedin.com/in/tilen-smole-8550152a1/" target="_blank" rel="noopener noreferrer" class="tech-card">
-                <img src="photos/linkedin.png" alt="LinkedIn Icon" class="tech-icon">
-              </a>
-              <a href="mailto:smoletilen@gmail.com" class="tech-card">
-                <img src="photos/email.png" alt="Email Icon" class="tech-icon">
-              </a>
-            </div>
+<footer>
+  <div class="tech-section">
+    <div class="tech-items footer-content">
 
-            <a href="privacy.html" class="footer-link" data-i18n="privacy_title">Privacy Policy</a>
-            <p class="sec-text mt-2">&copy; Tilen Smole</p>
-          </div>
-        </div>
-      </footer>
-                <div class="description-col">
- ${t.outro.p.map(text => `<p>${text}</p>`).join('')}            
-          </div>
+<div class="footer-row footer-social-row">
+  <p class="sec-text" data-i18n="social_header">Let's connect</p>
+
+  <a href="https://github.com/TilenSmole" target="_blank" rel="noopener noreferrer">
+    <img src="photos/github.png" alt="GitHub Logo" class="tech-icon">
+  </a>
+  <a href="https://tilensmole.uk" target="_blank" rel="noopener noreferrer">
+    <img src="photos/world-wide-web.png" alt="Link Icon" class="tech-icon">
+  </a>
+  <a href="https://www.linkedin.com/in/tilen-smole-8550152a1/" target="_blank" rel="noopener noreferrer">
+    <img src="photos/linkedin.png" alt="LinkedIn Icon" class="tech-icon">
+  </a>
+  <a href="mailto:smoletilen@gmail.com">
+    <img src="photos/email.png" alt="Email Icon" class="tech-icon">
+  </a>
+</div>
+
+      <div class="footer-row">
+        <a href="privacy.html" class="footer-link" data-i18n="privacy_title">Privacy Policy</a>
+      </div>
+
+      <div class="footer-row">
+        <p class="sec-text mt-2">&copy; Tilen Smole</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
     `);
 
       return p;
@@ -921,13 +1099,19 @@
         e.style.clipPath = jag(); e.innerHTML = `<div class="inner">${h}</div>`;
         [...e.firstChild.children].forEach((c, k) => c.style.setProperty('--i', k));
         if (i < pg.length - 1) { const b = document.createElement('button'); b.className = 'curl'; b.setAttribute('aria-label', T().ui.next); b.onclick = e2 => { e2.stopPropagation(); if (!e2.detail) next() }; e.append(b) }
-        if (i === 0 && !seen()) { const t = document.createElement('div'); t.className = 'hint'; t.textContent = T().ui.pull + ' ↗'; e.append(t) }
+        if (i === 0) { const t = document.createElement('div'); t.className = 'hint'; t.textContent = T().ui.pull + ' ↗'; e.append(t) }
         area.append(e); return e
       });
       layout();
     }
+
     function layout() {
       $('#pl').textContent = T().ui.plain;
+      const u = T().ui;
+      document.querySelector('[data-i18n="cookie_text"]').textContent = u.cookieText;
+      document.querySelector('[data-i18n="cookie_privacy"]').textContent = u.cookiePrivacy;
+      $('#cookie-reject').textContent = u.cookieReject;
+      $('#cookie-accept').textContent = u.cookieAccept;
       document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.id === lang));
       const plain = false;
       sheets.forEach((e, i) => {
@@ -974,6 +1158,17 @@
       };
     });
 
+    // Global event listener for inline video cookie consent buttons
+    document.addEventListener('click', (e) => {
+      const consentBtn = e.target.closest('[data-consent]');
+      if (!consentBtn) return;
+
+      // Force-set localStorage directly
+      localStorage.setItem('cookie-consent-choice', 'accept');
+
+      // Reload immediately
+      window.location.reload();
+    });
     addEventListener('keydown', e => {
       if (e.target.tagName === 'BUTTON' && e.key === ' ') return;
       if (['ArrowRight', 'ArrowDown'].includes(e.key)) next(); if (['ArrowLeft', 'ArrowUp'].includes(e.key)) go(Math.max(0, cur - 1)); if (e.key === 'Home') go(0)
@@ -981,10 +1176,15 @@
     /* drag-to-tear from any corner */
     let d = null, raf = 0; window.dragging = false;
     area.addEventListener('pointerdown', e => {
-      const s = sheets[cur]; if (reduce || busy || !s || cur >= LAST() || !s.contains(e.target) || e.target.closest('a,iframe,.vid')) return;
+      const s = sheets[cur];
+      // Add e.target.closest('[data-consent], .consent-msg') here so drag capture doesn't steal the click!
+      if (reduce || busy || !s || cur >= LAST() || !s.contains(e.target) || e.target.closest('a,iframe,.vid,[data-consent], .consent-msg')) return;
+
       const r = s.getBoundingClientRect(), gx = e.clientX - r.left, gy = e.clientY - r.top, px = gx < r.width / 2 ? r.width : 0, py = gy < r.height / 2 ? r.height : 0;
       s.style.transformOrigin = `${px}px ${py}px`;
-      d = { x: e.clientX, y: e.clientY, t: performance.now(), s, gx: gx - px, gy: gy - py, a: 0, dx: 0, dy: 0, curl: !!e.target.closest('.curl') }; dragging = true; s.setPointerCapture(e.pointerId)
+      d = { x: e.clientX, y: e.clientY, t: performance.now(), s, gx: gx - px, gy: gy - py, a: 0, dx: 0, dy: 0, curl: !!e.target.closest('.curl') };
+      dragging = true;
+      s.setPointerCapture(e.pointerId);
     });
     area.addEventListener('pointermove', e => {
       if (!d) return; const dx = e.clientX - d.x, dy = e.clientY - d.y, a = Math.atan2(d.gy + dy, d.gx + dx) - Math.atan2(d.gy, d.gx);
@@ -1000,8 +1200,14 @@
     area.addEventListener('pointerup', endDrag); area.addEventListener('pointercancel', endDrag);
     /* lazy video embeds */
     area.addEventListener('click', e => {
-      const b = e.target.closest('button.vid'); if (!b) return; const f = document.createElement('iframe'); f.className = 'vid';
+      const b = e.target.closest('button.vid[data-v]'); if (!b) return;
+      const f = document.createElement('iframe'); f.className = 'vid';
       f.src = `https://www.youtube-nocookie.com/embed/${b.dataset.v}?autoplay=1&rel=0`; f.allow = 'autoplay;encrypted-media;fullscreen'; f.title = 'Video'; b.replaceWith(f)
+    });
+    area.addEventListener('click', e => {
+      if (e.target.closest('a,iframe,.vid,.consent-btn')) $('#cookie-accept').click();
+      if (e.target.closest('video-consent')) $('#video-consent').click();
+
     });
     /* drifting tech badges (canvas, text-only, paused when hidden) */
     (function () {
@@ -1085,6 +1291,7 @@
       })();
     })();
     build();
+
   </script>
 </body>
 

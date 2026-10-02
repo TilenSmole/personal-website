@@ -513,42 +513,6 @@ footer .tech-card {
 }
 
 /* ==========================================================================
-   COOKIES / PRIVACY BANNER
-   ========================================================================== */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  background-color: var(--gray2);
-  color: var(--cookie-text);
-  padding: 1.5rem;
-  display: none;
-  transition: transform 0.3s ease-in-out;
-}
-
-.cookie-banner.is-visible {
-  display: flex;
-  justify-content: center;
-}
-
-.cookie-content {
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.cookie-actions {
-  display: flex;
-  gap: 1rem;
-}
-
-/* ==========================================================================
    SKILLS GRID
    ========================================================================== */
 .skills-grid {
@@ -741,3 +705,21 @@ img {
   }
 }
 
+/* ==========================================================================
+   STICKY FIX (only addition): home + aboutMe stay sticky, the tall
+   sections grow with their content and scroll normally
+   ========================================================================== */
+@media (max-width: 1200px) {
+  #home,
+  #aboutMe,
+  #projects,
+  #videos {
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  #projects,
+  #videos {
+    position: relative;
+  }
+}

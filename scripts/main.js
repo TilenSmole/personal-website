@@ -60,50 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("showMyInfo").addEventListener('click', showMyInfo);
 });
 
-(() => {
-    const banner = document.getElementById('cookie-consent');
-    const acceptBtn = document.getElementById('cookie-accept');
-    const rejectBtn = document.getElementById('cookie-reject');
 
-    const consentChoice = localStorage.getItem('cookie-consent-choice');
-
-    if (!consentChoice) {
-        banner.setAttribute('aria-hidden', 'false');
-        banner.classList.add('is-visible');
-    }
-
-    const handleChoice = (choice) => {
-        setCookieConcent(choice);
-        banner.classList.remove('is-visible');
-        banner.setAttribute('aria-hidden', 'true');
-
-        if (choice === 'accept') {
-            initAnalytics();
-            window.location.reload();
-        }
-    };
-
-    acceptBtn.addEventListener('click', () => handleChoice('accept'));
-    rejectBtn.addEventListener('click', () => handleChoice('reject'));
-})();
-
-function setCookieConcent(choice) {
-    localStorage.setItem('cookie-consent-choice', choice);
-}
-
-function initAnalytics() {
-    const gtagScript = document.createElement('script');
-    gtagScript.async = true;
-    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-2QE406BX4M";
-
-    document.head.appendChild(gtagScript);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-
-    gtag('js', new Date());
-    gtag('config', 'G-2QE406BX4M');
-}
 
 function initCarousel() {
     const carousel = document.getElementById("controls");
@@ -220,3 +177,4 @@ window.addEventListener('load', () => {
 window.addEventListener('popstate', () => {
   goTo(location.hash.slice(1) || 'home', false);
 });
+
