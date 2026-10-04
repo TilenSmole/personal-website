@@ -27,7 +27,6 @@ function loadHTML(selector, url) {
 
 document.addEventListener("DOMContentLoaded", function () {
     if (window.contentLoaded) {
-        console.log("Content already loaded, skipping...");
         return;
     }
     window.contentLoaded = true;

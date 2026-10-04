@@ -5,9 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Tilen Smole · Portfolio</title>
-  <meta name="description" content="Portfolio of a full-stack web developer with 6 years of experience: games, web apps and playful interactive projects built with JavaScript, React, Flutter and more.">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap"
-    rel="stylesheet">
+  <meta name="description"
+    content="Portfolio of a full-stack web developer with 6 years of experience: games, web apps and playful interactive projects built with JavaScript, React, Flutter and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap"
+  media="print" onload="this.media='all'">
   <script src="scripts/privacy.js" defer></script>
   <link rel="stylesheet" href="global.css">
 
@@ -45,37 +49,37 @@
     }
 
     /* Footer Layout Structure */
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  gap: 1rem;
-  width: 100%;
-}
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      gap: 1rem;
+      width: 100%;
+    }
 
-.footer-row {
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  width: 100%;
-  margin-bottom: 1rem;
-}
+    .footer-row {
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
 
-.footer-social-row {
-  display: flex-start;
-  flex-wrap: wrap;
-  justify-content: left;
-  align-items: left;
-  gap: 1.25rem;
-  width: 100%;
-}
+    .footer-social-row {
+      display: flex-start;
+      flex-wrap: wrap;
+      justify-content: left;
+      align-items: left;
+      gap: 1.25rem;
+      width: 100%;
+    }
 
-/* Forces the paragraph to take up the full row, pushing the icons underneath */
-.footer-social-row p {
-  flex: 0 0 100%;
-  text-align: left;
-  margin: 0;
-}
+    /* Forces the paragraph to take up the full row, pushing the icons underneath */
+    .footer-social-row p {
+      flex: 0 0 100%;
+      text-align: left;
+      margin: 0;
+    }
 
     html,
     body {
@@ -127,23 +131,23 @@
       z-index: 999
     }
 
-#strip button,
-#strip a {
-  font: inherit;
-  line-height: 1;
-  color: #fff;
-  background: #0002;
-  border: .35cqw dashed #fff9;
-  border-radius: 1.2cqw;
-  min-width: 6.2cqw;
-  height: 6.4cqw;
-  padding: 0 1.5cqw 0;   
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
+    #strip button,
+    #strip a {
+      font: inherit;
+      line-height: 1;
+      color: #fff;
+      background: #0002;
+      border: .35cqw dashed #fff9;
+      border-radius: 1.2cqw;
+      min-width: 6.2cqw;
+      height: 6.4cqw;
+      padding: 0 1.5cqw 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
 
     #strip button:hover,
     #strip button:focus-visible,
@@ -172,7 +176,7 @@
       gap: 1.5cqw;
       align-items: center;
       flex-direction: column;
-       gap: 0.75rem;
+      gap: 0.75rem;
     }
 
     .social-icon {
@@ -285,12 +289,15 @@
     }
 
     .tech-items {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; /* Allows them to wrap to the next line if there are too many */
-  gap: 1rem;       /* Space between each tech card */
-  align-items: center;
-}
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      /* Allows them to wrap to the next line if there are too many */
+      gap: 1rem;
+      /* Space between each tech card */
+      align-items: center;
+    }
+
     .vid .play {
       position: absolute;
       inset: 0;
@@ -349,12 +356,16 @@
       z-index: 5;
       font-size: 0
     }
-.logo-row {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centers the logo and links horizontally */
-  gap: 1.5rem;             /* Space between the logo and the vertical links */
-}
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Centers the logo and links horizontally */
+      gap: 1.5rem;
+      /* Space between the logo and the vertical links */
+    }
+
     .hint {
       position: absolute;
       right: 12cqw;
@@ -394,15 +405,15 @@
     }
 
     /* Smooth lift effect on social icon hover */
-.footer-row a {
-  margin-left: 0.3rem;
-  display: inline-block;
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    .footer-row a {
+      margin-left: 0.3rem;
+      display: inline-block;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.footer-row a:hover {
-  transform: translateY(-4px) scale(1.05);
-}
+    .footer-row a:hover {
+      transform: translateY(-4px) scale(1.05);
+    }
 
     .toolbar {
       display: flex;
@@ -411,7 +422,15 @@
       margin-left: auto;
     }
 
+    #strip #pl {
+      background: white;
+      color: black;
+    }
 
+    #strip #pl:hover,
+    #strip #pl:focus-visible {
+      color: gray;
+    }
   </style>
 </head>
 
@@ -448,22 +467,24 @@
     <div id="area"></div>
 
   </main>
-<noscript>
-  <h1>Tilen Smole – Full-stack developer</h1>
-  <p>Full-stack developer with 2 years of experience.</p>
-  <ul>
-    <li><a href="https://missya.tilensmole.uk/">MissYa</a> – countdown links for loved ones (Ruby, Slim)</li>
-  </ul>
-  <a href="plain.html">Plain version</a>
-</noscript> 
-<link rel="canonical" href="https://tilensmole.uk/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tilen Smole · Portfolio">
-<meta property="og:description" content="Full-stack developer building playful, fast web things.">
-<meta property="og:image" content="https://tilensmole.uk/photos/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
+  <noscript>
+     <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap">
+    <h1>Tilen Smole – Full-stack developer</h1>
+    <p>Full-stack developer with 2 years of experience.</p>
+    <ul>
+      <li><a href="https://missya.tilensmole.uk/">MissYa</a> – countdown links for loved ones (Ruby, Slim)</li>
+    </ul>
+    <a href="plain.html">Plain version</a>
+  </noscript>
+  <link rel="canonical" href="https://tilensmole.uk/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tilen Smole · Portfolio">
+  <meta property="og:description" content="Full-stack developer building playful, fast web things.">
+  <meta property="og:image" content="https://tilensmole.uk/photos/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
 
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -477,7 +498,7 @@
 }
 </script>
 
-<script>
+  <script>
     const CONFIG = {
       name: "Tilen Smole",
       videos: [
@@ -531,7 +552,7 @@
         { name: 'Azure', icon: 'azure.svg' }
       ],
 
-       en: {
+      en: {
         ui: {
           enableVideos: "Please accept cookies to watch the videos", cookieText: "This website uses cookies. You can accept or reject them.",
           cookiePrivacy: "Privacy policy",
@@ -825,7 +846,7 @@
             id: "zmejelov",
             h: "Zmejelov",
             logo: "logos/zmejelov (1).png",
-            what:    "Zmejelov je projekt, ki je nastal kot diplomsko delo. Platforma vključuje 5 tematsko povezanih iger in združuje različne tehnologije ter kreativnost.",
+            what: "Zmejelov je projekt, ki je nastal kot diplomsko delo. Platforma vključuje 5 tematsko povezanih iger in združuje različne tehnologije ter kreativnost.",
             links: {
               youtube: "https://www.youtube.com/watch?v=WkpYCOwkyK4",
               github: "https://github.com/TilenSmole/ZMEJELOV",
@@ -844,7 +865,7 @@
             id: "panap",
             h: "Panap",
             logo: "photos/panap-logo.png",
-            what:   "Panap je kompleksna aplikacija za vodenje evidence shrambe. Uporabnik lahko pregleduje recepte, dodaja v košarico in prejema predloge za tedenski meni.",
+            what: "Panap je kompleksna aplikacija za vodenje evidence shrambe. Uporabnik lahko pregleduje recepte, dodaja v košarico in prejema predloge za tedenski meni.",
 
             links: {},
             tech: [
@@ -859,8 +880,8 @@
             id: "monobank",
             h: "Monobank",
             logo: "photos/mono-bank-logo.png",
-what:  "Monobank revolucionira Monopoly. Igralec, ki predstavlja banko, odpre novo igro, nato pa se ji igralci pridružijo preko kode. Aplikacija omogoča enostavno vodenje financ in pošiljanje denarja.",
-links: {},
+            what: "Monobank revolucionira Monopoly. Igralec, ki predstavlja banko, odpre novo igro, nato pa se ji igralci pridružijo preko kode. Aplikacija omogoča enostavno vodenje financ in pošiljanje denarja.",
+            links: {},
             tech: [
               { name: "JavaScript", icon: "javascript.svg" },
               { name: "React", icon: "react.svg" },
@@ -873,7 +894,7 @@ links: {},
             id: "missya",
             h: "MissYa",
             logo: "photos/missya-logo.png",
-            what:   "MissYa je preprost projekt, ki uporabnikom omogoča, da svojim bližnjim pošljejo povezavo s poljubnim sporočilcem in odštevalnikom do momenta, ko se bodo ponovno videli.",
+            what: "MissYa je preprost projekt, ki uporabnikom omogoča, da svojim bližnjim pošljejo povezavo s poljubnim sporočilcem in odštevalnikom do momenta, ko se bodo ponovno videli.",
             links: {
               github: "https://github.com/TilenSmole/MISSYA",
               live: "https://missya.tilensmole.uk/"
@@ -883,7 +904,7 @@ links: {},
               { name: "Slim", icon: "slim.svg" }
             ]
           },
-                    {
+          {
             id: "brumbrum",
             h: "BrumBrum",
             logo: "photos/brumbrum-logo.svg",
@@ -978,7 +999,7 @@ links: {},
         renderTechGroup({ Languages: c.languages, Markup: c.markup, DevOps: c.devops }, 1),
         renderTechGroup({ Frameworks: c.frameworks, Databases: c.databases }, 2),
       ];
-      
+
       t.projects.forEach((r, i) => {
         const linksHtml = Object.entries(r.links || {}).map(([type, url]) => {
           const icon = type === 'github' ? 'photos/github.png'
@@ -1211,21 +1232,7 @@ links: {},
     });
     /* drifting tech badges (canvas, text-only, paused when hidden) */
     (function () {
-      const cv = $('#bg'), x = cv.getContext('2d'); let W, H;
-
-      // Pull all icon file names dynamically from CONFIG.tech
-      const allIcons = Object.values({ ...CONFIG.frameworks, ...CONFIG.languages, ...CONFIG.markup, ...CONFIG.databases, ...CONFIG.devops })
-        .flatMap(categoryItems => categoryItems)
-        .map(item => item?.icon ?? item)
-        .filter(Boolean);
-
-      // Filter to only include icons present in your confirmed file list
-      const validFiles = [
-        "bash.svg", "clojurescript.svg", "csharp.svg", "css.svg", "dart.svg",
-        "flutter.svg", "git.svg", "github.svg", "go.svg", "html.svg",
-        "java.svg", "javascript.svg", "phaser.svg", "php.svg", "postgresql.svg",
-        "prisma.svg", "python.svg", "rails.svg", "react.svg", "ruby.svg", "typescript.svg"
-      ];
+      const cv = $('#bg'), x = cv.getContext('2d'); let W, H; 
 
       const fileNames = Object.values({ ...CONFIG.frameworks, ...CONFIG.languages, ...CONFIG.markup, ...CONFIG.databases, ...CONFIG.devops })
         .flat()

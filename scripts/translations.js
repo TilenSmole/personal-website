@@ -1,6 +1,5 @@
 async function updateLanguage(lang) {
   try {
-    console.log(lang);
     const response = await fetch(`/translations/${lang}.json`);
     if (!response.ok) throw new Error(`Could not load ${lang}`);
     
@@ -19,7 +18,6 @@ async function updateLanguage(lang) {
     localStorage.setItem('preferredLang', lang);
 
   } catch (error) {
-    console.error("i18n Error:", error);
   }
 }
 function initI18n() {

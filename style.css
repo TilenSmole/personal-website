@@ -69,10 +69,6 @@ h2 {
   margin-left: var(--uni-margin);
 }
 
-.sec-text {
-  color: var(--secondary-color);
-}
-
 /* ==========================================================================
    PAGE LAYOUT / SECTIONS / STACKING CARDS (FIXED STACK & FOOTER)
    ========================================================================== */
@@ -455,7 +451,7 @@ footer {
 footer .sec-text {
   margin: 0;
   font-size: 0.95rem;
-  color: var(--sub-box-color);
+  color: var(--secondary-color);
 }
 
 footer .row {
@@ -481,7 +477,7 @@ footer .tech-card {
 }
 
 .footer-link {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--secondary-color);
 }
 
 .circle-column {
@@ -706,20 +702,133 @@ img {
 }
 
 /* ==========================================================================
-   STICKY FIX (only addition): home + aboutMe stay sticky, the tall
-   sections grow with their content and scroll normally
+   MOBILE / TABLET: disable stacking cards, let sections grow with content
    ========================================================================== */
 @media (max-width: 1200px) {
   #home,
   #aboutMe,
   #projects,
   #videos {
-    height: auto;
+    position: relative;   /* no more sticky stacking */
+    height: auto;         /* grow with content */
+    min-height: 100vh;
     min-height: 100dvh;
   }
 
-  #projects,
-  #videos {
-    position: relative;
+  /* content must be able to shrink inside flex rows */
+  #introText,
+  #me,
+  #projectsCarousel,
+  #videosCarousel,
+  #videos > div {
+    min-width: 0;
+    width: 100%;
   }
+
+  .carousel-section {
+    min-height: 0;        /* 70vh forces extra empty space on phones */
+  }
+
+  /* videos */
+  .video-container {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .video-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .video-card iframe {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* images/media never exceed the screen */
+  img,
+  iframe {
+    max-width: 100%;
+  }
+
+  /* stop floating decorations causing horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  #myName {
+    font-size: clamp(2.5rem, 14vw, 4rem);
+    padding: 0 0.5rem;
+  }
+
+  .scroll-arrow {
+    font-size: 4rem;
+    margin-top: 3rem;
+  }
+
+  .tech-items {
+    margin: 0.5rem;
+    justify-content: center;
+  }
+
+  .description-col {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+}
+
+.skills-grid {
+  align-items: start;
+}
+
+.skill-box summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+}
+
+.skill-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.skill-box summary::after {
+  content: "▾";
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+.skill-box[open] summary {
+  margin-bottom: 20px;
+}
+
+.skill-box[open] summary::after {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1200px) {
+  .carousel-item,
+  .carousel-item-inner {
+    display: contents; 
+        width: 50%;
+
+  }
+
+@media (max-width: 1200px) {
+  .carousel-section {
+    flex: 0 0 calc(100% - 2rem);
+    width: auto;
+    margin: 1rem;
+    box-sizing: border-box;
+  }
+}
 }

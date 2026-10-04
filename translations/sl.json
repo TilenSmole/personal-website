@@ -40,5 +40,7 @@
   "sec7_title": "7. Vaša izbira",
   "status_label": "Trenutni status:",
   "reset_btn": "Ponastavi mojo izbiro piškotkov",
-  "video_disallow_text": "Za ogled videoposnetkov omogočite piškotke"
+  "video_disallow_text": "Za ogled videoposnetkov omogočite piškotke",
+  "devops": "DevOps & Cloud",
+  "frameworks":"Frameworks & Libraries"
 }

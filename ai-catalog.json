@@ -1,8 +1,12 @@
 {
   "specVersion": "1.0",
-  "host": {
-    "displayName": "Tilen Smole",
-    "identifier": "did:web:tilensmole.uk"
-  },
-  "entries": []
+  "host": { "displayName": "Tilen Smole" },
+  "entries": [
+    {
+      "identifier": "urn:air:tilensmole.uk:site:portfolio",
+      "displayName": "Portfolio",
+      "entries": [],
+      "url": "https://tilensmole.uk/openapi.json"
+    }
+  ]
 }
