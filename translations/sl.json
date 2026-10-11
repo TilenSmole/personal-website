@@ -111,9 +111,7 @@
           { "name": "JavaScript", "icon": "javascript.svg" },
           { "name": "React", "icon": "react.svg" },
           { "name": "TypeScript", "icon": "typescript.svg" },
-          { "name": "CSS", "icon": "css.svg" },
-          { "name": "NodeJS", "icon": "nodejs.svg" }
-        ]
+          { "name": "CSS", "icon": "css.svg" }        ]
       },
       {
         "id": "missya",

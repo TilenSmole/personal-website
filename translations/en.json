@@ -12,7 +12,7 @@
   "projects_title": "PROJECTS",
   "project_lyfio": "Lyfio is a project that allows users to easily monitor expenses using tables and specialized graphs.",
   "project_missya": "MissYa is a projects that allows users to create and send missyas. Missya is a simple message that a user can create, with the option to add time of an upcoming event.  This last feature lets a user, for example, send their better half a link to a page that displays a countdown until they see each other again.  Users can also choose between different themes to make a missya feel more personal. After creating a missya, the user gets a link that can be shared with others, and in the main menu they can see a dashboard with all of their missyas.",
-  "project_monobank": "Monobank is an aplication that improves the UX of my favorite game, MONOPOLY. Instead of having physical money, each user now has their own mobile bank. At the start of the game the player who will also be the bank creates the game and then all the other users join using a code. When a user has to spend money they simply select the recipient and in three clicks the other user’s balance will update. This is possible, because of the useage of  sockets. If the user has to receive the money, the user who plays the bank simply selects the recipient and sends them money as a bank.",
+  "project_monobank": "Monobank is an aplication that improves the UX of my favorite game, MONOPOLY. Instead of having physical money, each user now has their own mobile bank. At the start of the game the player who will also be the bank creates the game and then all the other users join using a code. When a user has to spend money they simply select the recipient and in three clicks the other user’s balance will update. This is possible, because of the usage of  sockets. If the user has to receive the money, the user who plays the bank simply selects the recipient and sends them money as a bank.",
   "project_panap": "TL;DR, Panap is a digitalized pantry. In a broader sense Panap is a complex system that allows the user to track their recipes, add ingredients to the shopping list, plan weekly meals, and save their receipts,  save their receipts and analyze them with the help of AI. It also includes a notepad system, both at the app level and at the level of individual recipes. It also offers currency conversion.The whole system is backed up daily.  ",
   "project_sloopy": "Sloopy fruits is a slot machine simulator where players pull a lever to hit winning combinations, featuring various gameplay modifications.",
   "project_wp_site": "Server that hosts all my applications and APIs, including this website.",
@@ -138,7 +138,7 @@
         "id": "monobank",
         "h": "Monobank",
         "logo": "photos/mono-bank-logo.png",
-        "what": "Monobank is an aplication that improves the UX of my favorite game, MONOPOLY. Instead of having physical money, each user now has their own mobile bank. At the start of the game the player who will also be the bank creates the game and then all the other users join using a code. When a user has to spend money they simply select the recipient and in three clicks the other user’s balance will update. This is possible, because of the useage of  sockets. If the user has to receive the money, the user who plays the bank simply selects the recipient and sends them money as a bank.",
+        "what": "Monobank is an aplication that improves the UX of my favorite game, MONOPOLY. Instead of having physical money, each user now has their own mobile bank. At the start of the game the player who will also be the bank creates the game and then all the other users join using a code. When a user has to spend money they simply select the recipient and in three clicks the other user’s balance will update. This is possible, because of the usage of  sockets. If the user has to receive the money, the user who plays the bank simply selects the recipient and sends them money as a bank.",
         "links": {},
         "tech": [
           {
@@ -156,10 +156,6 @@
           {
             "name": "CSS",
             "icon": "css.svg"
-          },
-          {
-            "name": "NodeJS",
-            "icon": "nodejs.svg"
           }
         ]
       },

@@ -156,10 +156,6 @@
           {
             "name": "CSS",
             "icon": "css.svg"
-          },
-          {
-            "name": "NodeJS",
-            "icon": "nodejs.svg"
           }
         ]
       },
