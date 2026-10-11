@@ -11,12 +11,12 @@
   "videos": "VIDEO VSEBINA",
   "projects_title": "PROJEKTI",
   "project_lyfio": "Lyfio je projekt, ki uporabniku omogoča enostavno monitoriranje stroškov z uporabo tabel oz. namenskih grafov.",
-  "project_missya": "MissYa je preprost projekt, ki uporabnikom omogoča, da svojim bližnjim pošljejo povezavo s poljubnim sporočilcem in odštevalnikom do momenta, ko se bodo ponovno videli.",
-  "project_monobank": "Monobank revolucionira Monopoly. Igralec, ki predstavlja banko, odpre novo igro, nato pa se ji igralci pridružijo preko kode. Aplikacija omogoča enostavno vodenje financ in pošiljanje denarja.",
-  "project_panap": "Panap je kompleksna aplikacija za vodenje evidence shrambe. Uporabnik lahko pregleduje recepte, dodaja v košarico in prejema predloge za tedenski meni.",
+  "project_missya": "MissYa je projekt, ki uporabniku omogoča enostavno pošiljanje t.i \"missyas\". Missya je preprosto sporočilce, ki ga uporabnik ustvari, pri tem pa ima tudi opcijo uporabiti uro do kakega dogodka. Ta zadnja funkcionalnost npr. omogoča, da  svoji boljši polovici uporabnik pošlje link do povezave, ki bo za njiju odštevala čas do njunega naslednjega srečanja. Poleg sporočilca in odštevalnika lahko uporabnik izbera tudi med različnimi temami, ki dopolnjujejo sporočilce, da ustvarijo pravilno vzdušje. Po kreaciji se uporabniku ustvari link, ki ga pošlje prejemniku, vedno pa lahko uporabnik vidi tudi svojo zgodovino \"missyas\".",
+  "project_monobank": "Monobank je aplikacija, ki izboljša uporabnikovo izkušnjo pri igranju moje najljubše igre - MONOPOLY. Namesto fizičnega denarja, ima vsak uporabnik sedaj svojo mobilno banko. Na začetku igralec, ki bo imel tudi vlogo banke ustvari igro, potem se ji uporabniku pridružijo preko kode in nato se igra prične. Ko mora uporabnit zapraviti svoj denar, samo izbere prejemnika in v 3 klikih bo drugi uporabnik ali pa banka videla nakazilo. Sinhronizacija poteka v realanem času preko t.i socketov. Če pa uporabnik prejme denar od banke pa to izvede uporabnik, ki igra tudi banko, saj ima posebno vlogo, ki mu omogoča nakazovanje denarja drugim uporabnikov v imenu le-te.",
+  "project_panap": "Panap z dvema besedama digitaliza shrambo. V širšem pomenu pa predstavlja sistem, ki uporabniku omogoča enostavno shranjevanje receptov, dodajanje sestavin iz njih v nakupovalno košarico, planiranje tedenskega menija, shranjevanje vseh nakupovalnih računov in njihovo analizo s pomočje UI. Vključuje tudi napreden sistem beležke, na nivoju aplikacije in receptov, enostavno pretvorbo med različnimi valutami. Celoten sistem ima narejeno tudi samodejno ustvarjanje  varnostnih kopij.",
   "project_sloopy": "Sloopy fruits je simulacija igralnega avtomata, kjer uporabnik potegne ročico in čaka na zmagovalno kombinacijo. Igra omogoča številne modifikacije.",
-  "project_wp_site": "Osebna spletna stran je preprosto spletišče, napisano v Wordpressu.",
-  "project_zmejelov": "Zmejelov je projekt, ki je nastal kot diplomsko delo. Platforma vključuje 5 tematsko povezanih iger in združuje različne tehnologije ter kreativnost.",
+  "project_wp_site": "Server, ki gosti vse moje aplikacije in API-je, med drugim tudi to spletišče.",
+  "project_zmejelov": "Zmejelov je en mojih prvih večjih projektov. Iz preproste igrice se je prelevil v kompleksno igralno platformo s petimi različnimi a tematsko povezani igrami, z lestvicami , ki pripravijo igralca, do tekmovalnosti. Projetk je zanimiv, ker poleg vseh tehničnih kompleksnosti vsebuje tudi veliko mero kreativnost.",
   "project_brumbrum": "BrumBrum je preprosta osebna aplikacija, ki uporabniku omogoča, preprost izračun porabe bencina v evrih na tekoči dan. Aplikacija vzame ceno bencina na Petrolu, prevožene kilomentre in porabo avtomobila v litrih in izračuna strošek. Uporabo posebej, ko voziš avto od drugega in mu hočeš povrniti stroške.",
   "cookie_text": "Za izboljšanje vaše izkušnje uporabljamo piškotke. Preberite našo",
   "cookie_privacy": "Politiko zasebnosti",
@@ -42,5 +42,158 @@
   "reset_btn": "Ponastavi mojo izbiro piškotkov",
   "video_disallow_text": "Za ogled videoposnetkov omogočite piškotke",
   "devops": "DevOps & Cloud",
-  "frameworks":"Frameworks & Libraries"
+  "frameworks": "Frameworks & Libraries",
+
+  "page": {
+    "ui": {
+      "enableVideos": "Za ogled videoposnetkov omogočite piškotke",
+      "cookieAccept": "Sprejmi",
+      "pull": "potegni, da odtrgaš!",
+      "next": "Odtrgaj stran",
+      "back": "Nazaj",
+      "home": "Domov",
+      "play": "▶ Predvajaj",
+      "plain": "Klasična stran"
+    },
+    "intro": {
+      "h": "Živjo, jaz sem Tilen!",
+      "p": [
+        "Diplomirani inženir računalništva in informatike",
+        "Full-stack razvijalec s skoraj 3 leti izkušenj, navdušen nad večino tehnologij in njihovim delovanjem. Vedno v iskanju novega znanja."
+      ]
+    },
+    "outro": {
+      "h": "To je vse! Hvala za obisk ✌"
+    },
+    "techH": "Moja znanja",
+    "vidH": "Moji videoposnetki",
+    "projH": "Projekti",
+    "projects": [
+      {
+        "id": "zmejelov",
+        "h": "Zmejelov",
+        "logo": "logos/zmejelov (1).png",
+        "what": "Zmejelov je en mojih prvih večjih projektov. Iz preproste igrice se je prelevil v kompleksno igralno platformo s petimi različnimi a tematsko povezani igrami, z lestvicami , ki pripravijo igralca, do tekmovalnosti. Projetk je zanimiv, ker poleg vseh tehničnih kompleksnosti vsebuje tudi veliko mero kreativnost.",
+        "links": {
+          "youtube": "https://www.youtube.com/watch?v=WkpYCOwkyK4",
+          "github": "https://github.com/TilenSmole/ZMEJELOV",
+          "live": "https://zmejelov.azurewebsites.net/"
+        },
+        "tech": [
+          { "name": "HTML", "icon": "html.svg" },
+          { "name": "JavaScript", "icon": "javascript.svg" },
+          { "name": "PHP", "icon": "php.svg" },
+          { "name": "Phaser", "icon": "phaser.svg" },
+          { "name": "CSS", "icon": "css.svg" },
+          { "name": "SQL", "icon": "mysql.svg" }
+        ]
+      },
+      {
+        "id": "panap",
+        "h": "Panap",
+        "logo": "photos/panap-logo.png",
+        "what": "Panap z dvema besedama digitaliza shrambo. V širšem pomenu pa predstavlja sistem, ki uporabniku omogoča enostavno shranjevanje receptov, dodajanje sestavin iz njih v nakupovalno košarico, planiranje tedenskega menija, shranjevanje vseh nakupovalnih računov in njihovo analizo s pomočje UI. Vključuje tudi napreden sistem beležke, na nivoju aplikacije in receptov, enostavno pretvorbo med različnimi valutami. Celoten sistem ima narejeno tudi samodejno ustvarjanje  varnostnih kopij.",
+        "links": {},
+        "tech": [
+          { "name": "Flutter", "icon": "flutter.svg" },
+          { "name": "TypeScript", "icon": "typescript.svg" },
+          { "name": "PostGres", "icon": "postgresql.svg" },
+          { "name": "React", "icon": "react.svg" }
+                ]
+      },
+      {
+        "id": "monobank",
+        "h": "Monobank",
+        "logo": "photos/mono-bank-logo.png",
+        "what": "Monobank je aplikacija, ki izboljša uporabnikovo izkušnjo pri igranju moje najljubše igre - MONOPOLY. Namesto fizičnega denarja, ima vsak uporabnik sedaj svojo mobilno banko. Na začetku igralec, ki bo imel tudi vlogo banke ustvari igro, potem se ji uporabniku pridružijo preko kode in nato se igra prične. Ko mora uporabnit zapraviti svoj denar, samo izbere prejemnika in v 3 klikih bo drugi uporabnik ali pa banka videla nakazilo. Sinhronizacija poteka v realanem času preko t.i socketov. Če pa uporabnik prejme denar od banke pa to izvede uporabnik, ki igra tudi banko, saj ima posebno vlogo, ki mu omogoča nakazovanje denarja drugim uporabnikov v imenu le-te.",
+        "links": {},
+        "tech": [
+          { "name": "JavaScript", "icon": "javascript.svg" },
+          { "name": "React", "icon": "react.svg" },
+          { "name": "TypeScript", "icon": "typescript.svg" },
+          { "name": "CSS", "icon": "css.svg" },
+          { "name": "NodeJS", "icon": "nodejs.svg" }
+        ]
+      },
+      {
+        "id": "missya",
+        "h": "MissYa",
+        "logo": "photos/missya-logo.png",
+        "what": "MissYa je projekt, ki uporabniku omogoča enostavno pošiljanje t.i \"missyas\". Missya je preprosto sporočilce, ki ga uporabnik ustvari, pri tem pa ima tudi opcijo uporabiti uro do kakega dogodka. Ta zadnja funkcionalnost npr. omogoča, da  svoji boljši polovici uporabnik pošlje link do povezave, ki bo za njiju odštevala čas do njunega naslednjega srečanja. Poleg sporočilca in odštevalnika lahko uporabnik izbera tudi med različnimi temami, ki dopolnjujejo sporočilce, da ustvarijo pravilno vzdušje. Po kreaciji se uporabniku ustvari link, ki ga pošlje prejemniku, vedno pa lahko uporabnik vidi tudi svojo zgodovino \"missyas\".",
+        "links": {
+          "github": "https://github.com/TilenSmole/MISSYA",
+          "live": "https://missya.tilensmole.uk/"
+        },
+        "tech": [
+          { "name": "Ruby", "icon": "ruby.svg" },
+          { "name": "Slim", "icon": "slim.svg" }
+        ]
+      },
+      {
+        "id": "brumbrum",
+        "h": "BrumBrum",
+        "logo": "photos/brumbrum-logo.svg",
+        "what": "BrumBrum je preprosta osebna aplikacija, ki uporabniku omogoča, preprost izračun porabe bencina v evrih na tekoči dan. Aplikacija vzame ceno bencina na Petrolu, prevožene kilomentre in porabo avtomobila v litrih in izračuna strošek. Uporabo posebej, ko voziš avto od drugega in mu hočeš povrniti stroške.",
+        "links": {
+          "github": "https://github.com/TilenSmole/BRUMBRUM",
+          "live": "https://brumbrum.tilensmole.uk/"
+        },
+        "tech": [
+          { "name": "C#", "icon": "csharp.svg" },
+          { "name": "HTML", "icon": "html.svg" },
+          { "name": "JavaScript", "icon": "javascript.svg" },
+          { "name": "CSS", "icon": "css.svg" }
+        ]
+      },
+      {
+        "id": "sloopyfruits",
+        "h": "Sloppy Fruits",
+        "logo": "photos/sloopy-fruits-logo.png",
+        "what": "Sloopy fruits je simulacija igralnega avtomata, kjer uporabnik potegne ročico in čaka na zmagovalno kombinacijo. Igra omogoča številne modifikacije.",
+        "links": {
+          "github": "https://github.com/TilenSmole/Sloppy_fruits"
+        },
+        "tech": [
+          { "name": "Java", "icon": "java.svg" },
+          { "name": "JavaFX", "icon": "javafx.svg" }
+        ]
+      },
+      {
+        "id": "lyfio",
+        "h": "Lyfio",
+        "logo": "photos/lyfio-logo.png",
+        "what": "Lyfio je projekt, ki uporabnikom omogoča enostavno spremljanje stroškov z uporabo tabel in specializiranih grafov.",
+        "links": {
+          "github": "https://github.com/TilenSmole/DAYLIO"
+        },
+        "tech": [
+          { "name": "HTML", "icon": "html.svg" },
+          { "name": "JavaScript", "icon": "javascript.svg" },
+          { "name": "PHP", "icon": "php.svg" },
+          { "name": "CSS", "icon": "css.svg" }
+        ]
+      },
+      {
+        "id": "website",
+        "h": "Spletna stran",
+        "logo": "photos/website-logo.png",
+        "what": "Server, ki gosti vse moje aplikacije in API-je, med drugim tudi to spletišče.",
+        "links": {
+          "live": "https://tilensmole.uk"
+        },
+        "tech": [
+          { "name": "HTML", "icon": "html.svg" },
+          { "name": "JS", "icon": "javascript.svg" },
+          { "name": "CSS", "icon": "css.svg" }
+        ]
+      }
+    ],
+    "lbl": {
+      "what": "Kaj",
+      "how": "Kako",
+      "role": "Moja vloga",
+      "res": "Rezultati",
+      "visit": "Obišči"
+    }
+  }
 }

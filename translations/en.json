@@ -1,42 +1,292 @@
 {
-    "about_me": "ABOUT ME",
-    "prog_languages": "Programming Languages",
-    "web_tech": "Web Technologies",
-    "databases": "Databases",
-    "ui_ux": "User Interfaces",
-    "os": "Operating Systems",
-    "titles": "Programmer, Video Editor",
-    "social_header": "SOCIAL NETWORKS",
-    "projects_title": "PROJECTS",
-    "project_lyfio": "Lyfio is a project that allows users to easily monitor expenses using tables and specialized graphs.",
-    "project_missya": "MissYa is a simple project that lets users send a link with a custom message and a countdown to their loved ones until they meet again.",
-    "project_monobank": "Monobank revolutionizes Monopoly. The banker starts a game, and players join via code. The app simplifies financial management and money transfers between players.",
-    "project_panap": "Panap is a complex pantry management app. Users can view recipes, add items to a shopping cart, and get weekly menu suggestions automatically.",
-    "project_sloopy": "Sloopy fruits is a slot machine simulator where players pull a lever to hit winning combinations, featuring various gameplay modifications.",
-    "project_wp_site": "Personal website is a simple site built using WordPress.",
-    "project_zmejelov": "Zmejelov is a multi-year project that culminated in my thesis. It is a suite of 5 challenging, themed games combining various technologies and creativity.",
-    "videos": "VIDEOS",
-    "cookie_text": "We use cookies to improve your experience. View our",
-    "cookie_privacy": "Privacy Policy",
-    "cookie_reject": "Reject All",
-    "cookie_accept": "Accept All",
-    "privacy_title": "Privacy Policy",
-    "last_updated": "Last Updated: February 2026",
-    "sec1_title": "1. The Short Version",
-    "sec1_text": "I value your privacy. I only use cookies to see how many people visit tilensmole.uk and to show you YouTube videos.",
-    "sec2_title": "2. Data I Collect",
-    "sec2_analytics": "Analytics: I use Google Analytics 4 to see which projects you like most. This uses your IP address (anonymized).",
-    "sec2_embed": "Embedded Content: YouTube videos on this site may set cookies if you choose to watch them.",
-    "sec3_title": "3. Data Sharing",
-    "sec3_text": "I do not sell, trade, or share your data with anyone except the processors mentioned above (Google Analytics, YouTube).",
-    "sec4_title": "4. Third-Party Links",
-    "sec4_text": "This site may link to external websites. I am not responsible for the privacy practices of those sites.",
-    "sec5_title": "5. Your Rights (GDPR)",
-    "sec5_text": "Under the GDPR, you have the right to access, correct, or request deletion of your personal data.",
-    "sec6_title": "6. Contact",
-    "sec6_text": "For any privacy-related questions, you can reach me at:",
-    "sec7_title": "7. Your Choice",
-    "status_label": "Current Status:",
-    "reset_btn": "Reset My Cookie Choice",
-    "video_disallow_text": "Please enable cookies to watch videos"
+  "about_me": "ABOUT ME",
+  "prog_languages": "Programming Languages",
+  "web_tech": "Web Technologies",
+  "databases": "Databases",
+  "ui_ux": "User Interfaces",
+  "os": "Operating Systems",
+  "video_editing": "Video Editing",
+  "titles": "Programmer, Video Editor",
+  "social_header": "SOCIAL NETWORKS",
+  "videos": "VIDEOS",
+  "projects_title": "PROJECTS",
+  "project_lyfio": "Lyfio is a project that allows users to easily monitor expenses using tables and specialized graphs.",
+  "project_missya": "MissYa is a projects that allows users to create and send missyas. Missya is a simple message that a user can create, with the option to add time of an upcoming event.  This last feature lets a user, for example, send their better half a link to a page that displays a countdown until they see each other again.  Users can also choose between different themes to make a missya feel more personal. After creating a missya, the user gets a link that can be shared with others, and in the main menu they can see a dashboard with all of their missyas.",
+  "project_monobank": "Monobank is an aplication that improves the UX of my favorite game, MONOPOLY. Instead of having physical money, each user now has their own mobile bank. At the start of the game the player who will also be the bank creates the game and then all the other users join using a code. When a user has to spend money they simply select the recipient and in three clicks the other user’s balance will update. This is possible, because of the useage of  sockets. If the user has to receive the money, the user who plays the bank simply selects the recipient and sends them money as a bank.",
+  "project_panap": "TL;DR, Panap is a digitalized pantry. In a broader sense Panap is a complex system that allows the user to track their recipes, add ingredients to the shopping list, plan weekly meals, and save their receipts,  save their receipts and analyze them with the help of AI. It also includes a notepad system, both at the app level and at the level of individual recipes. It also offers currency conversion.The whole system is backed up daily.  ",
+  "project_sloopy": "Sloopy fruits is a slot machine simulator where players pull a lever to hit winning combinations, featuring various gameplay modifications.",
+  "project_wp_site": "Server that hosts all my applications and APIs, including this website.",
+  "project_zmejelov": "Zmejelov is my first bigger project. From a simple game, it evolved into a complex gaming platform with five thematically connected games, with leaderboards that make users compete against each other.  The project is interesting, because behind all the technical difficulties lies a lot of creativity. ",
+  "project_brumbrum": "BrumBrum is a simple personal app that calculates the fuel cost in euros for the day. It takes the fuel price at Petrol, the kilometers driven and the car's consumption in liters, and works out the cost. Especially handy when you drive someone else's car and want to reimburse them.",
+  "cookie_text": "We use cookies to improve your experience. View our",
+  "cookie_privacy": "Privacy Policy",
+  "cookie_reject": "Reject All",
+  "cookie_accept": "Accept All",
+  "privacy_title": "Privacy Policy",
+  "last_updated": "Last Updated: February 2026",
+  "sec1_title": "1. The Short Version",
+  "sec1_text": "I value your privacy. I only use cookies to see how many people visit tilensmole.uk and to show you YouTube videos.",
+  "sec2_title": "2. Data I Collect",
+  "sec2_analytics": "Analytics: I use Google Analytics 4 to see which projects you like most. This uses your IP address (anonymized).",
+  "sec2_embed": "Embedded Content: YouTube videos on this site may set cookies if you choose to watch them.",
+  "sec3_title": "3. Data Sharing",
+  "sec3_text": "I do not sell, trade, or share your data with anyone except the processors mentioned above (Google Analytics, YouTube).",
+  "sec4_title": "4. Third-Party Links",
+  "sec4_text": "This site may link to external websites. I am not responsible for the privacy practices of those sites.",
+  "sec5_title": "5. Your Rights (GDPR)",
+  "sec5_text": "Under the GDPR, you have the right to access, correct, or request deletion of your personal data.",
+  "sec6_title": "6. Contact",
+  "sec6_text": "For any privacy-related questions, you can reach me at:",
+  "sec7_title": "7. Your Choice",
+  "status_label": "Current Status:",
+  "reset_btn": "Reset My Cookie Choice",
+  "video_disallow_text": "Please enable cookies to watch videos",
+  "devops": "DevOps & Cloud",
+  "frameworks": "Frameworks & Libraries",
+  "page": {
+    "ui": {
+      "enableVideos": "Please accept cookies to watch the videos",
+      "cookieAccept": "Accept",
+      "pull": "pull to tear!",
+      "next": "Tear page",
+      "back": "Back",
+      "home": "Home",
+      "play": "▶ Play",
+      "plain": "Classic"
+    },
+    "intro": {
+      "h": "Hi, I'm Tilen!",
+      "p": [
+        "Bachelor's graduate in Computer and Information Science",
+        "Full-stack developer with almost 3 years of experience, passionate about most technologies and how they work. Always looking for new knowledge."
+      ]
+    },
+    "outro": {
+      "h": "That's all! Thanks for visiting ✌"
+    },
+    "techH": "My skills",
+    "vidH": "My videos",
+    "projH": "Projects",
+    "projects": [
+      {
+        "id": "zmejelov",
+        "h": "Zmejelov",
+        "logo": "logos/zmejelov (1).png",
+        "what": "Zmejelov is my first bigger project. From a simple game, it evolved into a complex gaming platform with five thematically connected games, with leaderboards that make users compete against each other.  The project is interesting, because behind all the technical difficulties lies a lot of creativity. ",
+        "links": {
+          "youtube": "https://www.youtube.com/watch?v=WkpYCOwkyK4",
+          "github": "https://github.com/TilenSmole/ZMEJELOV",
+          "live": "https://zmejelov.azurewebsites.net/"
+        },
+        "tech": [
+          {
+            "name": "HTML",
+            "icon": "html.svg"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "javascript.svg"
+          },
+          {
+            "name": "PHP",
+            "icon": "php.svg"
+          },
+          {
+            "name": "Phaser",
+            "icon": "phaser.svg"
+          },
+          {
+            "name": "CSS",
+            "icon": "css.svg"
+          },
+          {
+            "name": "SQL",
+            "icon": "mysql.svg"
+          }
+        ]
+      },
+      {
+        "id": "panap",
+        "h": "Panap",
+        "logo": "photos/panap-logo.png",
+        "what": "TL;DR, Panap is a digitalized pantry. In a broader sense Panap is a complex system that allows the user to track their recipes, add ingredients to the shopping list, plan weekly meals, and save their receipts,  save their receipts and analyze them with the help of AI. It also includes a notepad system, both at the app level and at the level of individual recipes. It also offers currency conversion.The whole system is backed up daily.  ",
+        "links": {},
+        "tech": [
+          {
+            "name": "Flutter",
+            "icon": "flutter.svg"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "typescript.svg"
+          },
+          {
+            "name": "PostGres",
+            "icon": "postgresql.svg"
+          },
+          {
+            "name": "React",
+            "icon": "react.svg"
+          },
+          {
+            "name": "NodeJS",
+            "icon": "nodejs.svg"
+          }
+        ]
+      },
+      {
+        "id": "monobank",
+        "h": "Monobank",
+        "logo": "photos/mono-bank-logo.png",
+        "what": "Monobank is an aplication that improves the UX of my favorite game, MONOPOLY. Instead of having physical money, each user now has their own mobile bank. At the start of the game the player who will also be the bank creates the game and then all the other users join using a code. When a user has to spend money they simply select the recipient and in three clicks the other user’s balance will update. This is possible, because of the useage of  sockets. If the user has to receive the money, the user who plays the bank simply selects the recipient and sends them money as a bank.",
+        "links": {},
+        "tech": [
+          {
+            "name": "JavaScript",
+            "icon": "javascript.svg"
+          },
+          {
+            "name": "React",
+            "icon": "react.svg"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "typescript.svg"
+          },
+          {
+            "name": "CSS",
+            "icon": "css.svg"
+          },
+          {
+            "name": "NodeJS",
+            "icon": "nodejs.svg"
+          }
+        ]
+      },
+      {
+        "id": "missya",
+        "h": "MissYa",
+        "logo": "photos/missya-logo.png",
+        "what": "MissYa is a projects that allows users to create and send missyas. Missya is a simple message that a user can create, with the option to add time of an upcoming event.  This last feature lets a user, for example, send their better half a link to a page that displays a countdown until they see each other again.  Users can also choose between different themes to make a missya feel more personal. After creating a missya, the user gets a link that can be shared with others, and in the main menu they can see a dashboard with all of their missyas.",
+        "links": {
+          "github": "https://github.com/TilenSmole/MISSYA",
+          "live": "https://missya.tilensmole.uk/"
+        },
+        "tech": [
+          {
+            "name": "Ruby",
+            "icon": "ruby.svg"
+          },
+          {
+            "name": "Slim",
+            "icon": "slim.svg"
+          }
+        ]
+      },
+      {
+        "id": "brumbrum",
+        "h": "BrumBrum",
+        "logo": "photos/brumbrum-logo.svg",
+        "what": "BrumBrum is a simple personal app that calculates the fuel cost in euros for the day. It takes the fuel price at Petrol, the kilometers driven and the car's consumption in liters, and works out the cost. Especially handy when you drive someone else's car and want to reimburse them.",
+        "links": {
+          "github": "https://github.com/TilenSmole/BRUMBRUM",
+          "live": "https://brumbrum.tilensmole.uk/"
+        },
+        "tech": [
+          {
+            "name": "C#",
+            "icon": "csharp.svg"
+          },
+          {
+            "name": "HTML",
+            "icon": "html.svg"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "javascript.svg"
+          },
+          {
+            "name": "CSS",
+            "icon": "css.svg"
+          }
+        ]
+      },
+      {
+        "id": "sloopyfruits",
+        "h": "Sloppy Fruits",
+        "logo": "photos/sloopy-fruits-logo.png",
+        "what": "Sloppy Fruits is a slot machine simulator where the user pulls the lever and waits for a winning combination. The game offers many modifications.",
+        "links": {
+          "github": "https://github.com/TilenSmole/Sloppy_fruits"
+        },
+        "tech": [
+          {
+            "name": "Java",
+            "icon": "java.svg"
+          },
+          {
+            "name": "JavaFX",
+            "icon": "javafx.svg"
+          }
+        ]
+      },
+      {
+        "id": "lyfio",
+        "h": "Lyfio",
+        "logo": "photos/lyfio-logo.png",
+        "what": "Lyfio is a project that lets users easily track their expenses using tables and specialized charts.",
+        "links": {
+          "github": "https://github.com/TilenSmole/DAYLIO"
+        },
+        "tech": [
+          {
+            "name": "HTML",
+            "icon": "html.svg"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "javascript.svg"
+          },
+          {
+            "name": "PHP",
+            "icon": "php.svg"
+          },
+          {
+            "name": "CSS",
+            "icon": "css.svg"
+          }
+        ]
+      },
+      {
+        "id": "website",
+        "h": "Website",
+        "logo": "photos/website-logo.png",
+        "what": "Server that hosts all my applications and APIs, including this website.",
+        "links": {
+          "live": "https://tilensmole.uk"
+        },
+        "tech": [
+          {
+            "name": "HTML",
+            "icon": "html.svg"
+          },
+          {
+            "name": "JS",
+            "icon": "javascript.svg"
+          },
+          {
+            "name": "CSS",
+            "icon": "css.svg"
+          }
+        ]
+      }
+    ],
+    "lbl": {
+      "what": "What",
+      "how": "How",
+      "role": "My role",
+      "res": "Results",
+      "visit": "Visit"
+    }
+  }
 }

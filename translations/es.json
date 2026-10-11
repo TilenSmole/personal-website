@@ -1,42 +1,292 @@
 {
-    "about_me": "SOBRE MÍ",
-    "prog_languages": "Lenguajes de Programación",
-    "web_tech": "Tecnologías Web",
-    "databases": "Bases de Datos",
-    "ui_ux": "Interfaces de Usuario",
-    "os": "Sistemas Operativos",
-    "titles": "Programador, Editor de video",
-    "social_header": "REDES SOCIALES",
-    "projects_title": "PROYECTOS",
-    "project_lyfio": "Lyfio es un proyecto que permite al usuario monitorear fácilmente sus gastos mediante el uso de tablas y gráficos especializados.",
-    "project_missya": "MissYa es un proyecto sencillo que permite a los usuarios enviar a sus seres queridos un enlace con un mensaje personalizado y una cuenta regresiva hasta el momento en que se vuelvan a ver.",
-    "project_monobank": "Monobank revoluciona el Monopoly. El jugador que actúa como banco abre una nueva partida y los demás se unen mediante un código. La aplicación facilita la gestión de las finanzas y el envío de dinero entre jugadores.",
-    "project_panap": "Panap es una aplicación compleja que permite al usuario llevar un control de su despensa. Con un simple clic, puede ver recetas, añadir productos al carrito y revisar su inventario, el cual se actualiza automáticamente al comprar.",
-    "project_sloopy": "Sloopy Fruits es un simulador de máquina tragamonedas donde el usuario tira de la palanca y espera a ver si ha obtenido una combinación ganadora. El juego incluye múltiples modificaciones para mejorar la experiencia.",
-    "project_wp_site": "Mi sitio web personal es una página sencilla desarrollada en WordPress.",
-    "project_zmejelov": "Zmejelov es un proyecto que comenzó en la secundaria y culminó como mi tesis de grado. Esta plataforma cuenta con 5 juegos temáticos desafiantes que combinan diversas tecnologías y mucha creatividad.",
-    "videos": "VIDEOS",
-    "cookie_text": "Utilizamos cookies para mejorar su experiencia. Consulte nuestra",
-    "cookie_privacy": "Política de Privacidad",
-    "cookie_reject": "Rechazar todo",
-    "cookie_accept": "Aceptar todo",
-    "privacy_title": "Política de Privacidad",
-    "last_updated": "Última actualización: febrero de 2026",
-    "sec1_title": "1. La Versión Corta",
-    "sec1_text": "Valoro su privacidad. Solo utilizo cookies para ver cuántas personas visitan tilensmole.uk y para mostrarle videos de YouTube.",
-    "sec2_title": "2. Datos que Recopilo",
-    "sec2_analytics": "Analítica: Utilizo Google Analytics 4 para ver qué proyectos le gustan más. Esto utiliza su dirección IP (anonimizada).",
-    "sec2_embed": "Contenido incrustado: Los videos de YouTube en este sitio pueden establecer cookies si decide verlos.",
-    "sec3_title": "3. Compartir Datos",
-    "sec3_text": "No vendo ni comparto sus datos con nadie, excepto con los procesadores mencionados anteriormente.",
-    "sec4_title": "4. Enlaces de Terceros",
-    "sec4_text": "Este sitio puede enlazar a sitios externos. No soy responsable de las prácticas de privacidad de dichos sitios.",
-    "sec5_title": "5. Sus Derechos (GDPR)",
-    "sec5_text": "Según el GDPR, tiene derecho a acceder, corregir o solicitar la eliminación de sus datos personales.",
-    "sec6_title": "6. Contacto",
-    "sec6_text": "Para cualquier pregunta sobre privacidad, puede contactarme en:",
-    "sec7_title": "7. Su Elección",
-    "status_label": "Estado actual:",
-    "reset_btn": "Restablecer mi elección de cookies",
-    "video_disallow_text": "Por favor, active las cookies para ver videos"
+  "about_me": "SOBRE MÍ",
+  "prog_languages": "Lenguajes de programación",
+  "web_tech": "Tecnologías web",
+  "databases": "Bases de datos",
+  "ui_ux": "Interfaces de usuario",
+  "os": "Sistemas operativos",
+  "video_editing": "Edición de vídeo",
+  "titles": "Programador, editor de vídeo",
+  "social_header": "REDES SOCIALES",
+  "videos": "VÍDEOS",
+  "projects_title": "PROYECTOS",
+  "project_lyfio": "Lyfio es un proyecto que permite controlar fácilmente los gastos mediante tablas y gráficos especializados.",
+  "project_missya": "MissYa es un proyecto sencillo que permite enviar a tus seres queridos un enlace con un mensaje personalizado y una cuenta atrás hasta el momento en que volváis a veros.",
+  "project_monobank": "Monobank revoluciona el Monopoly. El jugador que hace de banco crea una nueva partida y los demás se unen mediante un código. La aplicación facilita la gestión de las finanzas y el envío de dinero.",
+  "project_panap": "Panap es una aplicación compleja para gestionar la despensa. El usuario puede consultar recetas, añadir productos al carrito y recibir sugerencias de menú semanal.",
+  "project_sloopy": "Sloppy Fruits es un simulador de tragaperras en el que el usuario tira de la palanca y espera una combinación ganadora. El juego ofrece numerosas modificaciones.",
+  "project_wp_site": "Mi sitio web personal es una página sencilla creada con WordPress.",
+  "project_zmejelov": "Zmejelov es un proyecto que nació como mi trabajo de fin de grado. La plataforma incluye 5 juegos temáticos y combina diversas tecnologías con creatividad.",
+  "project_brumbrum": "BrumBrum es una aplicación personal sencilla que calcula el coste del combustible en euros para el día. Toma el precio de la gasolina en Petrol, los kilómetros recorridos y el consumo del coche en litros, y calcula el coste. Muy útil cuando conduces el coche de otra persona y quieres reembolsarle los gastos.",
+  "cookie_text": "Usamos cookies para mejorar tu experiencia. Consulta nuestra",
+  "cookie_privacy": "Política de privacidad",
+  "cookie_reject": "Rechazar todo",
+  "cookie_accept": "Aceptar todo",
+  "privacy_title": "Política de privacidad",
+  "last_updated": "Última actualización: febrero de 2026",
+  "sec1_title": "1. La versión corta",
+  "sec1_text": "Valoro tu privacidad. Solo uso cookies para ver cuánta gente visita tilensmole.uk y para mostrarte vídeos de YouTube.",
+  "sec2_title": "2. Datos que recopilo",
+  "sec2_analytics": "Analítica: uso Google Analytics 4 para ver qué proyectos te gustan más. Esto utiliza tu dirección IP (anonimizada).",
+  "sec2_embed": "Contenido incrustado: los vídeos de YouTube de este sitio pueden establecer cookies si decides verlos.",
+  "sec3_title": "3. Compartición de datos",
+  "sec3_text": "No vendo, intercambio ni comparto tus datos con nadie, salvo con los procesadores mencionados arriba (Google Analytics, YouTube).",
+  "sec4_title": "4. Enlaces de terceros",
+  "sec4_text": "Este sitio puede enlazar a sitios web externos. No soy responsable de las prácticas de privacidad de esos sitios.",
+  "sec5_title": "5. Tus derechos (RGPD)",
+  "sec5_text": "Según el RGPD, tienes derecho a acceder a tus datos personales, corregirlos o solicitar su eliminación.",
+  "sec6_title": "6. Contacto",
+  "sec6_text": "Para cualquier consulta sobre privacidad, puedes contactarme en:",
+  "sec7_title": "7. Tu elección",
+  "status_label": "Estado actual:",
+  "reset_btn": "Restablecer mi elección de cookies",
+  "video_disallow_text": "Activa las cookies para ver los vídeos",
+  "devops": "DevOps y Cloud",
+  "frameworks": "Frameworks y librerías",
+  "page": {
+    "ui": {
+      "enableVideos": "Acepta las cookies para ver los vídeos",
+      "cookieAccept": "Aceptar",
+      "pull": "¡tira para rasgar!",
+      "next": "Rasgar página",
+      "back": "Atrás",
+      "home": "Inicio",
+      "play": "▶ Reproducir",
+      "plain": "Clásico"
+    },
+    "intro": {
+      "h": "¡Hola, soy Tilen!",
+      "p": [
+        "Graduado en Ingeniería Informática y de la Computación",
+        "Desarrollador full-stack con casi 3 años de experiencia, apasionado por la mayoría de las tecnologías y su funcionamiento. Siempre en busca de nuevos conocimientos."
+      ]
+    },
+    "outro": {
+      "h": "¡Eso es todo! Gracias por visitar ✌"
+    },
+    "techH": "Mis conocimientos",
+    "vidH": "Mis vídeos",
+    "projH": "Proyectos",
+    "projects": [
+      {
+        "id": "zmejelov",
+        "h": "Zmejelov",
+        "logo": "logos/zmejelov (1).png",
+        "what": "Zmejelov es un proyecto que nació como mi trabajo de fin de grado. La plataforma incluye 5 juegos temáticos y combina diversas tecnologías con creatividad.",
+        "links": {
+          "youtube": "https://www.youtube.com/watch?v=WkpYCOwkyK4",
+          "github": "https://github.com/TilenSmole/ZMEJELOV",
+          "live": "https://zmejelov.azurewebsites.net/"
+        },
+        "tech": [
+          {
+            "name": "HTML",
+            "icon": "html.svg"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "javascript.svg"
+          },
+          {
+            "name": "PHP",
+            "icon": "php.svg"
+          },
+          {
+            "name": "Phaser",
+            "icon": "phaser.svg"
+          },
+          {
+            "name": "CSS",
+            "icon": "css.svg"
+          },
+          {
+            "name": "SQL",
+            "icon": "mysql.svg"
+          }
+        ]
+      },
+      {
+        "id": "panap",
+        "h": "Panap",
+        "logo": "photos/panap-logo.png",
+        "what": "Panap es una aplicación compleja para gestionar la despensa. El usuario puede consultar recetas, añadir productos al carrito y recibir sugerencias de menú semanal.",
+        "links": {},
+        "tech": [
+          {
+            "name": "Flutter",
+            "icon": "flutter.svg"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "typescript.svg"
+          },
+          {
+            "name": "PostGres",
+            "icon": "postgresql.svg"
+          },
+          {
+            "name": "React",
+            "icon": "react.svg"
+          },
+          {
+            "name": "NodeJS",
+            "icon": "nodejs.svg"
+          }
+        ]
+      },
+      {
+        "id": "monobank",
+        "h": "Monobank",
+        "logo": "photos/mono-bank-logo.png",
+        "what": "Monobank revoluciona el Monopoly. El jugador que hace de banco crea una nueva partida y los demás se unen mediante un código. La aplicación facilita la gestión de las finanzas y el envío de dinero.",
+        "links": {},
+        "tech": [
+          {
+            "name": "JavaScript",
+            "icon": "javascript.svg"
+          },
+          {
+            "name": "React",
+            "icon": "react.svg"
+          },
+          {
+            "name": "TypeScript",
+            "icon": "typescript.svg"
+          },
+          {
+            "name": "CSS",
+            "icon": "css.svg"
+          },
+          {
+            "name": "NodeJS",
+            "icon": "nodejs.svg"
+          }
+        ]
+      },
+      {
+        "id": "missya",
+        "h": "MissYa",
+        "logo": "photos/missya-logo.png",
+        "what": "MissYa es un proyecto sencillo que permite enviar a tus seres queridos un enlace con un mensaje personalizado y una cuenta atrás hasta el momento en que volváis a veros.",
+        "links": {
+          "github": "https://github.com/TilenSmole/MISSYA",
+          "live": "https://missya.tilensmole.uk/"
+        },
+        "tech": [
+          {
+            "name": "Ruby",
+            "icon": "ruby.svg"
+          },
+          {
+            "name": "Slim",
+            "icon": "slim.svg"
+          }
+        ]
+      },
+      {
+        "id": "brumbrum",
+        "h": "BrumBrum",
+        "logo": "photos/brumbrum-logo.svg",
+        "what": "BrumBrum es una aplicación personal sencilla que calcula el coste del combustible en euros para el día. Toma el precio de la gasolina en Petrol, los kilómetros recorridos y el consumo del coche en litros, y calcula el coste. Muy útil cuando conduces el coche de otra persona y quieres reembolsarle los gastos.",
+        "links": {
+          "github": "https://github.com/TilenSmole/BRUMBRUM",
+          "live": "https://brumbrum.tilensmole.uk/"
+        },
+        "tech": [
+          {
+            "name": "C#",
+            "icon": "csharp.svg"
+          },
+          {
+            "name": "HTML",
+            "icon": "html.svg"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "javascript.svg"
+          },
+          {
+            "name": "CSS",
+            "icon": "css.svg"
+          }
+        ]
+      },
+      {
+        "id": "sloopyfruits",
+        "h": "Sloppy Fruits",
+        "logo": "photos/sloopy-fruits-logo.png",
+        "what": "Sloppy Fruits es un simulador de tragaperras en el que el usuario tira de la palanca y espera una combinación ganadora. El juego ofrece numerosas modificaciones.",
+        "links": {
+          "github": "https://github.com/TilenSmole/Sloppy_fruits"
+        },
+        "tech": [
+          {
+            "name": "Java",
+            "icon": "java.svg"
+          },
+          {
+            "name": "JavaFX",
+            "icon": "javafx.svg"
+          }
+        ]
+      },
+      {
+        "id": "lyfio",
+        "h": "Lyfio",
+        "logo": "photos/lyfio-logo.png",
+        "what": "Lyfio es un proyecto que permite controlar fácilmente los gastos mediante tablas y gráficos especializados.",
+        "links": {
+          "github": "https://github.com/TilenSmole/DAYLIO"
+        },
+        "tech": [
+          {
+            "name": "HTML",
+            "icon": "html.svg"
+          },
+          {
+            "name": "JavaScript",
+            "icon": "javascript.svg"
+          },
+          {
+            "name": "PHP",
+            "icon": "php.svg"
+          },
+          {
+            "name": "CSS",
+            "icon": "css.svg"
+          }
+        ]
+      },
+      {
+        "id": "website",
+        "h": "Sitio web",
+        "logo": "photos/website-logo.png",
+        "what": "Mi sitio web personal es una página sencilla creada con WordPress.",
+        "links": {
+          "live": "https://tilensmole.uk"
+        },
+        "tech": [
+          {
+            "name": "HTML",
+            "icon": "html.svg"
+          },
+          {
+            "name": "JS",
+            "icon": "javascript.svg"
+          },
+          {
+            "name": "CSS",
+            "icon": "css.svg"
+          }
+        ]
+      }
+    ],
+    "lbl": {
+      "what": "Qué",
+      "how": "Cómo",
+      "role": "Mi rol",
+      "res": "Resultados",
+      "visit": "Visitar"
+    }
+  }
 }

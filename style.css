@@ -746,13 +746,7 @@ img {
     aspect-ratio: 16 / 9;
   }
 
-  /* images/media never exceed the screen */
-  img,
-  iframe {
-    max-width: 100%;
-  }
 
-  /* stop floating decorations causing horizontal scroll */
   body {
     overflow-x: hidden;
   }

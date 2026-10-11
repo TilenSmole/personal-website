@@ -20,6 +20,7 @@ async function updateLanguage(lang) {
   } catch (error) {
   }
 }
+
 function initI18n() {
     const savedLang = localStorage.getItem('preferredLang');
     const browserLang = navigator.language.split('-')[0];

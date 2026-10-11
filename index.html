@@ -7,13 +7,27 @@
   <title>Tilen Smole · Portfolio</title>
   <meta name="description"
     content="Portfolio of a full-stack web developer with 6 years of experience: games, web apps and playful interactive projects built with JavaScript, React, Flutter and more.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap"
-  media="print" onload="this.media='all'">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap" media="print"
+    onload="this.media='all'">
   <script src="scripts/privacy.js" defer></script>
   <link rel="stylesheet" href="global.css">
+
+  <script>
+  try {
+    var b = navigator.language.split('-')[0];
+    var l = localStorage.getItem('preferredLang') || (b);
+    if (['en', 'es', 'sl'].indexOf(l) === -1) l = 'en';
+    var link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'fetch';
+    link.href = 'translations/' + l + '.json';
+    link.crossOrigin = 'anonymous';
+    document.head.appendChild(link);
+  } catch (e) {}
+</script>
 
   <style>
     :root {
@@ -192,6 +206,21 @@
       transform: scale(1.15);
       opacity: 0.85;
     }
+
+.description-col {
+  max-height: 48cqw;        
+  overflow-y: auto;
+  padding-right: 1.5cqw;    
+  overscroll-behavior: contain;
+  touch-action: pan-y;        
+  scrollbar-width: thin;  
+  scrollbar-color: var(--strip) transparent;
+}
+.description-col::-webkit-scrollbar { width: 6px; }
+.description-col::-webkit-scrollbar-thumb {
+  background: var(--strip);
+  border-radius: 6px;
+}
 
     #area {
       position: relative;
@@ -458,9 +487,9 @@
       <button id="end" title="End">⏭</button>
 
       <div class="toolbar">
-        <button id="slo" class="lang-btn">SLO</button>
-        <button id="en" class="lang-btn">EN</button>
-        <button id="es" class="lang-btn">ES</button>
+        <button class="lang-btn" data-lang="sl">SLO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
         <a id="pl" title="Plain version" href="plain.html">Plain</a>
       </div>
     </div>
@@ -468,8 +497,8 @@
 
   </main>
   <noscript>
-     <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Patrick+Hand&display=swap">
     <h1>Tilen Smole – Full-stack developer</h1>
     <p>Full-stack developer with 2 years of experience.</p>
     <ul>
@@ -552,423 +581,11 @@
         { name: 'Azure', icon: 'azure.svg' }
       ],
 
-      en: {
-        ui: {
-          enableVideos: "Please accept cookies to watch the videos", cookieText: "This website uses cookies. You can accept or reject them.",
-          cookiePrivacy: "Privacy policy",
-          cookieReject: "Reject",
-          cookieAccept: "Accept",
-          connect: "Let's connect", pull: "pull to tear!", next: "Tear page", back: "Back", home: "Home", play: "▶ Play", plain: "Classic"
-        },
-        intro: { h: "Hi, I'm Tilen!", p: ["Bachelor's graduate in Computer and Information Science", "Full-stack developer with almost 3 years of experience, passionate about most technologies and how they work. Always looking for new knowledge."] },
-        outro: {
-          h: "That's all! Thanks for visiting ✌",
-          social_header: "Let's connect",
-          privacy_title: "Privacy policy"
-        },
-        techH: "My skills", vidH: "My videos", projH: "Projects",
-        projects: [
-          {
-            id: "zmejelov",
-            h: "Zmejelov",
-            logo: "logos/zmejelov (1).png",
-            what: "Zmejelov is a project that started as my thesis. The platform includes 5 themed games and combines various technologies with creativity.",
-            links: {
-              youtube: "https://www.youtube.com/watch?v=WkpYCOwkyK4",
-              github: "https://github.com/TilenSmole/ZMEJELOV",
-              live: "https://zmejelov.azurewebsites.net/"
-            },
-            tech: [
-              { name: "HTML", icon: "html.svg" },
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "PHP", icon: "php.svg" },
-              { name: "Phaser", icon: "phaser.svg" },
-              { name: "CSS", icon: "css.svg" },
-              { name: "SQL", icon: "mysql.svg" }
-            ]
-          },
-          {
-            id: "panap",
-            h: "Panap",
-            logo: "photos/panap-logo.png",
-            what: "Panap is a complex pantry management app. Users can browse recipes, add items to a shopping cart and receive weekly menu suggestions.",
-            links: {},
-            tech: [
-              { name: "Flutter", icon: "flutter.svg" },
-              { name: "TypeScript", icon: "typescript.svg" },
-              { name: "PostGres", icon: "postgresql.svg" },
-              { name: "React", icon: "react.svg" },
-              { name: "NodeJS", icon: "nodejs.svg" }
-            ]
-          },
-          {
-            id: "monobank",
-            h: "Monobank",
-            logo: "photos/mono-bank-logo.png",
-            what: "Monobank revolutionizes Monopoly. The player acting as the banker starts a new game and the other players join with a code. The app makes managing finances and sending money easy.",
-            links: {},
-            tech: [
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "React", icon: "react.svg" },
-              { name: "TypeScript", icon: "typescript.svg" },
-              { name: "CSS", icon: "css.svg" },
-              { name: "NodeJS", icon: "nodejs.svg" }
-            ]
-          },
-          {
-            id: "missya",
-            h: "MissYa",
-            logo: "photos/missya-logo.png",
-            what: "MissYa is a simple project that lets users send their loved ones a link with a custom message and a countdown to the moment they will see each other again.",
-            links: {
-              github: "https://github.com/TilenSmole/MISSYA",
-              live: "https://missya.tilensmole.uk/"
-            },
-            tech: [
-              { name: "Ruby", icon: "ruby.svg" },
-              { name: "Slim", icon: "slim.svg" }
-            ]
-          },
-          {
-            id: "brumbrum",
-            h: "BrumBrum",
-            logo: "photos/brumbrum-logo.svg",
-            what: "BrumBrum is a simple personal app that calculates the fuel cost in euros for the day. It takes the fuel price at Petrol, the kilometers driven and the car's consumption in liters, and works out the cost. Especially handy when you drive someone else's car and want to reimburse them.",
-            links: {
-              github: "https://github.com/TilenSmole/BRUMBRUM",
-              live: "https://brumbrum.tilensmole.uk/"
-            },
-            tech: [
-              { name: "C#", icon: "csharp.svg" },
-              { name: "HTML", icon: "html.svg" },
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "CSS", icon: "css.svg" }
-            ]
-          },
-          {
-            id: "sloopyfruits",
-            h: "Sloppy Fruits",
-            logo: "photos/sloopy-fruits-logo.png",
-            what: "Sloppy Fruits is a slot machine simulator where the user pulls the lever and waits for a winning combination. The game offers many modifications.",
-            links: {
-              github: "https://github.com/TilenSmole/Sloppy_fruits"
-            },
-            tech: [
-              { name: "Java", icon: "java.svg" },
-              { name: "JavaFX", icon: "javafx.svg" }
-            ]
-          },
-          {
-            id: "lyfio",
-            h: "Lyfio",
-            logo: "photos/lyfio-logo.png",
-            what: "Lyfio is a project that lets users easily track their expenses using tables and specialized charts.",
-            links: {
-              github: "https://github.com/TilenSmole/DAYLIO"
-            },
-            tech: [
-              { name: "HTML", icon: "html.svg" },
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "PHP", icon: "php.svg" },
-              { name: "CSS", icon: "css.svg" }
-            ]
-          },
-          {
-            id: "website",
-            h: "Website",
-            logo: "photos/website-logo.png",
-            what: "My personal website is a simple site built with WordPress.",
-            links: {
-              live: "https://tilensmole.uk"
-            },
-            tech: [
-              { name: "HTML", icon: "html.svg" },
-              { name: "JS", icon: "javascript.svg" },
-              { name: "CSS", icon: "css.svg" }
-            ]
-          }
-        ], lbl: { what: "What", how: "How", role: "My role", res: "Results", visit: "Visit" }
-      },
-      es: {
-        ui: {
-          enableVideos: "Acepta las cookies para ver los vídeos", cookieText: "Este sitio web utiliza cookies. Puedes aceptarlas o rechazarlas.",
-          cookiePrivacy: "Política de privacidad",
-          cookieReject: "Rechazar",
-          cookieAccept: "Aceptar",
-          connect: "Conectemos", pull: "¡tira para rasgar!", next: "Rasgar página", back: "Atrás", home: "Inicio", play: "▶ Reproducir", plain: "Clásico"
-        },
-        intro: { h: "¡Hola, soy Tilen!", p: ["Graduado en Ingeniería Informática y de la Computación", "Desarrollador full-stack con casi 3 años de experiencia, apasionado por la mayoría de las tecnologías y su funcionamiento. Siempre en busca de nuevos conocimientos."] },
-        outro: {
-          h: "¡Eso es todo! Gracias por visitar ✌",
-          social_header: "Conectemos",
-          privacy_title: "Política de privacidad"
-        },
-        techH: "Mis conocimientos", vidH: "Mis vídeos", projH: "Proyectos",
-        projects: [
-          {
-            id: "zmejelov",
-            h: "Zmejelov",
-            logo: "logos/zmejelov (1).png",
-            what: "Zmejelov es un proyecto que nació como mi trabajo de fin de grado. La plataforma incluye 5 juegos temáticos y combina diversas tecnologías con creatividad.",
-            links: {
-              youtube: "https://www.youtube.com/watch?v=WkpYCOwkyK4",
-              github: "https://github.com/TilenSmole/ZMEJELOV",
-              live: "https://zmejelov.azurewebsites.net/"
-            },
-            tech: [
-              { name: "HTML", icon: "html.svg" },
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "PHP", icon: "php.svg" },
-              { name: "Phaser", icon: "phaser.svg" },
-              { name: "CSS", icon: "css.svg" },
-              { name: "SQL", icon: "mysql.svg" }
-            ]
-          },
-          {
-            id: "panap",
-            h: "Panap",
-            logo: "photos/panap-logo.png",
-            what: "Panap es una aplicación compleja para gestionar la despensa. El usuario puede consultar recetas, añadir productos al carrito y recibir sugerencias de menú semanal.",
-            links: {},
-            tech: [
-              { name: "Flutter", icon: "flutter.svg" },
-              { name: "TypeScript", icon: "typescript.svg" },
-              { name: "PostGres", icon: "postgresql.svg" },
-              { name: "React", icon: "react.svg" },
-              { name: "NodeJS", icon: "nodejs.svg" }
-            ]
-          },
-          {
-            id: "monobank",
-            h: "Monobank",
-            logo: "photos/mono-bank-logo.png",
-            what: "Monobank revoluciona el Monopoly. El jugador que hace de banco crea una nueva partida y los demás se unen mediante un código. La aplicación facilita la gestión de las finanzas y el envío de dinero.",
-            links: {},
-            tech: [
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "React", icon: "react.svg" },
-              { name: "TypeScript", icon: "typescript.svg" },
-              { name: "CSS", icon: "css.svg" },
-              { name: "NodeJS", icon: "nodejs.svg" }
-            ]
-          },
-          {
-            id: "missya",
-            h: "MissYa",
-            logo: "photos/missya-logo.png",
-            what: "MissYa es un proyecto sencillo que permite enviar a tus seres queridos un enlace con un mensaje personalizado y una cuenta atrás hasta el momento en que volváis a veros.",
-            links: {
-              github: "https://github.com/TilenSmole/MISSYA",
-              live: "https://missya.tilensmole.uk/"
-            },
-            tech: [
-              { name: "Ruby", icon: "ruby.svg" },
-              { name: "Slim", icon: "slim.svg" }
-            ]
-          },
-          {
-            id: "brumbrum",
-            h: "BrumBrum",
-            logo: "photos/brumbrum-logo.svg",
-            what: "BrumBrum es una aplicación personal sencilla que calcula el coste del combustible en euros para el día. Toma el precio de la gasolina en Petrol, los kilómetros recorridos y el consumo del coche en litros, y calcula el coste. Muy útil cuando conduces el coche de otra persona y quieres reembolsarle los gastos.",
-            links: {
-              github: "https://github.com/TilenSmole/BRUMBRUM",
-              live: "https://brumbrum.tilensmole.uk/"
-            },
-            tech: [
-              { name: "C#", icon: "csharp.svg" },
-              { name: "HTML", icon: "html.svg" },
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "CSS", icon: "css.svg" }
-            ]
-          },
-          {
-            id: "sloopyfruits",
-            h: "Sloppy Fruits",
-            logo: "photos/sloopy-fruits-logo.png",
-            what: "Sloppy Fruits es un simulador de tragaperras en el que el usuario tira de la palanca y espera una combinación ganadora. El juego ofrece numerosas modificaciones.",
-            links: {
-              github: "https://github.com/TilenSmole/Sloppy_fruits"
-            },
-            tech: [
-              { name: "Java", icon: "java.svg" },
-              { name: "JavaFX", icon: "javafx.svg" }
-            ]
-          },
-          {
-            id: "lyfio",
-            h: "Lyfio",
-            logo: "photos/lyfio-logo.png",
-            what: "Lyfio es un proyecto que permite controlar fácilmente los gastos mediante tablas y gráficos especializados.",
-            links: {
-              github: "https://github.com/TilenSmole/DAYLIO"
-            },
-            tech: [
-              { name: "HTML", icon: "html.svg" },
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "PHP", icon: "php.svg" },
-              { name: "CSS", icon: "css.svg" }
-            ]
-          },
-          {
-            id: "website",
-            h: "Website",
-            logo: "photos/website-logo.png",
-            what: "Mi sitio web personal es una página sencilla creada con WordPress.",
-            links: {
-              live: "https://tilensmole.uk"
-            },
-            tech: [
-              { name: "HTML", icon: "html.svg" },
-              { name: "JS", icon: "javascript.svg" },
-              { name: "CSS", icon: "css.svg" }
-            ]
-          }
-        ], lbl: { what: "What", how: "How", role: "My role", res: "Results", visit: "Visit" }
-      },
-      slo: {
-        ui: {
-          enableVideos: "Za ogled videoposnetkov omogočite piškotke", cookieText: "To spletišče uporablja piškotke. Lahko jih sprejmete ali zavrnete.",
-          cookiePrivacy: "Politika zasebnosti",
-          cookieReject: "Zavrni",
-          cookieAccept: "Sprejmi",
-          connect: "Povežimo se", pull: "potegni, da odtrgaš!", next: "Odtrgaj stran", back: "Nazaj", home: "Domov", play: "▶ Predvajaj", plain: "Klasična stran"
-        },
-        intro: { h: "Živjo, jaz sem Tilen!", p: ["Diplomirani inženir računalništva in informatike", "Full-stack razvijalec s skoraj 3 leti izkušenj, navdušen nad večino tehnologij in njihovim delovanjem. Vedno v iskanju novega znanja."] },
-        outro: {
-          h: "To je vse! Hvala za obisk ✌",
-          social_header: "Povežimo se",
-          privacy_title: "Politika zasebnosti"
-        },
-        techH: "Moja znanja", vidH: "Moji Videoposnetki", projH: "Projekti",
-        projects: [
-          {
-            id: "zmejelov",
-            h: "Zmejelov",
-            logo: "logos/zmejelov (1).png",
-            what: "Zmejelov je projekt, ki je nastal kot diplomsko delo. Platforma vključuje 5 tematsko povezanih iger in združuje različne tehnologije ter kreativnost.",
-            links: {
-              youtube: "https://www.youtube.com/watch?v=WkpYCOwkyK4",
-              github: "https://github.com/TilenSmole/ZMEJELOV",
-              live: "https://zmejelov.azurewebsites.net/"
-            },
-            tech: [
-              { name: "HTML", icon: "html.svg" },
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "PHP", icon: "php.svg" },
-              { name: "Phaser", icon: "phaser.svg" },
-              { name: "CSS", icon: "css.svg" },
-              { name: "SQL", icon: "mysql.svg" }
-            ]
-          },
-          {
-            id: "panap",
-            h: "Panap",
-            logo: "photos/panap-logo.png",
-            what: "Panap je kompleksna aplikacija za vodenje evidence shrambe. Uporabnik lahko pregleduje recepte, dodaja v košarico in prejema predloge za tedenski meni.",
-
-            links: {},
-            tech: [
-              { name: "Flutter", icon: "flutter.svg" },
-              { name: "TypeScript", icon: "typescript.svg" },
-              { name: "PostGres", icon: "postgresql.svg" },
-              { name: "React", icon: "react.svg" },
-              { name: "NodeJS", icon: "nodejs.svg" }
-            ]
-          },
-          {
-            id: "monobank",
-            h: "Monobank",
-            logo: "photos/mono-bank-logo.png",
-            what: "Monobank revolucionira Monopoly. Igralec, ki predstavlja banko, odpre novo igro, nato pa se ji igralci pridružijo preko kode. Aplikacija omogoča enostavno vodenje financ in pošiljanje denarja.",
-            links: {},
-            tech: [
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "React", icon: "react.svg" },
-              { name: "TypeScript", icon: "typescript.svg" },
-              { name: "CSS", icon: "css.svg" },
-              { name: "NodeJS", icon: "nodejs.svg" }
-            ]
-          },
-          {
-            id: "missya",
-            h: "MissYa",
-            logo: "photos/missya-logo.png",
-            what: "MissYa je preprost projekt, ki uporabnikom omogoča, da svojim bližnjim pošljejo povezavo s poljubnim sporočilcem in odštevalnikom do momenta, ko se bodo ponovno videli.",
-            links: {
-              github: "https://github.com/TilenSmole/MISSYA",
-              live: "https://missya.tilensmole.uk/"
-            },
-            tech: [
-              { name: "Ruby", icon: "ruby.svg" },
-              { name: "Slim", icon: "slim.svg" }
-            ]
-          },
-          {
-            id: "brumbrum",
-            h: "BrumBrum",
-            logo: "photos/brumbrum-logo.svg",
-            what: "BrumBrum je preprosta osebna aplikacija, ki uporabniku omogoča, preprost izračun porabe bencina v evrih na tekoči dan. Aplikacija vzame ceno bencina na Petrolu, prevožene kilomentre in porabo avtomobila v litrih in izračuna strošek. Uporabo posebej, ko voziš avto od drugega in mu hočeš povrniti stroške.",
-            links: {
-              github: "https://github.com/TilenSmole/BRUMBRUM",
-              live: "https://brumbrum.tilensmole.uk/"
-            },
-            tech: [
-              { name: "C#", icon: "csharp.svg" },
-              { name: "HTML", icon: "html.svg" },
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "CSS", icon: "css.svg" }
-            ]
-          },
-          {
-            id: "sloopyfruits",
-            h: "Sloppy Fruits",
-            logo: "photos/sloopy-fruits-logo.png",
-            what: "Sloopy fruits je simulacija igralnega avtomata, kjer uporabnik potegne ročico in čaka na zmagovalno kombinacijo. Igra omogoča številne modifikacije.",
-            links: {
-              github: "https://github.com/TilenSmole/Sloppy_fruits"
-            },
-            tech: [
-              { name: "Java", icon: "java.svg" },
-              { name: "JavaFX", icon: "javafx.svg" }
-            ]
-          },
-          {
-            id: "lyfio",
-            h: "Lyfio",
-            logo: "photos/lyfio-logo.png",
-            what: "Lyfio je projekt, ki uporabnikom omogoča enostavno spremljanje stroškov z uporabo tabel in specializiranih grafov.",
-            links: {
-              github: "https://github.com/TilenSmole/DAYLIO"
-            },
-            tech: [
-              { name: "HTML", icon: "html.svg" },
-              { name: "JavaScript", icon: "javascript.svg" },
-              { name: "PHP", icon: "php.svg" },
-              { name: "CSS", icon: "css.svg" }
-            ]
-          },
-          {
-            id: "website",
-            h: "Website",
-            logo: "photos/website-logo.png",
-            what: "Personal website is a simple site built using WordPress.",
-            links: {
-              live: "https://tilensmole.uk"
-            },
-            tech: [
-              { name: "HTML", icon: "html.svg" },
-              { name: "JS", icon: "javascript.svg" },
-              { name: "CSS", icon: "css.svg" }
-            ]
-          }
-        ], lbl: { what: "What", how: "How", role: "My role", res: "Results", visit: "Visit" }
-      },
     };
     /* ========= ENGINE ========= */
     const $ = s => document.querySelector(s), area = $('#area'), pad = $('#pad');
     let lang = 'en', cur = 0, sheets = [], busy = false, mute = false, reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
-    const T = () => CONFIG[lang];
+    const T = () => I18N[lang].page;
     function renderTechGroup(techCategory, indicator) {
       return `<h2>${T().techH}  (${indicator})</h2>` +
         Object.entries(techCategory)
@@ -1125,7 +742,55 @@
       });
       layout();
     }
+    const SUPPORTED = ['en', 'es', 'sl'];
+    const BROWSER_MAP = { sl: 'sl' };
+    const I18N = {};
 
+    async function loadLang(l) {
+      if (!I18N[l]) {
+        const r = await fetch(`translations/${l}.json`);
+        if (!r.ok) throw new Error(`Could not load ${l}`);
+        I18N[l] = await r.json();
+      }
+      return I18N[l];
+    }
+
+    function applyStatic() {
+      const tr = I18N[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const v = tr[el.dataset.i18n];
+        if (v) el.textContent = v;
+      });
+      document.querySelectorAll('.lang-btn')
+        .forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    }
+
+    async function setLang(l) {
+      try {
+        await loadLang(l);
+        lang = l;
+        document.documentElement.lang = l ===  l;
+        build();
+        applyStatic();
+        try { localStorage.setItem('preferredLang', l); } catch (e) { }
+      } catch (err) {
+        console.error('i18n Error:', err);
+      }
+    }
+
+    function initI18n() {
+      let saved = null;
+      try { saved = localStorage.getItem('preferredLang'); } catch (e) { }
+      const b = navigator.language.split('-')[0];
+      const detected = BROWSER_MAP[b] || b;
+      setLang(SUPPORTED.includes(saved) ? saved
+        : SUPPORTED.includes(detected) ? detected : 'en');
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn =>
+      btn.addEventListener('click', () => setLang(btn.dataset.lang)));
+
+    initI18n();
     function layout() {
       $('#pl').textContent = T().ui.plain;
       const u = T().ui;
@@ -1232,7 +897,7 @@
     });
     /* drifting tech badges (canvas, text-only, paused when hidden) */
     (function () {
-      const cv = $('#bg'), x = cv.getContext('2d'); let W, H; 
+      const cv = $('#bg'), x = cv.getContext('2d'); let W, H;
 
       const fileNames = Object.values({ ...CONFIG.frameworks, ...CONFIG.languages, ...CONFIG.markup, ...CONFIG.databases, ...CONFIG.devops })
         .flat()
@@ -1297,8 +962,6 @@
         requestAnimationFrame(f);
       })();
     })();
-    build();
-
   </script>
 </body>
 

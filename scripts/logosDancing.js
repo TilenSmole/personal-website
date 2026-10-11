@@ -10,14 +10,25 @@ function loadData() {
         "react.svg", "ruby.svg", "typescript.svg",
     ];
 
+    const isSmallScreen = window.innerWidth < 992;
+    if (isSmallScreen) {
+        for (let i = fileNames.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [fileNames[i], fileNames[j]] = [fileNames[j], fileNames[i]];
+        }
+    }
+
+    var itemsCount = 0;
     fileNames.forEach(file => {
         const isLogo = file.toLowerCase().includes("logo");
         const isZmejelov = file.toLowerCase().includes("zmejelov");
-        const isSmallScreen = window.innerWidth < 992;
 
-        if ((isLogo || isZmejelov) && isSmallScreen) {
+        itemsCount++;
+        if (isSmallScreen && itemsCount > 8) {
             return;
         }
+
+        console.log(file);
 
         const item = document.createElement("img");
         item.src = `img-icons/${encodeURIComponent(file)}`;
@@ -28,11 +39,9 @@ function loadData() {
 
         if (isLogo) {
             item.classList.add("floating-item-logo");
-            container.href = "https://example.com";
             container.target = "_blank";
         } else if (isZmejelov) {
             item.classList.add("floating-item-zmejelov");
-            container.href = "https://example.com";
             container.target = "_blank";
         } else {
             item.classList.add("floating-item-basic");
@@ -53,7 +62,7 @@ function loadData() {
             removable: !isLogo && !isZmejelov
         });
     });
-} 
+}
 
 function animate() {
     const maxX = home.clientWidth;

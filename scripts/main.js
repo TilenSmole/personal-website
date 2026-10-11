@@ -1,19 +1,3 @@
-function showMyInfo() {
-    const home = document.getElementById("home");
-    const aboutMe = document.getElementById("aboutMe");
-    const btn = document.getElementById("showMyInfo");
-
-    if (home.style.display === "none") {
-        home.style.display = "flex";
-        aboutMe.style.display = "none";
-        btn.innerText = "O meni";
-    } else {
-        home.style.display = "none";
-        aboutMe.style.display = "flex";
-        btn.innerText = "<";
-    }
-}
-
 // Replacement for $(el).load(url)
 function loadHTML(selector, url) {
     return fetch(url)
@@ -55,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
             initCarousel();
         });
     });
-
-    document.getElementById("showMyInfo").addEventListener('click', showMyInfo);
 });
 
 
