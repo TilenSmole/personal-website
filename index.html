@@ -853,14 +853,11 @@
 
     // Global event listener for inline video cookie consent buttons
     document.addEventListener('click', (e) => {
-      const consentBtn = e.target.closest('[data-consent]');
-      if (!consentBtn) return;
-
-      // Force-set localStorage directly
-      localStorage.setItem('cookie-consent-choice', 'accept');
-
-      // Reload immediately
-      window.location.reload();
+  if (!e.target.closest('[data-consent]')) return;
+  try { localStorage.setItem('cookie-consent-choice', 'accept'); } catch (err) {}
+  if (typeof window.setCookieConcent === 'function') window.setCookieConcent('accept');
+  build();   
+  applyStatic();
     });
     addEventListener('keydown', e => {
       if (e.target.tagName === 'BUTTON' && e.key === ' ') return;
@@ -896,11 +893,6 @@
       const b = e.target.closest('button.vid[data-v]'); if (!b) return;
       const f = document.createElement('iframe'); f.className = 'vid';
       f.src = `https://www.youtube-nocookie.com/embed/${b.dataset.v}?autoplay=1&rel=0`; f.allow = 'autoplay;encrypted-media;fullscreen'; f.title = 'Video'; b.replaceWith(f)
-    });
-    area.addEventListener('click', e => {
-      if (e.target.closest('a,iframe,.vid,.consent-btn')) $('#cookie-accept').click();
-      if (e.target.closest('video-consent')) $('#video-consent').click();
-
     });
     /* drifting tech badges (canvas, text-only, paused when hidden) */
     (function () {
